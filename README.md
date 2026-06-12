@@ -10,7 +10,7 @@ synthesize raw data into human-readable bullet points matching the report format
 
 ![Weekly Pulse autonomous flow](weekly-pulse-flow.png)
 
-1. **Cron trigger** - GitHub Actions fires every Thursday at 9am ET
+1. **Cron trigger** - GitHub Actions fires every Thursday at 12:30pm ET
 2. **Collect** - pulls from four sources in parallel: GitHub PRs/reviews,
    Jira tickets, Slack messages, and the baseline AAET report
 3. **Synthesize** - Claude (Vertex AI) distills raw data into concise,
@@ -22,6 +22,18 @@ synthesize raw data into human-readable bullet points matching the report format
 
 The goal is full autonomy: no human in the loop until the review step.
 Today, steps 1-3 work; steps 4-5 (publish + notify) are the remaining gaps.
+
+## Architecture
+
+![System architecture](system-architecture.png)
+
+The system is a Python pipeline orchestrated by `generate.py`. GitHub Actions
+triggers it on a cron schedule (or manual dispatch). The orchestrator calls four
+collector modules in sequence, each hitting a different external API. Collected
+data flows into `synthesize.py`, which formats it against `prompt.md` templates
+and calls Vertex AI (Claude) for final bullet generation. Output is committed
+back to the repo. Google Docs publishing and Slack notification are the next
+modules to build (dashed cards above).
 
 ## Quick start
 
