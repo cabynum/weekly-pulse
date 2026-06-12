@@ -19,11 +19,11 @@ from pathlib import Path
 import yaml
 from dotenv import load_dotenv
 
-from collectors.report import ReportCollector
+from collectors.baseline import BaselineCollector
 from collectors.github import GitHubCollector
 from collectors.jira import JiraCollector
 from collectors.slack import SlackCollector
-from synthesis.writer import ReportWriter
+from synthesize import Synthesizer
 
 
 def load_config(config_path: str = None) -> dict:
@@ -37,7 +37,6 @@ def main():
     parser = argparse.ArgumentParser(description="Generate Data Processing weekly highlights")
     parser.add_argument("--days-back", type=int, default=7, help="Days to look back")
     parser.add_argument("--skip-slack", action="store_true", help="Skip Slack collection")
-    parser.add_argument("--output-only", action="store_true", help="Only print output, no Slack post")
     parser.add_argument("--config", type=str, help="Path to config.yaml")
     args = parser.parse_args()
 
@@ -49,15 +48,15 @@ def main():
     print(f"Looking back {args.days_back} days")
     print("=" * 60)
 
-    # 1. Fetch the generated AAET report
+    # 1. Fetch the generated AAET report as baseline
     github_token = os.getenv("GITHUB_TOKEN", "")
     aaet = config.get("github", {}).get("aaet_report", {})
-    report_collector = ReportCollector(
+    baseline = BaselineCollector(
         github_token=github_token,
         owner=aaet.get("owner", "catrobson"),
         repo=aaet.get("repo", "AAET-Weekly-Status"),
     )
-    report_data = report_collector.collect()
+    report_data = baseline.collect()
 
     # 2. Collect GitHub activity
     members = config.get("team", {}).get("members", [])
@@ -88,7 +87,7 @@ def main():
 
     # 5. Synthesize into bullet points
     llm_cfg = config.get("llm", {})
-    writer = ReportWriter(
+    synth = Synthesizer(
         vertex_project=llm_cfg.get("vertex_project"),
         vertex_region=llm_cfg.get("vertex_region"),
         model=llm_cfg.get("model"),
@@ -98,8 +97,13 @@ def main():
     print("Synthesizing highlights...")
     print("=" * 60)
 
-    bullets = writer.synthesize(report_data, github_data, jira_data, slack_data)
-    full_section = writer.format_full_section(bullets, jira_data)
+    team_cfg = config.get("team", {})
+    bullets = synth.synthesize(report_data, github_data, jira_data, slack_data)
+    full_section = synth.format_full_section(
+        bullets, jira_data,
+        team_name=team_cfg.get("name", "Data Processing"),
+        leader_name=team_cfg.get("leader", "Chris Bynum"),
+    )
 
     # 6. Save output
     output_dir = Path(__file__).parent / "output"

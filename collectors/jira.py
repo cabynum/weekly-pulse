@@ -8,10 +8,14 @@ from datetime import datetime, timedelta
 from typing import List
 
 
+FIELD_TARGET_VERSION = "customfield_10855"
+FIELD_COLOR_STATUS = "customfield_10712"     # RAG status (Red/Yellow/Green)
+FIELD_STATUS_SUMMARY = "customfield_10814"   # free-text progress note
+
 FIELDS = (
     "summary,status,assignee,created,updated,resolutiondate,"
     "priority,components,labels,issuetype,fixVersions,"
-    "customfield_10855,customfield_10712,customfield_10814"
+    f"{FIELD_TARGET_VERSION},{FIELD_COLOR_STATUS},{FIELD_STATUS_SUMMARY}"
 )
 
 
@@ -48,10 +52,10 @@ class JiraCollector:
     def _format(self, issue: dict) -> dict:
         f = issue.get("fields", {})
         assignee = f.get("assignee")
-        color_field = f.get("customfield_10712")
+        color_field = f.get(FIELD_COLOR_STATUS)
         color = color_field.get("value", "") if isinstance(color_field, dict) else ""
 
-        status_summary = f.get("customfield_10814")
+        status_summary = f.get(FIELD_STATUS_SUMMARY)
         if isinstance(status_summary, dict):
             try:
                 ss_text = status_summary["content"][0]["content"][0]["text"]
@@ -60,7 +64,7 @@ class JiraCollector:
         else:
             ss_text = str(status_summary) if status_summary else ""
 
-        tv = f.get("customfield_10855") or []
+        tv = f.get(FIELD_TARGET_VERSION) or []
         target_versions = [
             v.get("name", "") if isinstance(v, dict) else str(v) for v in tv
         ]

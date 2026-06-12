@@ -1,6 +1,7 @@
 """
-Fetch the latest generated AAET Weekly Status report from Cat's GitHub repo
-and extract the Data Processing section as a baseline.
+Fetch the latest auto-generated AAET Weekly Status report from
+catrobson/AAET-Weekly-Status and extract the Data Processing section
+as a baseline to improve on.
 """
 
 import re
@@ -9,7 +10,7 @@ from datetime import datetime
 from typing import Optional
 
 
-class ReportCollector:
+class BaselineCollector:
 
     def __init__(self, github_token: str, owner: str = "catrobson",
                  repo: str = "AAET-Weekly-Status"):
@@ -58,7 +59,7 @@ class ReportCollector:
         return match.group(1).strip() if match else ""
 
     def collect(self) -> dict:
-        """Main entry point: fetch latest report and extract DP section."""
+        """Fetch latest report and extract DP section."""
         print("Fetching latest AAET report from GitHub...")
         path = self.find_latest_report()
         if not path:

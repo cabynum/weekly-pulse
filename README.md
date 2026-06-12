@@ -8,13 +8,20 @@ synthesize raw data into human-readable bullet points matching the report format
 
 ## How it works
 
-1. **Fetches** the latest auto-generated AAET report from `catrobson/AAET-Weekly-Status`
-2. **Collects** additional context: GitHub PRs/reviews by team members, Jira ticket
-   details, Slack messages
-3. **Synthesizes** everything into concise bullet points via Claude (Vertex AI)
-4. **Outputs** a draft to `output/` and optionally posts to Slack for team review
+![Weekly Pulse autonomous flow](weekly-pulse-flow.png)
 
-The draft gives you a head start on supplementing the report before the Friday noon deadline.
+1. **Cron trigger** - GitHub Actions fires every Thursday at 9am ET
+2. **Collect** - pulls from four sources in parallel: GitHub PRs/reviews,
+   Jira tickets, Slack messages, and the baseline AAET report
+3. **Synthesize** - Claude (Vertex AI) distills raw data into concise,
+   style-matched bullet points
+4. **Publish** - a Google Docs publisher module finds and replaces the
+   Data Processing section in the live Pulse doc
+5. **Notify** - posts the draft to Slack for a quick human review before
+   the Friday noon deadline
+
+The goal is full autonomy: no human in the loop until the review step.
+Today, steps 1-3 work; steps 4-5 (publish + notify) are the remaining gaps.
 
 ## Quick start
 
@@ -34,6 +41,7 @@ from the Actions tab.
 ## Configuration
 
 Edit `config.yaml` to update:
+
 - Team members (names, emails, GitHub usernames)
 - GitHub repos to track
 - Jira component and projects
