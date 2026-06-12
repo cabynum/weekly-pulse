@@ -2,9 +2,10 @@ name: Weekly Pulse
 
 on:
   schedule:
-    # Thursday 9:00am ET (13:00 UTC during EDT, 14:00 during EST)
-    # Runs before the 12:30pm leadership notification
-    - cron: '0 13 * * 4'
+    # Thursday 12:30pm ET (16:30 UTC during EDT, 17:30 during EST)
+    # Runs 30min after Cat's AAET report (catrobson/AAET-Weekly-Status @ 16:00 UTC)
+    # Draft ready for review ~12:35pm, posted to team Slack by 2pm
+    - cron: '30 16 * * 4'
 
   workflow_dispatch:
     inputs:

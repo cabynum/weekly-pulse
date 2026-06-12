@@ -35,8 +35,9 @@ python generate.py --days-back 7
 
 ## Automated schedule
 
-GitHub Actions runs every Thursday at 9:00am ET. You can also trigger manually
-from the Actions tab.
+GitHub Actions runs every Thursday at 12:30pm ET (after Cat's AAET baseline
+report generates at noon). Draft is ready for review by ~12:35pm, targeting
+team Slack post by 2pm. You can also trigger manually from the Actions tab.
 
 ## Configuration
 
