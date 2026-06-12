@@ -1,0 +1,66 @@
+# Weekly Pulse - Data Processing Team Highlights
+# Generates supplemental bullet points for the AAET Weekly Pulse Check
+
+team:
+  name: Data Processing
+  leader: Chris Bynum
+  leader_email: cbynum@redhat.com
+
+  members:
+    - name: Ali Maredia
+      email: amaredia@redhat.com
+      github: AliMaredia
+      slack_id: null  # populate with Slack user IDs
+    - name: Alina Ryan
+      email: aryan@redhat.com
+      github: alinaryan
+      slack_id: null
+    - name: Rishabh Singh
+      email: risingh@redhat.com
+      github: rishabhssingh
+      slack_id: null
+    - name: Shruthi Sankepelly
+      email: ssankepelly@redhat.com
+      github: ssankepelly
+      slack_id: null
+    - name: Vedant Deshpande
+      email: vdeshpan@redhat.com
+      github: VedantDeshpande-RH
+      slack_id: null
+
+# Repos to scan for team activity (PRs, reviews, commits)
+github:
+  repos:
+    - opendatahub-io/odh-data-processing
+    - opendatahub-io/spark-operator
+    - kubeflow/spark-operator
+  # Repo containing the generated AAET report
+  aaet_report:
+    owner: catrobson
+    repo: AAET-Weekly-Status
+    report_path: reports/
+
+jira:
+  base_url: https://redhat.atlassian.net
+  component: Data Processing
+  projects:
+    - RHAIENG
+    - RHAISTRAT
+    - RHOAIENG
+    - RHAIRFE
+
+slack:
+  # General sweep: search all messages from each team member in the past week.
+  # Requires a Slack user token with search:read scope.
+  days_back: 7
+
+llm:
+  # Uses Anthropic via Vertex AI (same as Cat's report generator)
+  vertex_project: itpc-gcp-ai-eng-claude
+  vertex_region: us-east5
+  model: claude-sonnet-4-5@20250929
+
+output:
+  # Where to post the draft
+  slack_channel: "#aaiet-data-processing"
+  local_path: output/

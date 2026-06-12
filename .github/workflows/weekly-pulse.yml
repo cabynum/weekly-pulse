@@ -1,0 +1,80 @@
+name: Weekly Pulse
+
+on:
+  schedule:
+    # Thursday 9:00am ET (13:00 UTC during EDT, 14:00 during EST)
+    # Runs before the 12:30pm leadership notification
+    - cron: '0 13 * * 4'
+
+  workflow_dispatch:
+    inputs:
+      days_back:
+        description: 'Number of days to look back'
+        required: false
+        default: '7'
+        type: string
+      skip_slack:
+        description: 'Skip Slack data collection'
+        required: false
+        default: 'false'
+        type: boolean
+
+jobs:
+  generate-highlights:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Configure GCP credentials for Vertex AI
+        env:
+          GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
+        run: |
+          echo "$GCP_CREDENTIALS" > /tmp/gcp_credentials.json
+          echo "GOOGLE_APPLICATION_CREDENTIALS=/tmp/gcp_credentials.json" >> $GITHUB_ENV
+
+      - name: Generate highlights
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT_TOKEN }}
+          JIRA_USERNAME: ${{ secrets.JIRA_USERNAME }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+          SLACK_USER_TOKEN: ${{ secrets.SLACK_USER_TOKEN }}
+          ANTHROPIC_VERTEX_PROJECT_ID: itpc-gcp-ai-eng-claude
+          ANTHROPIC_VERTEX_REGION: us-east5
+        run: |
+          DAYS_BACK="${{ github.event.inputs.days_back || '7' }}"
+          SKIP_SLACK="${{ github.event.inputs.skip_slack || 'false' }}"
+          ARGS="--days-back $DAYS_BACK"
+          if [ "$SKIP_SLACK" = "true" ]; then
+            ARGS="$ARGS --skip-slack"
+          fi
+          python generate.py $ARGS
+
+      - name: Upload draft as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-pulse-${{ github.run_id }}
+          path: output/
+          retention-days: 30
+
+      - name: Commit output
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add -f output/
+          git diff --staged --quiet || git commit -m "pulse: $(date +%Y-%m-%d) weekly highlights"
+          git push
+
+      - name: Clean up credentials
+        if: always()
+        run: rm -f /tmp/gcp_credentials.json
