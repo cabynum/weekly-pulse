@@ -107,10 +107,11 @@ def main():
 
     # 6. Save output
     output_dir = Path(__file__).parent / "output"
-    output_dir.mkdir(exist_ok=True)
     date_str = datetime.now().strftime("%Y-%m-%d")
+    date_dir = output_dir / date_str
+    date_dir.mkdir(parents=True, exist_ok=True)
 
-    draft_path = output_dir / f"draft_{date_str}.md"
+    draft_path = date_dir / "draft.md"
     with open(draft_path, "w") as f:
         f.write(f"# Data Processing - Weekly Highlights Draft\n")
         f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M')}\n\n")
@@ -132,7 +133,7 @@ def main():
     print(f"\nDraft saved: {draft_path}")
 
     # Save raw data for debugging
-    raw_path = output_dir / f"raw_{date_str}.json"
+    raw_path = date_dir / "raw.json"
     with open(raw_path, "w") as f:
         json.dump({
             "report": {k: v for k, v in report_data.items() if k != "full_report"},
