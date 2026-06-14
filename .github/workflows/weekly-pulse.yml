@@ -13,16 +13,10 @@ on:
         required: false
         default: '7'
         type: string
-      skip_slack:
-        description: 'Skip Slack data collection'
-        required: false
-        default: 'false'
-        type: boolean
-      skip_publish:
-        description: 'Skip Google Docs publishing'
-        required: false
-        default: 'false'
-        type: boolean
+
+# This pipeline ONLY generates the draft. Publishing happens interactively
+# via the weekly-pulse-review Argus skill in Cursor (Slack MCP sweep →
+# enrich → approve → publish to Google Doc).
 
 jobs:
   generate-highlights:
@@ -50,30 +44,14 @@ jobs:
           echo "$GCP_CREDENTIALS" > /tmp/gcp_credentials.json
           echo "GOOGLE_APPLICATION_CREDENTIALS=/tmp/gcp_credentials.json" >> $GITHUB_ENV
 
-      - name: Configure Google Docs credentials
-        env:
-          GOOGLE_DOCS_CREDENTIALS_JSON: ${{ secrets.GOOGLE_DOCS_CREDENTIALS }}
-        if: ${{ env.GOOGLE_DOCS_CREDENTIALS_JSON != '' }}
-        run: |
-          echo "$GOOGLE_DOCS_CREDENTIALS_JSON" > /tmp/docs_credentials.json
-          echo "GOOGLE_DOCS_CREDENTIALS=/tmp/docs_credentials.json" >> $GITHUB_ENV
-
       - name: Generate highlights
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT_TOKEN }}
           JIRA_USERNAME: ${{ secrets.JIRA_USERNAME }}
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
-          SLACK_USER_TOKEN: ${{ secrets.SLACK_USER_TOKEN }}
           ANTHROPIC_VERTEX_PROJECT_ID: itpc-gcp-ai-eng-claude
           ANTHROPIC_VERTEX_REGION: us-east5
-        run: |
-          DAYS_BACK="${{ github.event.inputs.days_back || '7' }}"
-          SKIP_SLACK="${{ github.event.inputs.skip_slack || 'false' }}"
-          ARGS="--days-back $DAYS_BACK"
-          if [ "$SKIP_SLACK" = "true" ]; then
-            ARGS="$ARGS --skip-slack"
-          fi
-          python generate.py $ARGS
+        run: python generate.py --days-back ${{ github.event.inputs.days_back || '7' }} --skip-slack
 
       - name: Upload draft as artifact
         if: always()
@@ -92,13 +70,6 @@ jobs:
           git diff --staged --quiet || git commit -m "pulse: $(date +%Y-%m-%d) weekly highlights"
           git push
 
-      - name: Publish to Google Docs
-        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.skip_publish != 'true' && env.GOOGLE_DOCS_CREDENTIALS != '' }}
-        env:
-          GOOGLE_DOCS_CREDENTIALS: ${{ env.GOOGLE_DOCS_CREDENTIALS }}
-          REPORT_DOC_ID: ${{ secrets.REPORT_DOC_ID }}
-        run: python publish.py
-
       - name: Clean up credentials
         if: always()
-        run: rm -f /tmp/gcp_credentials.json /tmp/docs_credentials.json
+        run: rm -f /tmp/gcp_credentials.json
