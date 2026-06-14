@@ -34,25 +34,25 @@ NEXT_SECTION = "RAG / Agent Ops"
 
 
 def get_credentials():
-    """Build credentials from service account JSON or application default credentials."""
-    creds_path = os.getenv("GOOGLE_DOCS_CREDENTIALS")
-    if creds_path:
-        return service_account.Credentials.from_service_account_file(
-            creds_path, scopes=SCOPES
-        )
+    """Build credentials from service account JSON or user OAuth credentials."""
+    import json
 
-    # Fall back to application default credentials (user auth or service account)
-    creds_path = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+    creds_path = os.getenv("GOOGLE_DOCS_CREDENTIALS")
+    if not creds_path:
+        creds_path = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+
     if creds_path:
-        import json
         with open(creds_path) as f:
             info = json.load(f)
+
         if info.get("type") == "service_account":
             return service_account.Credentials.from_service_account_file(
                 creds_path, scopes=SCOPES
             )
+
         # User credentials (from gcloud auth application-default login)
         from google.oauth2.credentials import Credentials as UserCredentials
+        quota_project = info.get("quota_project_id", "itpc-gcp-ai-eng-claude")
         return UserCredentials(
             token=info.get("access_token"),
             refresh_token=info.get("refresh_token"),
@@ -60,6 +60,7 @@ def get_credentials():
             client_id=info.get("client_id"),
             client_secret=info.get("client_secret"),
             scopes=SCOPES,
+            quota_project_id=quota_project,
         )
 
     # Try default credentials discovery
