@@ -58,7 +58,7 @@ llm:
   # Uses Anthropic via Vertex AI (same as Cat's report generator)
   vertex_project: itpc-gcp-ai-eng-claude
   vertex_region: us-east5
-  model: claude-sonnet-4-5@20250929
+  model: claude-sonnet-4-6
 
 output:
   # Where to post the draft

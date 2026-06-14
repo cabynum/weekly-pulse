@@ -72,7 +72,7 @@ class Synthesizer:
     def __init__(self, vertex_project: str = None, vertex_region: str = None,
                  model: str = None):
         self.model = model or os.getenv(
-            "LLM_MODEL", "claude-sonnet-4-5@20250929"
+            "LLM_MODEL", "claude-sonnet-4-6"
         )
         self.system_prompt, self.user_template = _load_prompt()
 
