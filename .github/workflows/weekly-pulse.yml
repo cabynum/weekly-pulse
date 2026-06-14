@@ -75,13 +75,8 @@ jobs:
           fi
           python generate.py $ARGS
 
-      - name: Publish to Google Docs
-        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.skip_publish != 'true' && env.GOOGLE_DOCS_CREDENTIALS != '' }}
-        env:
-          GOOGLE_DOCS_CREDENTIALS: ${{ env.GOOGLE_DOCS_CREDENTIALS }}
-        run: python publish.py
-
       - name: Upload draft as artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: weekly-pulse-${{ github.run_id }}
@@ -89,12 +84,20 @@ jobs:
           retention-days: 30
 
       - name: Commit output
+        if: always()
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add -f output/
           git diff --staged --quiet || git commit -m "pulse: $(date +%Y-%m-%d) weekly highlights"
           git push
+
+      - name: Publish to Google Docs
+        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.skip_publish != 'true' && env.GOOGLE_DOCS_CREDENTIALS != '' }}
+        env:
+          GOOGLE_DOCS_CREDENTIALS: ${{ env.GOOGLE_DOCS_CREDENTIALS }}
+          REPORT_DOC_ID: ${{ secrets.REPORT_DOC_ID }}
+        run: python publish.py
 
       - name: Clean up credentials
         if: always()

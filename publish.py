@@ -144,8 +144,9 @@ def find_latest_report_doc(creds, folder_id: str = REPORTS_FOLDER_ID) -> tuple[s
 
 
 def resolve_doc_id(cli_override: str | None, creds) -> tuple[str, str | None]:
-    if cli_override:
-        return cli_override, None
+    doc_id = cli_override or os.getenv("REPORT_DOC_ID")
+    if doc_id:
+        return doc_id, None
     return find_latest_report_doc(creds)
 
 
