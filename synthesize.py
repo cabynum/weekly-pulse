@@ -27,7 +27,9 @@ def _load_prompt() -> tuple[str, str]:
     )
     system_prompt = system_match.group(1).strip() if system_match else ""
 
-    template_match = re.search(r"```\n(.*?)```", text, re.DOTALL)
+    template_match = re.search(
+        r"## User Prompt Template\s*\n.*?```\w*\n(.*?)```", text, re.DOTALL
+    )
     user_template = template_match.group(1).strip() if template_match else ""
 
     return system_prompt, user_template
