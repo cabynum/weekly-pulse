@@ -40,7 +40,7 @@ TEAM_SECTION = "Data Processing"
 NEXT_SECTION = "Notebooks"
 
 SECONDARY_SECTIONS = {
-    "Risks/Issues": {"marker": "Risks/Issues", "draft_label": "Risks/Issues"},
+    "Risks / Issues": {"marker": "Risks / Issues", "draft_label": "Risks/Issues"},
     "Customers": {"marker": "Customers", "draft_label": "Customers"},
     "Associates": {"marker": "Associates", "draft_label": "Associates"},
 }
@@ -253,7 +253,7 @@ def extract_raw_sections_from_draft(draft_path: Path) -> dict[str, str]:
         if match:
             raw = match.group(1).strip()
             if raw:
-                key = label_key.lower().replace("/", "_")
+                key = label_key.lower().replace(" ", "").replace("/", "_")
                 if key == "associates":
                     raw = _add_associates_flair(raw)
                 result[key] = raw
@@ -373,6 +373,12 @@ def read_doc_body(service, doc_id: str) -> tuple[str, dict]:
 
 def find_section_indices(full_text: str, section_name: str, next_section: str,
                          search_after: str = "Weekly Updates"):
+    """Find the character range of a team section's content in the doc.
+
+    Searches the raw document text (not headings) for section_name after
+    the "Weekly Updates" anchor, returning the start/end offsets of the
+    content between section_name and next_section.
+    """
     anchor_pos = full_text.find(search_after)
     if anchor_pos == -1:
         return None, None
@@ -391,6 +397,12 @@ def find_section_indices(full_text: str, section_name: str, next_section: str,
 
 
 def find_append_point(full_text: str, section_name: str) -> int | None:
+    """Find the insertion index for appending content to a shared section.
+
+    Locates section_name in the raw doc text and returns the character
+    offset just before the next section heading (or end of content),
+    so new bullets can be inserted without overwriting existing content.
+    """
     pos = full_text.find(section_name)
     if pos == -1:
         return None
@@ -517,7 +529,7 @@ def publish(creds, doc_id: str, raw_sections: dict[str, str],
     # --- Secondary sections (append) ---
     secondary_items = []
     section_map = {
-        "risks_issues": "Risks/Issues",
+        "risks_issues": "Risks / Issues",
         "customers": "Customers",
         "associates": "Associates",
     }

@@ -77,14 +77,26 @@ enhanced the Dashboard notification with an action button.
 
 ### Left Off
 
-Skill is scaffolded and ready for first live test. The next Thursday
-(Jun 18) will be the first real run. Key things to validate live:
-1. Does the Slack sweep return useful signal from MCP?
-2. Does the section boundary detection work on the current week's template?
-3. Does the full publish flow work end-to-end?
+Publisher module (`publish.py`) works end-to-end in CI - credentials,
+section detection, and Google Docs write all validated. But it has a
+critical bug: the doc ID is hardcoded to a stale document
+(`1jMyzuYlkKyl_...`) instead of the actual live doc
+(`18FVFNqzjKuMUyCQXnpzWZnVKMKIlGvYLN8Tvjfd9Vvw`). The plan specified
+dynamic discovery via Slack channel search but this was not implemented.
+The stale doc got test data written to it (no harm done - it's not the
+live one).
 
-### Open Questions
+Additionally: output quality is formulaic (mechanical "Completed X" bullets).
+The hand-edited v3 draft in `output/2026-06-12/draft.md` shows what good
+output looks like. `prompt.md` tuning needed.
 
-- How does Sarah prepare the doc each week? Does she insert the date into
-  the template beforehand, or fill it after collecting content?
-- Should we auto-detect "current week" by date proximity, or always ask?
+### Next Session
+
+1. Fix `publish.py` doc discovery - remove hardcoded ID, implement lookup
+   (Slack search for CI won't work without token; use a config file
+   `doc_id.txt` that gets updated manually or via the review skill)
+2. Create a TEST doc for CI validation (don't use the live doc)
+3. Tune `prompt.md` for higher quality synthesis output
+4. Update the README/architecture to reflect the live doc is
+   `18FVFNqzjKuMUyCQXnpzWZnVKMKIlGvYLN8Tvjfd9Vvw` (DO NOT WRITE TO IT
+   without explicit approval)

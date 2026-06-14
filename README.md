@@ -6,9 +6,8 @@ A two-phase system: CI generates a draft autonomously every Thursday, then
 an interactive review step handles Slack enrichment and Google Docs publishing
 with a human in the loop.
 
-The long-term goal is full autonomy - remove the human from Phase 2 entirely.
-Two blockers remain: a pending Slack App approval (for CI-based message
-collection) and a Google Docs publisher module (Python, not MCP).
+The remaining blocker for full autonomy is Slack App approval (for CI-based
+message collection). Google Docs publishing is handled by `publish.py`.
 
 ## How it works
 
@@ -21,20 +20,20 @@ collection) and a Google Docs publisher module (Python, not MCP).
    report. Slack message collection requires a Slack App with `search:read`
    scope, which is pending internal approval. Skipped gracefully without it.
 3. **Synthesize** - Claude (Vertex AI) distills raw data into concise,
-   style-matched bullet points
+   style-matched bullet points with multi-section routing (DATA_PROCESSING,
+   RISKS, CUSTOMERS, ASSOCIATES)
 4. **Output** - draft committed to repo, Dashboard notification fires
 
-**Phase 2 - Interim Manual Steps (goal: automate away):**
+**Phase 2 - Interactive (Argus session, human in the loop):**
 
-1. **Human trigger** - user initiates the review flow locally
+1. **Human trigger** - user says "produce the report" in an Argus session
 2. **Slack sweep** - uses a local MCP tool to search team member messages.
    This is a workaround until the Slack App is approved, at which point
    collection moves into the CI pipeline (Phase 1, step 2).
 3. **Enrich** - notable Slack findings are folded into the draft
 4. **Review + Approve** - user reviews the final version
-5. **Publish** - writes the DP section to the live Google Doc. Currently
-   uses a local MCP tool; long-term, this becomes a Python module
-   (`google-api-python-client`) running in CI.
+5. **Publish** - `publish.py` writes all sections to the live Google Doc
+   with native formatting (bullets, hyperlinks, bold removal)
 
 ## Architecture
 
@@ -47,18 +46,18 @@ data flows into `synthesize.py`, which formats it against `prompt.md` templates
 and calls Vertex AI (Claude) for final bullet generation. Output is committed
 back to the repo and a Dashboard notification fires.
 
-The interim manual steps run locally via MCP tools. Slack sweep uses
-`search_messages` (browser-authenticated token) to compensate for the
-missing CI token. Publishing uses `find_and_replace_doc` or `modify_doc_text`
-for Google Docs section replacement. Both of these will become Python modules
-in the CI pipeline once the Slack App is approved and Google Docs auth is
-configured as a CI secret.
+Publishing is handled by `publish.py` (`google-api-python-client`), which
+discovers the target doc dynamically from a shared Drive folder, parses the
+draft markdown into structured content (UTF-16 offsets, hyperlink ranges,
+bullet regions), and writes to Google Docs with native formatting. Slack sweep
+runs locally via MCP `search_messages` (browser-authenticated token) during
+the interactive review step.
 
 ## Quick start
 
 ```bash
 cp .env.example .env
-# Fill in credentials
+# Fill in credentials (see table below)
 
 pip install -r requirements.txt
 python generate.py --days-back 7
@@ -105,6 +104,5 @@ To enable automated publishing to the Weekly Summary doc:
 
 | Blocker | Status | Once resolved |
 |---|---|---|
-| Slack App (`search:read` scope) | Pending approval | Slack collection moves to CI (Phase 1) |
-| Google Docs publisher module | Designed, needs Python impl | Publishing moves to CI, no human needed |
-| Full autonomy | Blocked on above | Phase 2 disappears entirely |
+| Slack App (`search:read` scope) | Pending approval | Slack collection moves to CI (Phase 1), Phase 2 disappears |
+| ~~Google Docs publisher module~~ | Done (`publish.py`) | ~~Publishing moves to CI~~ |
