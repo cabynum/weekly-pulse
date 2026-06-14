@@ -1221,6 +1221,7 @@
   "slack": {},
   "sections_routed": [
     "DATA_PROCESSING",
+    "RISKS",
     "ASSOCIATES"
   ]
 }
