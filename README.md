@@ -26,6 +26,10 @@ message collection). Google Docs publishing is handled by `publish.py`.
 
 **Phase 2 - Interactive (Argus session, human in the loop):**
 
+Steps 2-5 are orchestrated by the `weekly-pulse-review` Argus skill
+(`.cursor/skills/weekly-pulse-review/SKILL.md`), triggered by the phrase
+"produce the report."
+
 1. **Human trigger** - user says "produce the report" in an Argus session
 2. **Slack sweep** - uses a local MCP tool to search team member messages.
    This is a workaround until the Slack App is approved, at which point
