@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "error": "Service account info was not in the expected format, missing fields token_uri, client_email.",
+  "doc_url": "https://docs.google.com/document/d/1jMyzuYlkKyl_CULDhyb2CaWGUrAkk4DI6rW0diI0J38/edit",
+  "manual_content": "Data Processing\nCompleted RHOAIENG-67538: Remove .tekton CI pipeline files to fix Konflux conflicts\nCompleted RHOAIENG-65795: Replace tini with catatonit in Dockerfile.konflux\nCompleted RHOAIENG-64770: Implement and submit PR for driverIngressOptions annotation fix\nCompleted RHOAIENG-61812: [RHOAI 3.5.0-EA1][TFA Sign-Off][Data Processing] RC1 - Run Test execution matrix\nCompleted RHOAIENG-61713: [RHOAI 3.5.0-EA1] Test Plan Sign Off - Data Processing Team\nMerged 6 PRs across tracked repositories\nIn progress: 41 active issues.\nFeature watch: RHAISTRAT-1477 Kueue support for Kubeflow Spark Operator (KSO) - testing and docs  (Green) TV:rhoai-3.5; RHAISTRAT-1410 Include File Processors API in OGX (previously Llama Stack) Operator downstream (Green) TV:rhoai-3.5; RHAISTRAT-1409 Docling container image updates (new package versions, models) and push to registry.redhat every EA2 release (Green) TV:rhoai-3.5; RHAISTRAT-1408 Test & document using the Spark Application UI and spark-history mcp server for logs (Green) TV:rhoai-3.5",
+  "timestamp": "2026-06-14T15:01:59.171067"
+}

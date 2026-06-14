@@ -1,0 +1,14 @@
+**Data Processing** (Chris Bynum) - 12 issues completed
+
+Highlights:
+
+- Completed RHOAIENG-67538: Remove .tekton CI pipeline files to fix Konflux conflicts
+- Completed RHOAIENG-65795: Replace tini with catatonit in Dockerfile.konflux
+- Completed RHOAIENG-64770: Implement and submit PR for driverIngressOptions annotation fix
+- Completed RHOAIENG-61812: [RHOAI 3.5.0-EA1][TFA Sign-Off][Data Processing] RC1 - Run Test execution matrix
+- Completed RHOAIENG-61713: [RHOAI 3.5.0-EA1] Test Plan Sign Off - Data Processing Team
+- Merged 6 PRs across tracked repositories
+
+In progress: 41 active issues.
+
+Feature watch: RHAISTRAT-1477 Kueue support for Kubeflow Spark Operator (KSO) - testing and docs  (Green) TV:rhoai-3.5; RHAISTRAT-1410 Include File Processors API in OGX (previously Llama Stack) Operator downstream (Green) TV:rhoai-3.5; RHAISTRAT-1409 Docling container image updates (new package versions, models) and push to registry.redhat every EA2 release (Green) TV:rhoai-3.5; RHAISTRAT-1408 Test & document using the Spark Application UI and spark-history mcp server for logs (Green) TV:rhoai-3.5
