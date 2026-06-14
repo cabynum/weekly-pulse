@@ -1220,6 +1220,7 @@
   },
   "slack": {},
   "sections_routed": [
-    "DATA_PROCESSING"
+    "DATA_PROCESSING",
+    "ASSOCIATES"
   ]
 }
