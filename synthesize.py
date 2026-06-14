@@ -87,12 +87,8 @@ class Synthesizer:
         region = vertex_region or os.getenv(
             "ANTHROPIC_VERTEX_REGION", "us-east5"
         )
-        try:
-            self.client = AnthropicVertex(project_id=project, region=region)
-            print(f"LLM: Vertex AI ({project}/{region}) model={self.model}")
-        except Exception as e:
-            print(f"Warning: Could not init Vertex AI: {e}")
-            self.client = None
+        self.client = AnthropicVertex(project_id=project, region=region)
+        print(f"LLM: Vertex AI ({project}/{region}) model={self.model}")
 
     # -- Data formatting helpers ------------------------------------------
 
@@ -170,36 +166,24 @@ class Synthesizer:
         )
 
         if not self.client:
-            return self._fallback(jira_data, github_data)
-
-        try:
-            resp = self.client.messages.create(
-                model=self.model,
-                max_tokens=1500,
-                system=self.system_prompt,
-                messages=[{"role": "user", "content": prompt}],
+            raise RuntimeError(
+                "LLM client not initialized. Cannot synthesize without it. "
+                "Check anthropic[vertex] install and GCP credentials."
             )
-            raw = resp.content[0].text.strip()
-            sections = parse_sections(raw)
-            if not sections.get("DATA_PROCESSING"):
-                print("Warning: LLM returned no DATA_PROCESSING section, using fallback")
-                return self._fallback(jira_data, github_data)
-            return sections
-        except Exception as e:
-            print(f"LLM error: {e}")
-            return self._fallback(jira_data, github_data)
 
-    def _fallback(self, jira_data: dict, github_data: dict) -> dict[str, str]:
-        """Basic bullet generation when LLM is unavailable."""
-        bullets = []
-        for t in jira_data.get("completed", [])[:5]:
-            bullets.append(f"- Completed [{t['key']}]({t['url']}): {t['summary']}")
-        team_prs = github_data.get("team_prs", [])
-        if team_prs:
-            bullets.append(f"- Merged {len(team_prs)} PRs across tracked repositories")
-        if not bullets:
-            bullets.append("- (No significant activity captured this period)")
-        return {"DATA_PROCESSING": "\n".join(bullets)}
+        resp = self.client.messages.create(
+            model=self.model,
+            max_tokens=1500,
+            system=self.system_prompt,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        raw = resp.content[0].text.strip()
+        sections = parse_sections(raw)
+        if not sections.get("DATA_PROCESSING"):
+            raise RuntimeError(
+                f"LLM returned no DATA_PROCESSING section. Raw output:\n{raw[:500]}"
+            )
+        return sections
 
     def format_full_section(self, sections: dict[str, str], jira_data: dict,
                             team_name: str = "Data Processing",
