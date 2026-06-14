@@ -228,22 +228,22 @@ def publish(doc_id: str, content: str, dry_run: bool = False):
     start_index = content_start + 1
     end_index = content_end + 1
 
-    requests = [
-        {
+    requests = []
+    if start_index < end_index:
+        requests.append({
             "deleteContentRange": {
                 "range": {
                     "startIndex": start_index,
                     "endIndex": end_index,
                 }
             }
-        },
-        {
-            "insertText": {
-                "location": {"index": start_index},
-                "text": new_content,
-            }
-        },
-    ]
+        })
+    requests.append({
+        "insertText": {
+            "location": {"index": start_index},
+            "text": new_content,
+        }
+    })
 
     print("\nPublishing to Google Docs...")
     result = service.documents().batchUpdate(
