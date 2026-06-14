@@ -57,6 +57,14 @@
     ],
     "external_prs": [
       {
+        "number": 2966,
+        "title": "Update version to 2.5.1",
+        "url": "https://github.com/kubeflow/spark-operator/pull/2966",
+        "author": "nabuskey",
+        "is_team_member": false,
+        "merged_at": "2026-06-14T16:26:12Z"
+      },
+      {
         "number": 2982,
         "title": "fix(kustomize): Add webhook subPath and expand Helm/Kustomize drift checks",
         "url": "https://github.com/kubeflow/spark-operator/pull/2982",
@@ -123,7 +131,7 @@
         "closed_by": "shruthis4"
       }
     ],
-    "total_merged": 9
+    "total_merged": 10
   },
   "jira": {
     "completed": [
@@ -1210,5 +1218,8 @@
       "created": 7
     }
   },
-  "slack": {}
+  "slack": {},
+  "sections_routed": [
+    "DATA_PROCESSING"
+  ]
 }

@@ -1,5 +1,5 @@
 # Data Processing - Weekly Highlights Draft
-Generated: 2026-06-14 15:10
+Generated: 2026-06-14 17:24
 
 ## Suggested Section for AAET Weekly Pulse Check
 
@@ -22,6 +22,8 @@ Feature watch: [RHAISTRAT-1477](https://redhat.atlassian.net/browse/RHAISTRAT-14
 
 ## Raw Bullets (for editing)
 
+### DATA_PROCESSING
+
 - Completed [RHOAIENG-67538](https://redhat.atlassian.net/browse/RHOAIENG-67538): Remove .tekton CI pipeline files to fix Konflux conflicts
 - Completed [RHOAIENG-65795](https://redhat.atlassian.net/browse/RHOAIENG-65795): Replace tini with catatonit in Dockerfile.konflux
 - Completed [RHOAIENG-64770](https://redhat.atlassian.net/browse/RHOAIENG-64770): Implement and submit PR for driverIngressOptions annotation fix
@@ -34,4 +36,5 @@ Feature watch: [RHAISTRAT-1477](https://redhat.atlassian.net/browse/RHAISTRAT-14
 ## Source Data Summary
 
 - Jira: 12 completed, 41 in progress
-- GitHub: 9 PRs merged, 6 by team
+- GitHub: 10 PRs merged, 6 by team
+- Sections: DATA_PROCESSING
