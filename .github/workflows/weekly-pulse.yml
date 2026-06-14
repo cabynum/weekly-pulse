@@ -4,7 +4,6 @@ on:
   schedule:
     # Thursday 12:30pm ET (16:30 UTC during EDT, 17:30 during EST)
     # Runs 30min after Cat's AAET report (catrobson/AAET-Weekly-Status @ 16:00 UTC)
-    # Draft ready for review ~12:35pm, posted to team Slack by 2pm
     - cron: '30 16 * * 4'
 
   workflow_dispatch:
@@ -16,6 +15,11 @@ on:
         type: string
       skip_slack:
         description: 'Skip Slack data collection'
+        required: false
+        default: 'false'
+        type: boolean
+      skip_publish:
+        description: 'Skip Google Docs publishing'
         required: false
         default: 'false'
         type: boolean
@@ -46,6 +50,14 @@ jobs:
           echo "$GCP_CREDENTIALS" > /tmp/gcp_credentials.json
           echo "GOOGLE_APPLICATION_CREDENTIALS=/tmp/gcp_credentials.json" >> $GITHUB_ENV
 
+      - name: Configure Google Docs credentials
+        env:
+          GOOGLE_DOCS_CREDENTIALS_JSON: ${{ secrets.GOOGLE_DOCS_CREDENTIALS }}
+        if: ${{ env.GOOGLE_DOCS_CREDENTIALS_JSON != '' }}
+        run: |
+          echo "$GOOGLE_DOCS_CREDENTIALS_JSON" > /tmp/docs_credentials.json
+          echo "GOOGLE_DOCS_CREDENTIALS=/tmp/docs_credentials.json" >> $GITHUB_ENV
+
       - name: Generate highlights
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT_TOKEN }}
@@ -62,6 +74,12 @@ jobs:
             ARGS="$ARGS --skip-slack"
           fi
           python generate.py $ARGS
+
+      - name: Publish to Google Docs
+        if: ${{ github.event.inputs.skip_publish != 'true' && env.GOOGLE_DOCS_CREDENTIALS != '' }}
+        env:
+          GOOGLE_DOCS_CREDENTIALS: ${{ env.GOOGLE_DOCS_CREDENTIALS }}
+        run: python publish.py
 
       - name: Upload draft as artifact
         uses: actions/upload-artifact@v4
@@ -80,4 +98,4 @@ jobs:
 
       - name: Clean up credentials
         if: always()
-        run: rm -f /tmp/gcp_credentials.json
+        run: rm -f /tmp/gcp_credentials.json /tmp/docs_credentials.json

@@ -88,6 +88,18 @@ Edit `config.yaml` to update:
 | `JIRA_API_TOKEN` | Jira API auth |
 | `SLACK_USER_TOKEN` | Slack message search (xoxp token, `search:read` scope) - pending Slack App approval |
 | `GCP_CREDENTIALS` | Vertex AI for Claude (JSON service account key) |
+| `GOOGLE_DOCS_CREDENTIALS` | Google Docs publish (service account JSON, needs doc shared with SA email) |
+
+## Setup: Google Docs publishing
+
+To enable automated publishing to the Weekly Summary doc:
+
+1. Create a GCP service account (or reuse an existing one)
+2. Enable the Google Docs API in the project
+3. Share the Weekly Summary doc with the service account email (Editor access)
+4. Download the service account JSON key
+5. Add it as `GOOGLE_DOCS_CREDENTIALS` secret in GitHub Actions
+6. Test with: `GOOGLE_DOCS_CREDENTIALS=path/to/key.json python publish.py --dry-run`
 
 ## Automation roadmap
 

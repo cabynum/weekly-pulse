@@ -12,6 +12,7 @@ Usage:
 import argparse
 import json
 import os
+import re
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -131,6 +132,13 @@ def main():
             f.write(f"- Slack: {total_msgs} messages scanned across team\n")
 
     print(f"\nDraft saved: {draft_path}")
+
+    # Save plain-text version (no markdown links, ready for Google Docs)
+    plain_path = date_dir / "plain.txt"
+    plain_section = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", full_section)
+    with open(plain_path, "w") as f:
+        f.write(plain_section)
+    print(f"Plain text saved: {plain_path}")
 
     # Save raw data for debugging
     raw_path = date_dir / "raw.json"

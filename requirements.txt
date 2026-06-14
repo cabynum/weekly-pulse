@@ -3,3 +3,5 @@ requests>=2.32.0
 slack-sdk>=3.33.0
 python-dotenv>=1.0.0
 pyyaml>=6.0.0
+google-api-python-client>=2.150.0
+google-auth>=2.35.0
