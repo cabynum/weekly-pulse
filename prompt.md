@@ -19,7 +19,7 @@ You must classify every bullet into one of four report sections. Output
 section markers on their own line, followed by bullets for that section.
 Omit any section that has no content (do NOT output empty sections).
 
-```
+```text
 [DATA_PROCESSING]
 - bullet 1
 - bullet 2
@@ -114,12 +114,14 @@ These examples show the target quality bar. Study the difference between
 "bad" (raw Jira dump) and "good" (rewritten for leadership).
 
 Bad (log-style, no context):
+
 - Completed RHOAIENG-64770: Implement and submit PR for driverIngressOptions annotation fix
 - Completed RHOAIENG-65795: Replace tini with catatonit in Dockerfile.konflux
-- Completed RHOAIENG-61812: [RHOAI 3.5.0-EA1][TFA Sign-Off][Data Processing] RC1 - Run Test execution matrix
-- Completed RHOAIENG-61713: [RHOAI 3.5.0-EA1] Test Plan Sign Off - Data Processing Team
+- Completed RHOAIENG-61812: \[RHOAI 3.5.0-EA1\]\[TFA Sign-Off\]\[Data Processing\] RC1 - Run Test execution matrix
+- Completed RHOAIENG-61713: \[RHOAI 3.5.0-EA1\] Test Plan Sign Off - Data Processing Team
 
 Good (impact-oriented, grouped, plain language):
+
 - Completed 3.5 EA1 [test plan sign-off and RC1 test execution](https://redhat.atlassian.net/browse/RHOAIENG-61812)
 - Fixed Spark UI accessibility by eliminating the need for manual port-forwarding to view running jobs. Enabled secure browser access by [implementing driverIngressOptions with TLS](https://redhat.atlassian.net/browse/RHOAIENG-64770).
 - Replaced tini init system with catatonit across Spark operator containers, resolving [licensing and supportability concerns for RHOAI productization](https://redhat.atlassian.net/browse/RHAIENG-5328).
@@ -133,12 +135,14 @@ images by what they do (batch vs API) not how they're built.
 Associates example (from the same week's data):
 
 Good:
+
 - Rishabh Singh was approved as a Maintainer of the Kubeflow Spark Operator, recognizing his upstream contributions in testing, code review, and community engagement.
 - Rishabh Singh co-authored [Protect your Kubernetes operator from OOMKill](https://developers.redhat.com/articles/2026/06/01/protect-your-kubernetes-operator-oomkill) on the Red Hat Developer Blog, detailing a systemic vulnerability found across controller-runtime operators.
 
 Risks example:
 
 Good:
+
 - Build system access for the second docling container image (serve layer) is blocked pending Konflux onboarding. Targeting 3.5 EA2, so this needs resolution this sprint.
 - Three Netty CVEs flagged in odh-spark-operator-rhel9 base image. Closed as "not affected" (vulnerable code not in execution path), but new CVEs continue to surface on the same dependency.
 
