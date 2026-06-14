@@ -199,20 +199,7 @@ class Synthesizer:
             f"**{team_name}** ({leader_name}) - {completed} issues completed\n",
             "Highlights:\n",
             dp_bullets,
-            "",
-            f"In progress: {in_progress} active issues.",
         ]
-
-        if features:
-            feature_notes = []
-            for feat in features:
-                color_tag = f" ({feat['color']})" if feat["color"] else ""
-                tv = ", ".join(feat.get("target_versions", []))
-                tv_note = f" TV:{tv}" if tv else ""
-                feature_notes.append(
-                    f"[{feat['key']}]({feat['url']}) {feat['summary']}{color_tag}{tv_note}"
-                )
-            lines.append(f"\nFeature watch: {'; '.join(feature_notes[:4])}")
 
         section_labels = {
             "RISKS": "Risks/Issues",
