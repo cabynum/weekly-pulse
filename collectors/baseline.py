@@ -61,7 +61,12 @@ class BaselineCollector:
     def collect(self) -> dict:
         """Fetch latest report and extract DP section."""
         print("Fetching latest AAET report from GitHub...")
-        path = self.find_latest_report()
+        try:
+            path = self.find_latest_report()
+        except Exception as e:
+            print(f"  Could not access baseline report: {e}")
+            return {"report_path": None, "dp_section": "", "exec_summary": ""}
+
         if not path:
             print("  No report found")
             return {"report_path": None, "dp_section": "", "exec_summary": ""}

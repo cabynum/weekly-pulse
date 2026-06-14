@@ -99,12 +99,18 @@ def main():
     print("=" * 60)
 
     team_cfg = config.get("team", {})
-    bullets = synth.synthesize(report_data, github_data, jira_data, slack_data)
+    sections = synth.synthesize(report_data, github_data, jira_data, slack_data)
     full_section = synth.format_full_section(
-        bullets, jira_data,
+        sections, jira_data,
         team_name=team_cfg.get("name", "Data Processing"),
         leader_name=team_cfg.get("leader", "Chris Bynum"),
     )
+
+    secondary_count = sum(
+        1 for k in ("RISKS", "CUSTOMERS", "ASSOCIATES") if k in sections
+    )
+    if secondary_count:
+        print(f"  Routed content to {secondary_count} additional section(s)")
 
     # 6. Save output
     output_dir = Path(__file__).parent / "output"
@@ -120,8 +126,9 @@ def main():
         f.write(full_section)
         f.write("\n\n---\n\n")
         f.write("## Raw Bullets (for editing)\n\n")
-        f.write(bullets)
-        f.write("\n\n---\n\n")
+        for key, bullets in sections.items():
+            f.write(f"### {key}\n\n{bullets}\n\n")
+        f.write("---\n\n")
         f.write("## Source Data Summary\n\n")
         f.write(f"- Jira: {jira_data['counts']['completed']} completed, "
                 f"{jira_data['counts']['in_progress']} in progress\n")
@@ -130,6 +137,7 @@ def main():
         if slack_data:
             total_msgs = sum(d["count"] for d in slack_data.values())
             f.write(f"- Slack: {total_msgs} messages scanned across team\n")
+        f.write(f"- Sections: {', '.join(sections.keys())}\n")
 
     print(f"\nDraft saved: {draft_path}")
 
@@ -151,6 +159,7 @@ def main():
                 name: {"count": d["count"]}
                 for name, d in (slack_data or {}).items()
             },
+            "sections_routed": list(sections.keys()),
         }, f, indent=2, default=str)
 
     # 7. Print the draft

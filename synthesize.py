@@ -1,12 +1,11 @@
 """
 Read prompt.md, format collected data into the template, call the LLM,
-and return bullet points for the weekly report.
+and return structured bullet points routed to report sections.
 """
 
 import os
 import re
 from pathlib import Path
-from typing import Optional
 
 try:
     from anthropic import AnthropicVertex
@@ -15,6 +14,8 @@ except ImportError:
 
 
 PROMPT_FILE = Path(__file__).parent / "prompt.md"
+
+SECTION_KEYS = ["DATA_PROCESSING", "RISKS", "CUSTOMERS", "ASSOCIATES"]
 
 
 def _load_prompt() -> tuple[str, str]:
@@ -30,6 +31,37 @@ def _load_prompt() -> tuple[str, str]:
     user_template = template_match.group(1).strip() if template_match else ""
 
     return system_prompt, user_template
+
+
+def parse_sections(raw: str) -> dict[str, str]:
+    """Parse LLM output with [SECTION] markers into a dict.
+
+    Returns a dict keyed by section name (DATA_PROCESSING, RISKS, etc.)
+    with the bullet text as values. Sections not present in the output
+    are omitted from the dict. Untagged content at the top defaults to
+    DATA_PROCESSING.
+    """
+    sections: dict[str, list[str]] = {}
+    current = None
+
+    for line in raw.split("\n"):
+        stripped = line.strip()
+        marker = re.match(r"^\[([A-Z_]+)\]$", stripped)
+        if marker:
+            key = marker.group(1)
+            if key in SECTION_KEYS:
+                current = key
+                if current not in sections:
+                    sections[current] = []
+            continue
+
+        if stripped:
+            if current is None:
+                current = "DATA_PROCESSING"
+                sections.setdefault(current, [])
+            sections[current].append(line)
+
+    return {k: "\n".join(v).strip() for k, v in sections.items() if v}
 
 
 class Synthesizer:
@@ -117,8 +149,12 @@ class Synthesizer:
     # -- Core synthesis ---------------------------------------------------
 
     def synthesize(self, report_data: dict, github_data: dict,
-                   jira_data: dict, slack_data: dict = None) -> str:
-        """Generate bullet points from all collected data."""
+                   jira_data: dict, slack_data: dict = None) -> dict[str, str]:
+        """Generate bullet points from all collected data.
+
+        Returns a dict keyed by section name (DATA_PROCESSING, RISKS,
+        CUSTOMERS, ASSOCIATES) with bullet text as values.
+        """
         prompt = self.user_template.format(
             current_dp_section=report_data.get("dp_section", "(not available)"),
             jira_completed_count=jira_data.get("counts", {}).get("completed", 0),
@@ -137,16 +173,21 @@ class Synthesizer:
         try:
             resp = self.client.messages.create(
                 model=self.model,
-                max_tokens=1000,
+                max_tokens=1500,
                 system=self.system_prompt,
                 messages=[{"role": "user", "content": prompt}],
             )
-            return resp.content[0].text.strip()
+            raw = resp.content[0].text.strip()
+            sections = parse_sections(raw)
+            if not sections.get("DATA_PROCESSING"):
+                print("Warning: LLM returned no DATA_PROCESSING section, using fallback")
+                return self._fallback(jira_data, github_data)
+            return sections
         except Exception as e:
             print(f"LLM error: {e}")
             return self._fallback(jira_data, github_data)
 
-    def _fallback(self, jira_data: dict, github_data: dict) -> str:
+    def _fallback(self, jira_data: dict, github_data: dict) -> dict[str, str]:
         """Basic bullet generation when LLM is unavailable."""
         bullets = []
         for t in jira_data.get("completed", [])[:5]:
@@ -156,20 +197,22 @@ class Synthesizer:
             bullets.append(f"- Merged {len(team_prs)} PRs across tracked repositories")
         if not bullets:
             bullets.append("- (No significant activity captured this period)")
-        return "\n".join(bullets)
+        return {"DATA_PROCESSING": "\n".join(bullets)}
 
-    def format_full_section(self, bullets: str, jira_data: dict,
+    def format_full_section(self, sections: dict[str, str], jira_data: dict,
                             team_name: str = "Data Processing",
                             leader_name: str = "Chris Bynum") -> str:
-        """Format the complete team section for the report."""
+        """Format all sections for the draft markdown output."""
         completed = jira_data.get("counts", {}).get("completed", 0)
         in_progress = jira_data.get("counts", {}).get("in_progress", 0)
         features = jira_data.get("features", [])
 
+        dp_bullets = sections.get("DATA_PROCESSING", "- (No updates)")
+
         lines = [
             f"**{team_name}** ({leader_name}) - {completed} issues completed\n",
             "Highlights:\n",
-            bullets,
+            dp_bullets,
             "",
             f"In progress: {in_progress} active issues.",
         ]
@@ -184,5 +227,15 @@ class Synthesizer:
                     f"[{feat['key']}]({feat['url']}) {feat['summary']}{color_tag}{tv_note}"
                 )
             lines.append(f"\nFeature watch: {'; '.join(feature_notes[:4])}")
+
+        section_labels = {
+            "RISKS": "Risks/Issues",
+            "CUSTOMERS": "Customers",
+            "ASSOCIATES": "Associates",
+        }
+        for key, label in section_labels.items():
+            if key in sections and sections[key].strip():
+                lines.append(f"\n## Suggested Addition to {label} Section\n")
+                lines.append(sections[key])
 
         return "\n".join(lines)

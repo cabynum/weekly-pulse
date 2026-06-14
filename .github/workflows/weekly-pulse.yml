@@ -76,7 +76,7 @@ jobs:
           python generate.py $ARGS
 
       - name: Publish to Google Docs
-        if: ${{ github.event.inputs.skip_publish != 'true' && env.GOOGLE_DOCS_CREDENTIALS != '' }}
+        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.skip_publish != 'true' && env.GOOGLE_DOCS_CREDENTIALS != '' }}
         env:
           GOOGLE_DOCS_CREDENTIALS: ${{ env.GOOGLE_DOCS_CREDENTIALS }}
         run: python publish.py
