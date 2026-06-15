@@ -7,7 +7,7 @@ an interactive review step handles Slack enrichment and Google Docs publishing
 with a human in the loop.
 
 The remaining blocker for full autonomy is Slack App approval (for CI-based
-message collection). Google Docs publishing is handled by `publish.py`.
+message collection).
 
 ## How it works
 
