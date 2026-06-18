@@ -1,19 +1,15 @@
-**Data Processing** (Chris Bynum) - 21 issues completed
+**Data Processing** (Chris Bynum) - 24 issues completed
 
 Highlights:
 
-- Completed 3.5 EA1 RC2 test execution, documentation sign-off, and product sign-off, closing out all EA1 release gate requirements for the team.
-- Shipped both docling container images for EA2: updated the existing batch processing image and created a new CUDA-enabled serve image, with both queued for push to the Red Hat registry on EA2 release.
-- Validated FIPS compliance and air-gapped environment support for the File Processors API, and integrated the API and Docling provider into the downstream llama-stack-distribution, with scheduler support for the Docling serve execution model also closed out.
-- Added E2E tests covering Kueue admission, quota enforcement, and reclamation for SparkApplications, with fair-sharing, priority scheduling, and preemption scenarios currently in review.
-- Fixed Spark UI accessibility by documenting the port-forwarding workflow as an interim measure while the driverIngressOptions TLS solution progresses toward release.
-- Replaced the tini init system with catatonit across Spark operator containers, resolving licensing and supportability concerns for productization.
-- Upgraded KFP to 2.16.1 and increased pipeline timeouts to reduce intermittent test failures in the data-processing pipeline.
-
-## Suggested Addition to Customers Section
-
-- Resolved a merge conflict in the python package index introduced during the main-to-rhoai-3.5 branch sync, preventing a build break that would have affected downstream consumers of the Spark operator.
+- Shipped 3.5 EA1 product, documentation, and RC2 sign-offs, closing out the EA1 release milestone for the team.
+- Replaced the tini init system with catatonit across Spark operator containers, resolving licensing and supportability concerns that blocked productization.
+- Fixed Spark UI accessibility by eliminating the need for manual port-forwarding to view running jobs. Enabled secure browser access by implementing driverIngressOptions with TLS, and documented the port-forwarding workflow as a fallback reference.
+- Landed E2E tests covering Kueue admission, quota enforcement, and reclamation for the Spark operator. Additional coverage for fair-sharing, priority scheduling, and preemption is in active review.
+- Delivered the File Processors API into the downstream LlamaStack operator, including CRD extension, beta status labeling, air-gapped environment support, and FIPS and license validation. Release is pending for EA2.
+- Built and published both docling container images for EA2: the batch document processing image (updated packages and models) and the new CUDA UBI9 serve image for the REST API.
+- Upgraded KFP to 2.16.1 and increased pipeline timeout to improve reliability in long-running pipeline scenarios.
 
 ## Suggested Addition to Associates Section
 
-- Rishabh Singh expanded upstream Kubeflow Spark Operator test coverage by landing webhook subPath parity and drift test additions, and reduced CI flakiness by increasing E2E test timeouts in the upstream repo.
+- Rishabh Singh expanded upstream Spark operator test coverage by adding webhook subPath parity tests and drift detection, and increased E2E test timeouts to reduce CI flakiness across the upstream project.

@@ -278,6 +278,25 @@
         "url": "https://redhat.atlassian.net/browse/RHOAIENG-60634"
       },
       {
+        "key": "RHAISTRAT-1410",
+        "summary": "Include File Processors API in OGX (previously Llama Stack) Operator downstream",
+        "status": "Release Pending",
+        "assignee": "Alina Ryan",
+        "priority": "Normal",
+        "type": "Feature",
+        "color": "Green",
+        "status_summary": "",
+        "target_versions": [
+          "rhoai-3.5.EA2"
+        ],
+        "fix_versions": [
+          "rhoai-3.5.EA2"
+        ],
+        "updated": "2026-06-18T19:21:49.855+0000",
+        "resolved": "2026-06-18T19:21:49.843+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1410"
+      },
+      {
         "key": "RHAISTRAT-1409",
         "summary": "Docling container image updates (new package versions, models) and push to registry.redhat every EA2 release",
         "status": "Release Pending",
@@ -438,6 +457,36 @@
         "updated": "2026-06-17T15:36:21.454+0000",
         "resolved": "2026-06-17T15:36:21.429+0000",
         "url": "https://redhat.atlassian.net/browse/RHAIENG-5122"
+      },
+      {
+        "key": "RHAIENG-5121",
+        "summary": "Mark File Processors API as beta in server responses and documentation",
+        "status": "Resolved",
+        "assignee": "Alina Ryan",
+        "priority": "Normal",
+        "type": "Story",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-06-18T19:35:57.688+0000",
+        "resolved": "2026-06-18T19:35:57.618+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-5121"
+      },
+      {
+        "key": "RHAIENG-5120",
+        "summary": "Extend LlamaStackDistribution CRD with fileProcessors configuration",
+        "status": "Resolved",
+        "assignee": "Alina Ryan",
+        "priority": "Normal",
+        "type": "Story",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-06-18T19:24:47.265+0000",
+        "resolved": "2026-06-18T19:18:49.818+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-5120"
       },
       {
         "key": "RHAIENG-5119",
@@ -1142,7 +1191,7 @@
       {
         "key": "RHAISTRAT-1410",
         "summary": "Include File Processors API in OGX (previously Llama Stack) Operator downstream",
-        "status": "In Progress",
+        "status": "Release Pending",
         "assignee": "Alina Ryan",
         "priority": "Normal",
         "type": "Feature",
@@ -1154,8 +1203,8 @@
         "fix_versions": [
           "rhoai-3.5.EA2"
         ],
-        "updated": "2026-06-17T15:25:56.786+0000",
-        "resolved": null,
+        "updated": "2026-06-18T19:21:49.855+0000",
+        "resolved": "2026-06-18T19:21:49.843+0000",
         "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1410"
       },
       {
@@ -1692,7 +1741,7 @@
       {
         "key": "RHAIENG-5121",
         "summary": "Mark File Processors API as beta in server responses and documentation",
-        "status": "In Progress",
+        "status": "Resolved",
         "assignee": "Alina Ryan",
         "priority": "Normal",
         "type": "Story",
@@ -1700,23 +1749,23 @@
         "status_summary": "",
         "target_versions": [],
         "fix_versions": [],
-        "updated": "2026-06-18T12:47:12.932+0000",
-        "resolved": null,
+        "updated": "2026-06-18T19:35:57.688+0000",
+        "resolved": "2026-06-18T19:35:57.618+0000",
         "url": "https://redhat.atlassian.net/browse/RHAIENG-5121"
       },
       {
         "key": "RHAIENG-5120",
         "summary": "Extend LlamaStackDistribution CRD with fileProcessors configuration",
-        "status": "In Progress",
-        "assignee": "Unassigned",
-        "priority": "Undefined",
+        "status": "Resolved",
+        "assignee": "Alina Ryan",
+        "priority": "Normal",
         "type": "Story",
         "color": "",
         "status_summary": "",
         "target_versions": [],
         "fix_versions": [],
-        "updated": "2026-06-18T12:47:18.548+0000",
-        "resolved": null,
+        "updated": "2026-06-18T19:24:47.265+0000",
+        "resolved": "2026-06-18T19:18:49.818+0000",
         "url": "https://redhat.atlassian.net/browse/RHAIENG-5120"
       },
       {
@@ -2344,25 +2393,6 @@
         "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1477"
       },
       {
-        "key": "RHAISTRAT-1410",
-        "summary": "Include File Processors API in OGX (previously Llama Stack) Operator downstream",
-        "status": "In Progress",
-        "assignee": "Alina Ryan",
-        "priority": "Normal",
-        "type": "Feature",
-        "color": "Green",
-        "status_summary": "",
-        "target_versions": [
-          "rhoai-3.5.EA2"
-        ],
-        "fix_versions": [
-          "rhoai-3.5.EA2"
-        ],
-        "updated": "2026-06-17T15:25:56.786+0000",
-        "resolved": null,
-        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1410"
-      },
-      {
         "key": "RHAISTRAT-1408",
         "summary": "Test & document using the Spark Application UI and spark-history mcp server for logs",
         "status": "Refinement",
@@ -2419,7 +2449,7 @@
       }
     ],
     "counts": {
-      "completed": 21,
+      "completed": 24,
       "in_progress": 89,
       "created": 25
     }
@@ -2427,7 +2457,6 @@
   "slack": {},
   "sections_routed": [
     "DATA_PROCESSING",
-    "CUSTOMERS",
     "ASSOCIATES"
   ]
 }
