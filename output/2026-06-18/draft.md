@@ -1,5 +1,5 @@
 # Data Processing - Weekly Highlights Draft
-Generated: 2026-06-18 19:50
+Generated: 2026-06-18 19:53
 
 ## Suggested Section for AAET Weekly Pulse Check
 
@@ -7,18 +7,18 @@ Generated: 2026-06-18 19:50
 
 Highlights:
 
-- Shipped [3.5 EA1 product and documentation sign-off](https://redhat.atlassian.net/browse/RHOAIENG-61873), completing RC2 test execution and closing out the EA1 release cycle for the team.
-- Fixed Spark UI accessibility by eliminating the need for manual port-forwarding to view running jobs. Enabled secure browser access by [implementing driverIngressOptions with TLS](https://redhat.atlassian.net/browse/RHOAIENG-64770) and published [documentation for the port-forwarding workflow](https://redhat.atlassian.net/browse/RHOAIENG-60634) in the interim.
-- Replaced the tini init system with catatonit across Spark operator containers, resolving [licensing and supportability concerns for productization](https://redhat.atlassian.net/browse/RHAIENG-5328).
-- Landed [E2E tests covering Kueue admission, quota enforcement, and reclamation](https://redhat.atlassian.net/browse/RHAIENG-5289) for SparkApplications, with active review underway on fair-sharing, priority scheduling, preemption, multi-tenancy, and gang-scheduling scenarios.
-- Delivered the [File Processors API into the downstream OGX operator](https://redhat.atlassian.net/browse/RHAISTRAT-1410), including beta-status markers, disconnected/air-gapped support, FIPS and license validation, and CRD extensions for file processor configuration.
-- Shipped updated [docling container images for EA2](https://redhat.atlassian.net/browse/RHAISTRAT-1409): refreshed the SDK image with new package versions and models, and built the new GPU-accelerated serve image, with both pending registry push.
-- Upgraded KFP to 2.16.1 and [increased pipeline timeout](https://github.com/opendatahub-io/data-processing/pull/127) to reduce flaky test failures in CI.
-- Expanded upstream Spark operator test coverage with [webhook subPath parity and drift tests](https://redhat.atlassian.net/browse/RHAIENG-5563), and increased E2E timeouts to [reduce CI flakiness](https://redhat.atlassian.net/browse/RHAIENG-5561).
+- Shipped [Spark Operator v2.5.1](https://github.com/opendatahub-io/spark-operator/pull/115), including TLS version and cipher suite configuration flags and a Kubernetes dependency bump to v1.35.4 with controller-runtime v0.23.3, keeping the operator current with upstream and hardening cluster security posture.
+- Released odh-3.5.0-ea.2, completing the [3.5 EA1 RC2 test execution matrix, documentation sign-off, and product sign-off](https://redhat.atlassian.net/browse/RHOAIENG-61873) ahead of the milestone.
+- Added [E2E test coverage for Kueue integration with SparkApplication](https://redhat.atlassian.net/browse/RHAIENG-5289), validating basic admission, quota enforcement, and resource reclamation. Active review underway on additional scenarios covering fair sharing, priority scheduling, and preemption.
+- Delivered both [docling container images for EA2](https://redhat.atlassian.net/browse/RHAISTRAT-1409): the SDK image (batch document processing) updated with new package versions and models, and a new CUDA/UBI9 serve image for the REST API, with both pushed to the Red Hat registry on the EA2 cadence.
+- Landed the [File Processors API into the downstream OGX Operator](https://redhat.atlassian.net/browse/RHAISTRAT-1410), completing air-gapped environment support, FIPS and license validation, beta API labeling, CRD extension, and provider integration across five linked tickets.
+- Resolved [upstream webhook subPath parity and expanded drift test coverage](https://redhat.atlassian.net/browse/RHAIENG-5563) in the Kubeflow Spark Operator, and increased E2E test timeouts to [reduce CI flakiness](https://redhat.atlassian.net/browse/RHAIENG-5561) blocking upstream contributors.
+- Documented the [Spark UI port-forwarding workflow](https://github.com/opendatahub-io/spark-operator/pull/107) to support users until the driverIngressOptions TLS-based browser access lands in a future release.
+- Upgraded KFP to [2.16.1 and increased pipeline timeout](https://github.com/opendatahub-io/data-processing/pull/127) to reduce intermittent test failures in the data-processing integration suite.
 
 ## Suggested Addition to Associates Section
 
-- Rishabh Singh drove both docling container image deliverables for EA2 and led the upstream webhook drift test expansion, spanning productization, image pipeline work, and upstream community contribution in a single sprint.
+- Rishabh Singh drove delivery of both docling container images and the [RHAISTRAT-1409](https://redhat.atlassian.net/browse/RHAISTRAT-1409) registry publication pipeline, a blocker-priority item, while simultaneously landing upstream webhook and drift test improvements.
 
 ---
 
@@ -26,18 +26,18 @@ Highlights:
 
 ### DATA_PROCESSING
 
-- Shipped [3.5 EA1 product and documentation sign-off](https://redhat.atlassian.net/browse/RHOAIENG-61873), completing RC2 test execution and closing out the EA1 release cycle for the team.
-- Fixed Spark UI accessibility by eliminating the need for manual port-forwarding to view running jobs. Enabled secure browser access by [implementing driverIngressOptions with TLS](https://redhat.atlassian.net/browse/RHOAIENG-64770) and published [documentation for the port-forwarding workflow](https://redhat.atlassian.net/browse/RHOAIENG-60634) in the interim.
-- Replaced the tini init system with catatonit across Spark operator containers, resolving [licensing and supportability concerns for productization](https://redhat.atlassian.net/browse/RHAIENG-5328).
-- Landed [E2E tests covering Kueue admission, quota enforcement, and reclamation](https://redhat.atlassian.net/browse/RHAIENG-5289) for SparkApplications, with active review underway on fair-sharing, priority scheduling, preemption, multi-tenancy, and gang-scheduling scenarios.
-- Delivered the [File Processors API into the downstream OGX operator](https://redhat.atlassian.net/browse/RHAISTRAT-1410), including beta-status markers, disconnected/air-gapped support, FIPS and license validation, and CRD extensions for file processor configuration.
-- Shipped updated [docling container images for EA2](https://redhat.atlassian.net/browse/RHAISTRAT-1409): refreshed the SDK image with new package versions and models, and built the new GPU-accelerated serve image, with both pending registry push.
-- Upgraded KFP to 2.16.1 and [increased pipeline timeout](https://github.com/opendatahub-io/data-processing/pull/127) to reduce flaky test failures in CI.
-- Expanded upstream Spark operator test coverage with [webhook subPath parity and drift tests](https://redhat.atlassian.net/browse/RHAIENG-5563), and increased E2E timeouts to [reduce CI flakiness](https://redhat.atlassian.net/browse/RHAIENG-5561).
+- Shipped [Spark Operator v2.5.1](https://github.com/opendatahub-io/spark-operator/pull/115), including TLS version and cipher suite configuration flags and a Kubernetes dependency bump to v1.35.4 with controller-runtime v0.23.3, keeping the operator current with upstream and hardening cluster security posture.
+- Released odh-3.5.0-ea.2, completing the [3.5 EA1 RC2 test execution matrix, documentation sign-off, and product sign-off](https://redhat.atlassian.net/browse/RHOAIENG-61873) ahead of the milestone.
+- Added [E2E test coverage for Kueue integration with SparkApplication](https://redhat.atlassian.net/browse/RHAIENG-5289), validating basic admission, quota enforcement, and resource reclamation. Active review underway on additional scenarios covering fair sharing, priority scheduling, and preemption.
+- Delivered both [docling container images for EA2](https://redhat.atlassian.net/browse/RHAISTRAT-1409): the SDK image (batch document processing) updated with new package versions and models, and a new CUDA/UBI9 serve image for the REST API, with both pushed to the Red Hat registry on the EA2 cadence.
+- Landed the [File Processors API into the downstream OGX Operator](https://redhat.atlassian.net/browse/RHAISTRAT-1410), completing air-gapped environment support, FIPS and license validation, beta API labeling, CRD extension, and provider integration across five linked tickets.
+- Resolved [upstream webhook subPath parity and expanded drift test coverage](https://redhat.atlassian.net/browse/RHAIENG-5563) in the Kubeflow Spark Operator, and increased E2E test timeouts to [reduce CI flakiness](https://redhat.atlassian.net/browse/RHAIENG-5561) blocking upstream contributors.
+- Documented the [Spark UI port-forwarding workflow](https://github.com/opendatahub-io/spark-operator/pull/107) to support users until the driverIngressOptions TLS-based browser access lands in a future release.
+- Upgraded KFP to [2.16.1 and increased pipeline timeout](https://github.com/opendatahub-io/data-processing/pull/127) to reduce intermittent test failures in the data-processing integration suite.
 
 ### ASSOCIATES
 
-- Rishabh Singh drove both docling container image deliverables for EA2 and led the upstream webhook drift test expansion, spanning productization, image pipeline work, and upstream community contribution in a single sprint.
+- Rishabh Singh drove delivery of both docling container images and the [RHAISTRAT-1409](https://redhat.atlassian.net/browse/RHAISTRAT-1409) registry publication pipeline, a blocker-priority item, while simultaneously landing upstream webhook and drift test improvements.
 
 ---
 
