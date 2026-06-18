@@ -1,11 +1,8 @@
 name: Weekly Pulse
 
 on:
-  schedule:
-    # Thursday 1:00pm ET (17:00 UTC during EDT, 18:00 during EST)
-    # Runs 1hr after Cat's AAET report (catrobson/AAET-Weekly-Status @ 16:00 UTC)
-    - cron: '0 17 * * 4'
-
+  # Triggered by macOS LaunchAgent (com.argus.weekly-pulse-scheduler)
+  # every Thursday at 1:00pm ET, 1hr after Cat's AAET baseline report.
   workflow_dispatch:
     inputs:
       days_back:

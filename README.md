@@ -15,7 +15,7 @@ message collection).
 
 **Phase 1 - Automated (CI Pipeline, every Thursday 1:00pm ET):**
 
-1. **Cron trigger** - GitHub Actions fires 1hr after Cat's baseline AAET report
+1. **Scheduled dispatch** - macOS LaunchAgent triggers GitHub Actions 1hr after Cat's baseline AAET report
 2. **Collect** - pulls from GitHub PRs/reviews, Jira tickets, and the baseline
    report. Slack message collection requires a Slack App with `search:read`
    scope, which is pending internal approval. Skipped gracefully without it.
@@ -43,8 +43,8 @@ Steps 2-5 are orchestrated by the `weekly-pulse-review` Argus skill
 
 ![System architecture](system-architecture.png)
 
-The CI layer is a Python pipeline orchestrated by `generate.py`. GitHub Actions
-triggers it on a cron schedule (or manual dispatch). The orchestrator calls
+The CI layer is a Python pipeline orchestrated by `generate.py`. A macOS
+LaunchAgent dispatches the GitHub Actions workflow on schedule. The orchestrator calls
 collector modules in sequence, each hitting a different external API. Collected
 data flows into `synthesize.py`, which formats it against `prompt.md` templates
 and calls Vertex AI (Claude) for final bullet generation. Output is committed
@@ -69,9 +69,10 @@ python generate.py --days-back 7
 
 ## Automated schedule
 
-GitHub Actions runs every Thursday at 1:00pm ET (after Cat's AAET baseline
-report generates at noon). Draft is ready for review by ~1:05pm. You can
-also trigger the CI manually from the Actions tab.
+A macOS LaunchAgent (`com.argus.weekly-pulse-scheduler`) dispatches the GitHub
+Actions workflow every Thursday at 1:00pm ET (after Cat's AAET baseline report
+generates at noon). Draft is ready for review by ~1:05pm. You can also trigger
+the workflow manually from the Actions tab or via `gh workflow run`.
 
 ## Configuration
 
