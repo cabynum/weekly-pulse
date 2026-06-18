@@ -2,14 +2,15 @@
 
 Highlights:
 
-- Shipped 3.5 EA1 product, documentation, and RC2 sign-offs, closing out the EA1 release milestone for the team.
-- Replaced the tini init system with catatonit across Spark operator containers, resolving licensing and supportability concerns that blocked productization.
-- Fixed Spark UI accessibility by eliminating the need for manual port-forwarding to view running jobs. Enabled secure browser access by implementing driverIngressOptions with TLS, and documented the port-forwarding workflow as a fallback reference.
-- Landed E2E tests covering Kueue admission, quota enforcement, and reclamation for the Spark operator. Additional coverage for fair-sharing, priority scheduling, and preemption is in active review.
-- Delivered the File Processors API into the downstream LlamaStack operator, including CRD extension, beta status labeling, air-gapped environment support, and FIPS and license validation. Release is pending for EA2.
-- Built and published both docling container images for EA2: the batch document processing image (updated packages and models) and the new CUDA UBI9 serve image for the REST API.
-- Upgraded KFP to 2.16.1 and increased pipeline timeout to improve reliability in long-running pipeline scenarios.
+- Shipped 3.5 EA1 product and documentation sign-off, completing RC2 test execution and closing out the EA1 release cycle for the team.
+- Fixed Spark UI accessibility by eliminating the need for manual port-forwarding to view running jobs. Enabled secure browser access by implementing driverIngressOptions with TLS and published documentation for the port-forwarding workflow in the interim.
+- Replaced the tini init system with catatonit across Spark operator containers, resolving licensing and supportability concerns for productization.
+- Landed E2E tests covering Kueue admission, quota enforcement, and reclamation for SparkApplications, with active review underway on fair-sharing, priority scheduling, preemption, multi-tenancy, and gang-scheduling scenarios.
+- Delivered the File Processors API into the downstream OGX operator, including beta-status markers, disconnected/air-gapped support, FIPS and license validation, and CRD extensions for file processor configuration.
+- Shipped updated docling container images for EA2: refreshed the SDK image with new package versions and models, and built the new GPU-accelerated serve image, with both pending registry push.
+- Upgraded KFP to 2.16.1 and increased pipeline timeout to reduce flaky test failures in CI.
+- Expanded upstream Spark operator test coverage with webhook subPath parity and drift tests, and increased E2E timeouts to reduce CI flakiness.
 
 ## Suggested Addition to Associates Section
 
-- Rishabh Singh expanded upstream Spark operator test coverage by adding webhook subPath parity tests and drift detection, and increased E2E test timeouts to reduce CI flakiness across the upstream project.
+- Rishabh Singh drove both docling container image deliverables for EA2 and led the upstream webhook drift test expansion, spanning productization, image pipeline work, and upstream community contribution in a single sprint.
