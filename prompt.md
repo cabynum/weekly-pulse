@@ -52,8 +52,13 @@ Section routing rules:
 
 Format:
 
-- Each bullet should be 1-2 sentences. Two sentences is fine when the
-  second adds real context (the "why" or "so what").
+- Each bullet should be 1-2 short sentences. Keep bullets readable and
+  human-friendly. Do not pack multiple version numbers, dependency names,
+  and technical details into one sentence. If a bullet has more than one
+  comma-separated list, it's too dense. Lead with the impact and link the
+  ticket; save the technical specifics for the link.
+- Two sentences is fine when the second adds real context (the "why" or
+  "so what"), but not when it just appends more technical details.
 - Use markdown "- " prefix for bullets.
 
 Voice and context:
@@ -65,6 +70,17 @@ Voice and context:
   knows which team this is.
 - Use version shorthand: "3.5 EA1" not "RHOAI 3.5.0-EA1".
 - Do not use em dashes. Use commas, colons, or separate sentences instead.
+
+Stream identification:
+
+- When a bullet involves code movement between repos, identify which stream
+  the work targets: upstream (kubeflow/, open-source), midstream (ODH,
+  opendatahub-io/), or downstream (RHOAI, productization). Use verbs like
+  "synced upstream X into ODH midstream" or "landed in the downstream build."
+- Do NOT imply the team owns a release unless it does. The team completes
+  release gate requirements (test execution, sign-offs), but does not "release"
+  a product milestone. Say "completed the team's EA1 release gate requirements"
+  not "released EA2."
 
 Writing style:
 
@@ -101,6 +117,9 @@ Content selection:
 - When two bullets are related (e.g., a fix and docs for the same feature),
   combine them or place them adjacent. If one makes the other redundant or
   contradictory, cut the weaker one.
+- Documentation PRs for a feature that was already reported as shipped are
+  not a standalone highlight. Either fold the docs into the original bullet
+  or skip it.
 - Skip trivial changes (dependency bumps, lock file updates, removing old
   CI configs) unless they fix a CVE or unblock something
 - If Slack messages reveal decisions, cross-team collaboration, or customer
