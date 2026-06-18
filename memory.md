@@ -1,3 +1,30 @@
+# Weekly Pulse - Project Memory
+
+## Pipeline Architecture (READ FIRST)
+
+Human-in-the-loop pipeline with two phases in different environments:
+
+**Phase 1 - Generate (GitHub Actions, automated):**
+GH Action (Thursday cron or manual) collects Jira + GitHub + baseline
+report, synthesizes via LLM, saves draft to `output/YYYY-MM-DD/draft.md`,
+commits and uploads artifact. CI NEVER collects Slack and NEVER publishes.
+The `--skip-slack` flag is always passed.
+
+**Phase 2 - Enrich + Publish (Cursor/Argus, interactive):**
+User says "review the pulse" which triggers the `weekly-pulse-review`
+skill. Skill sweeps Slack via MCP, enriches the draft, presents for
+user approval, then publishes to Google Doc via GWS MCP.
+
+**Critical rules:**
+
+- Target Google Doc is ALWAYS discovered dynamically from the Drive
+  reports folder (`1Nfir4VgHzPSUGZBJHFRM0GPYj8k5VeHu`). Never
+  hardcode a doc ID.
+- Slack data comes from Cursor's Slack MCP, not from CI.
+- Nothing publishes without user approval.
+
+---
+
 ## 2026-06-12
 
 ### Resume
@@ -27,7 +54,7 @@ Three gaps for full automation:
 
 ### Resume
 
-CI pipeline runs green. Cron at 12:30pm ET (after Cat's noon report).
+CI pipeline runs green. Cron at 1:00pm ET (after Cat's noon report).
 4 of 5 secrets set. Dashboard notification system pulsing when draft ready.
 Output organized into date folders.
 
@@ -100,3 +127,71 @@ output looks like. `prompt.md` tuning needed.
 4. Update the README/architecture to reflect the live doc is
    `18FVFNqzjKuMUyCQXnpzWZnVKMKIlGvYLN8Tvjfd9Vvw` (DO NOT WRITE TO IT
    without explicit approval)
+
+---
+
+## 2026-06-14 - Multi-Section Routing + Native Formatting
+
+### Resume
+
+Publish pipeline rewritten. Multi-section routing, native Google Docs
+formatting, Drive folder discovery, UTF-16 link math, LLM sentiment
+emoji. All pushed to remote.
+
+### Done
+
+- Multi-section synthesis: DATA_PROCESSING, RISKS, CUSTOMERS, ASSOCIATES
+- Drive folder discovery (folder ID: 1Nfir4VgHzPSUGZBJHFRM0GPYj8k5VeHu,
+  shared drive support)
+- Native bullets (createParagraphBullets), inline hyperlinks, bold removal
+- UTF-16 offset math for emoji + link positioning
+- LLM-based sentiment emoji for Associates
+- CI cron skips publish; interactive-only via review skill
+- prompt.md tuned with quality examples and anti-patterns
+- Test doc: "Weekly Pulse - TEST" (1BLo26JCsoZSUta_KoP_BSkXZvGYyW0iO_EcJTFGkwgY)
+
+### Left Off
+
+Code pushed. Need to trigger the GitHub Action (workflow_dispatch) to
+test the full generate + publish pipeline e2e. The local generate run
+failed because the local environment doesn't have Cat's repo access
+(CI secrets handle this). Next step: run the GH Action, then publish
+its output to the test doc.
+
+### Next Session
+
+1. Trigger GH Action via workflow_dispatch
+2. Pull the new draft and publish to test doc
+3. Validate multi-section routing and formatting quality
+4. If good, Thursday flow is ready
+
+---
+
+## 2026-06-14 (session 2) - Pipeline Validated E2E
+
+### Resume
+
+Pipeline fully validated. Every layer of silent failure found and fixed.
+
+### Done
+
+- LLM was 403ing every run (wrong SA key). Fixed with fresh
+  `dp-ai-usage` key. Model updated to `claude-sonnet-4-6`.
+- Template regex matched wrong code block. Prompt never reached LLM.
+  Fixed regex to anchor on `## User Prompt Template`.
+- Silent fallback removed. Pipeline fails red when LLM is unreachable.
+- GH Action stripped to generate-only. No publish, no Slack.
+- Stale doc ID (`1jMyzuYlkKyl...`) removed everywhere.
+- Skill updated: uses `publish.py` locally (not MCP) for native links.
+- Dashboard notification says "produce the report" not "review."
+- Boilerplate "in progress" and "feature watch" removed from draft.
+
+### Left Off
+
+Pipeline working e2e against test doc. Three sections routed
+(DATA_PROCESSING, RISKS, ASSOCIATES) with inline Jira hyperlinks.
+Minor: publish.py can't match "Risks / Issues" heading (space issue).
+
+### Next Session
+
+Fix "Risks / Issues" heading match. Thursday: real run.

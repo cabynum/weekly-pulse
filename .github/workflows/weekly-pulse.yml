@@ -2,9 +2,9 @@ name: Weekly Pulse
 
 on:
   schedule:
-    # Thursday 12:30pm ET (16:30 UTC during EDT, 17:30 during EST)
-    # Runs 30min after Cat's AAET report (catrobson/AAET-Weekly-Status @ 16:00 UTC)
-    - cron: '30 16 * * 4'
+    # Thursday 1:00pm ET (17:00 UTC during EDT, 18:00 during EST)
+    # Runs 1hr after Cat's AAET report (catrobson/AAET-Weekly-Status @ 16:00 UTC)
+    - cron: '0 17 * * 4'
 
   workflow_dispatch:
     inputs:

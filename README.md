@@ -3,8 +3,8 @@
 Generates Data Processing team highlights for the **AAET Weekly Pulse Check**.
 
 A two-phase system: CI generates a draft autonomously every Thursday, then
-an interactive review step handles Slack enrichment and Google Docs publishing
-with a human in the loop.
+an interactive review step handles Slack enrichment and publishing with a
+human in the loop.
 
 The remaining blocker for full autonomy is Slack App approval (for CI-based
 message collection).
@@ -13,9 +13,9 @@ message collection).
 
 ![Weekly Pulse flow](weekly-pulse-flow.png)
 
-**Phase 1 - Automated (CI Pipeline, every Thursday 12:30pm ET):**
+**Phase 1 - Automated (CI Pipeline, every Thursday 1:00pm ET):**
 
-1. **Cron trigger** - GitHub Actions fires 30min after Cat's baseline AAET report
+1. **Cron trigger** - GitHub Actions fires 1hr after Cat's baseline AAET report
 2. **Collect** - pulls from GitHub PRs/reviews, Jira tickets, and the baseline
    report. Slack message collection requires a Slack App with `search:read`
    scope, which is pending internal approval. Skipped gracefully without it.
@@ -69,8 +69,8 @@ python generate.py --days-back 7
 
 ## Automated schedule
 
-GitHub Actions runs every Thursday at 12:30pm ET (after Cat's AAET baseline
-report generates at noon). Draft is ready for review by ~12:35pm. You can
+GitHub Actions runs every Thursday at 1:00pm ET (after Cat's AAET baseline
+report generates at noon). Draft is ready for review by ~1:05pm. You can
 also trigger the CI manually from the Actions tab.
 
 ## Configuration
