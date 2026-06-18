@@ -191,10 +191,11 @@ class Synthesizer:
         return (
             "\n\n## Previously Reported (DO NOT REPEAT)\n"
             "The following tickets and PRs appeared in last week's report. "
-            "Do NOT include bullets about them unless there is genuinely new "
-            "progress this week (e.g., a ticket that was 'in review' last week "
-            "is now 'shipped'). If a ticket appears below and the only update "
-            "is that it was completed, skip it - it was already reported.\n\n"
+            "Skip them entirely. If a ticket has genuinely new progress since "
+            "last week, you may write a NEW bullet about it, but: (1) use "
+            "different Jira keys or PR URLs than those listed below, (2) lead "
+            "with what changed THIS week, not the original description, and "
+            "(3) never restate what was already reported.\n\n"
             f"{ref_list}\n"
         )
 
@@ -219,13 +220,12 @@ class Synthesizer:
             slack_summary=self._fmt_slack(slack_data),
         )
 
+        prev_draft = self._find_previous_draft()
+        prev_refs = self._extract_references(prev_draft) if prev_draft else set()
         dedup_clause = self._build_dedup_clause()
         if dedup_clause:
             prompt += dedup_clause
-            dedup_refs = self._extract_references(
-                self._find_previous_draft() or ""
-            )
-            print(f"  Dedup: {len(dedup_refs)} references from previous draft")
+            print(f"  Dedup: {len(prev_refs)} references from previous draft")
 
         if not self.client:
             raise RuntimeError(
@@ -245,7 +245,36 @@ class Synthesizer:
             raise RuntimeError(
                 f"LLM returned no DATA_PROCESSING section. Raw output:\n{raw[:500]}"
             )
+
+        if prev_refs:
+            sections = self._hard_filter_sections(sections, prev_refs)
+
         return sections
+
+    def _hard_filter_sections(self, sections: dict[str, str],
+                              prev_refs: set[str]) -> dict[str, str]:
+        """Remove bullets that reference previously-reported Jira keys or PRs."""
+        filtered = {}
+        total_dropped = 0
+        for key, text in sections.items():
+            kept = []
+            for line in text.split("\n"):
+                if not line.strip().startswith("- "):
+                    kept.append(line)
+                    continue
+                line_refs = self._extract_references(line)
+                overlap = line_refs & prev_refs
+                if overlap:
+                    total_dropped += 1
+                    print(f"  Dedup dropped: {', '.join(sorted(overlap))}")
+                else:
+                    kept.append(line)
+            result = "\n".join(kept).strip()
+            if result:
+                filtered[key] = result
+        if total_dropped:
+            print(f"  Dedup: dropped {total_dropped} repeated bullet(s)")
+        return filtered
 
     def format_full_section(self, sections: dict[str, str], jira_data: dict,
                             team_name: str = "Data Processing",
