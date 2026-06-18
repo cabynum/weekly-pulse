@@ -5,6 +5,7 @@ and return structured bullet points routed to report sections.
 
 import os
 import re
+from datetime import datetime, timedelta
 from pathlib import Path
 
 try:
@@ -144,6 +145,59 @@ class Synthesizer:
                 lines.append(f"  - [{ch}] {text}")
         return "\n".join(lines)
 
+    # -- Dedup helpers ----------------------------------------------------
+
+    def _find_previous_draft(self) -> str | None:
+        """Find the most recent prior draft with real content."""
+        output_dir = Path(__file__).parent / "output"
+        if not output_dir.exists():
+            return None
+
+        today = datetime.now().strftime("%Y-%m-%d")
+        date_dirs = sorted(
+            [d for d in output_dir.iterdir()
+             if d.is_dir() and d.name != today and (d / "draft.md").exists()],
+            key=lambda d: d.name,
+            reverse=True,
+        )
+
+        for d in date_dirs:
+            text = (d / "draft.md").read_text()
+            refs = self._extract_references(text)
+            if refs:
+                print(f"  Dedup baseline: {d.name} ({len(refs)} references)")
+                return text
+
+        return None
+
+    def _extract_references(self, draft_text: str) -> set[str]:
+        """Extract Jira keys and PR URLs from a draft for dedup."""
+        refs = set()
+        refs.update(re.findall(r"(?:RHAIENG|RHOAIENG|RHAISTRAT)-\d+", draft_text))
+        refs.update(re.findall(r"github\.com/[^\s)]+/pull/\d+", draft_text))
+        return refs
+
+    def _build_dedup_clause(self) -> str:
+        """Build a prompt clause listing previously reported references."""
+        prev_draft = self._find_previous_draft()
+        if not prev_draft:
+            return ""
+
+        refs = self._extract_references(prev_draft)
+        if not refs:
+            return ""
+
+        ref_list = "\n".join(f"- {r}" for r in sorted(refs))
+        return (
+            "\n\n## Previously Reported (DO NOT REPEAT)\n"
+            "The following tickets and PRs appeared in last week's report. "
+            "Do NOT include bullets about them unless there is genuinely new "
+            "progress this week (e.g., a ticket that was 'in review' last week "
+            "is now 'shipped'). If a ticket appears below and the only update "
+            "is that it was completed, skip it - it was already reported.\n\n"
+            f"{ref_list}\n"
+        )
+
     # -- Core synthesis ---------------------------------------------------
 
     def synthesize(self, report_data: dict, github_data: dict,
@@ -164,6 +218,14 @@ class Synthesizer:
             team_reviews=self._fmt_reviews(github_data.get("team_reviews", [])),
             slack_summary=self._fmt_slack(slack_data),
         )
+
+        dedup_clause = self._build_dedup_clause()
+        if dedup_clause:
+            prompt += dedup_clause
+            dedup_refs = self._extract_references(
+                self._find_previous_draft() or ""
+            )
+            print(f"  Dedup: {len(dedup_refs)} references from previous draft")
 
         if not self.client:
             raise RuntimeError(
