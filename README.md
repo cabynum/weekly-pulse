@@ -104,10 +104,3 @@ To enable automated publishing to the Weekly Summary doc:
 4. Download the service account JSON key
 5. Add it as `GOOGLE_DOCS_CREDENTIALS` secret in GitHub Actions
 6. Test with: `GOOGLE_DOCS_CREDENTIALS=path/to/key.json python publish.py --dry-run`
-
-## Automation roadmap
-
-| Blocker | Status | Once resolved |
-|---|---|---|
-| Slack App (`search:read` scope) | Pending approval | Slack collection moves to CI (Phase 1), Phase 2 disappears |
-| ~~Google Docs publisher module~~ | Done (`publish.py`) | ~~Publishing moves to CI~~ |
