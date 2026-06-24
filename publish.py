@@ -121,7 +121,8 @@ def _try_gws_credentials():
 
 # --- Doc discovery ---
 
-def find_latest_report_doc(creds, folder_id: str = REPORTS_FOLDER_ID) -> tuple[str, str]:
+def find_latest_report_doc(creds, folder_id: str = REPORTS_FOLDER_ID,
+                           max_age_days: int = 3) -> tuple[str, str]:
     drive = build("drive", "v3", credentials=creds)
 
     results = drive.files().list(
@@ -139,7 +140,23 @@ def find_latest_report_doc(creds, folder_id: str = REPORTS_FOLDER_ID) -> tuple[s
         sys.exit(1)
 
     doc = files[0]
-    print(f"Found report: \"{doc['name']}\" (created {doc['createdTime']})")
+    created = datetime.fromisoformat(doc["createdTime"].replace("Z", "+00:00"))
+    age_days = (datetime.now(created.tzinfo) - created).days
+
+    print(f"Found report: \"{doc['name']}\" (created {doc['createdTime']}, {age_days}d ago)")
+
+    if age_days > max_age_days:
+        print(f"\n{'!' * 60}")
+        print(f"SAFETY CHECK FAILED: Target doc is {age_days} days old.")
+        print(f"Expected a doc created within the last {max_age_days} days.")
+        print(f"This likely means no new report template was created this week.")
+        print(f"Publishing would overwrite last week's completed report.")
+        print(f"\nDoc: \"{doc['name']}\"")
+        print(f"Created: {doc['createdTime']}")
+        print(f"\nTo override, pass --doc-id {doc['id']} explicitly.")
+        print(f"{'!' * 60}")
+        sys.exit(1)
+
     return doc["id"], doc["name"]
 
 
