@@ -1,0 +1,13 @@
+**Data Processing** (Chris Bynum) - 45 issues completed
+
+Highlights:
+
+- Completed the team's 3.5 EA2 test plan sign-off and Week 1 test matrix execution, clearing the release gate for the EA2 milestone.
+- Landed comprehensive Kueue integration E2E test coverage across three scheduling scenarios: basic admission and quota enforcement, fair sharing, priority scheduling, and preemption, and multi-tenancy and gang scheduling. This validates enterprise scheduling behavior ahead of the Kueue + KSO feature release.
+- Updated the midstream ODH base image for the 3.5 EA2 build, keeping the operator container current with the AIPCC base.
+- Built out the spark-operator-module repository structure and completed initial design work modeled on the KServe module pattern, including resource inventory, handler registration, and finalizer logic. This lays the foundation for deploying the Spark operator as a standalone ODH module.
+- Fixed a pipeline tagging bug where the spark-operator build was pulling the `:latest` image tag instead of the configured `:main` tag, improving build reproducibility.
+
+## Suggested Addition to Associates Section
+
+- Rishabh Singh led the full design and implementation of the new spark-operator-module, from studying the KServe module pattern through repository creation, resource inventory, directory structure, finalizer logic, and handler registration, delivering all foundational pieces in a single sprint.
