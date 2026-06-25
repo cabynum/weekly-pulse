@@ -82,6 +82,20 @@ Stream identification:
   a product milestone. Say "completed the team's EA1 release gate requirements"
   not "released EA2."
 
+Continuity signaling:
+
+- When work builds on something reported in a prior week's bullet, make the
+  progression explicit in the wording. The reader should never wonder "didn't
+  I read this last week?" Use language that signals advancement:
+  "Completed the Kueue E2E tests that were in review last week, now covering..."
+  "Following last week's EA1 sign-off, cleared the EA2 release gate..."
+  "Merged the remaining fair-sharing and preemption scenarios, completing..."
+- If a topic appeared last week, lead with WHAT CHANGED, not a fresh
+  description of the same work. The prior week's bullets will be provided
+  in the prompt when available.
+- If work is entirely new (not mentioned last week), no continuity signal
+  is needed.
+
 Writing style:
 
 - NEVER start a bullet with "Completed [TICKET-KEY]:". That is a log entry,

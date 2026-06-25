@@ -177,8 +177,23 @@ class Synthesizer:
         refs.update(re.findall(r"github\.com/[^\s)]+/pull/\d+", draft_text))
         return refs
 
+    def _extract_bullets(self, draft_text: str) -> str:
+        """Extract the published bullet text from a draft for continuity context."""
+        lines = []
+        in_section = False
+        for line in draft_text.split("\n"):
+            if line.startswith("## Suggested Section") or line.startswith("## Suggested Addition"):
+                in_section = True
+                continue
+            if line.startswith("## Raw Bullets") or line.startswith("## Source Data"):
+                in_section = False
+                continue
+            if in_section and line.strip().startswith("- "):
+                lines.append(line)
+        return "\n".join(lines)
+
     def _build_dedup_clause(self) -> str:
-        """Build a prompt clause listing previously reported references."""
+        """Build a prompt clause with prior week's bullets and references."""
         prev_draft = self._find_previous_draft()
         if not prev_draft:
             return ""
@@ -188,8 +203,20 @@ class Synthesizer:
             return ""
 
         ref_list = "\n".join(f"- {r}" for r in sorted(refs))
-        return (
-            "\n\n## Previously Reported (DO NOT REPEAT)\n"
+        prev_bullets = self._extract_bullets(prev_draft)
+
+        clause = (
+            "\n\n## Last Week's Published Bullets\n"
+            "These bullets were shared with leadership last week. Use them to:\n"
+            "- Signal continuity when this week's work builds on a prior bullet "
+            "(e.g., 'Completed the X that was in review last week')\n"
+            "- Avoid restating the same work without showing progression\n\n"
+        )
+        if prev_bullets:
+            clause += f"{prev_bullets}\n"
+
+        clause += (
+            "\n## Previously Reported References (DO NOT REPEAT)\n"
             "The following tickets and PRs appeared in last week's report. "
             "Skip them entirely. If a ticket has genuinely new progress since "
             "last week, you may write a NEW bullet about it, but: (1) use "
@@ -198,6 +225,7 @@ class Synthesizer:
             "(3) never restate what was already reported.\n\n"
             f"{ref_list}\n"
         )
+        return clause
 
     # -- Core synthesis ---------------------------------------------------
 

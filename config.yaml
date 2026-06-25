@@ -10,23 +10,23 @@ team:
     - name: Ali Maredia
       email: amaredia@redhat.com
       github: AliMaredia
-      slack_id: null  # populate with Slack user IDs
+      slack_id: U03SVALGV3N
     - name: Alina Ryan
       email: aryan@redhat.com
       github: alinaryan
-      slack_id: null
+      slack_id: U014ZAU57CH
     - name: Rishabh Singh
       email: risingh@redhat.com
       github: rishabhssingh
-      slack_id: null
+      slack_id: U09APT87AG0
     - name: Shruthi Sankepelly
       email: ssankepelly@redhat.com
       github: shruthis4
-      slack_id: null
+      slack_id: U09GWCM4UF3
     - name: Vedant Deshpande
       email: vdeshpan@redhat.com
       github: Vedant-Deshpande
-      slack_id: null
+      slack_id: U09NHB52HST
 
 # Repos to scan for team activity (PRs, reviews, commits)
 github:
