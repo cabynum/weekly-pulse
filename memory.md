@@ -195,3 +195,25 @@ Minor: publish.py can't match "Risks / Issues" heading (space issue).
 ### Next Session
 
 Fix "Risks / Issues" heading match. Thursday: real run.
+
+## 2026-06-25 - Local Slack Collection + UX Upgrade
+
+### Done
+
+- Built `collect_slack.py` standalone collector using Slack Web API with
+  XOXC/XOXD browser tokens (no admin approval needed)
+- Updated `collectors/slack.py` to support both xoxp and xoxc auth, with
+  ID-based search when Slack IDs are populated in config.yaml
+- Populated all 5 team member Slack IDs in config.yaml
+- Added continuity signaling rules to prompt.md and synthesize.py (passes
+  prior week's actual bullets to the LLM for context-aware drafts)
+- Enhanced dispatch.sh: polls CI completion, git pulls draft, runs build.py,
+  fires macOS desktop notification
+- Rewrote README.md and regenerated both diagrams (flow + architecture)
+- Published this week's pulse with continuity-signaled bullets
+
+### Left Off
+
+Pipeline fully upgraded, committed, and pushed. XOXC token extracted and
+working (40 messages collected across team). Next Thursday will be the
+first end-to-end run with the new pipeline.
