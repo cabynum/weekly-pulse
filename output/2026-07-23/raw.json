@@ -1,0 +1,2509 @@
+{
+  "report": {
+    "report_path": "reports/AAET_Weekly_Status_-_Week_of_Jun_25,_2026.md",
+    "dp_section": "**Data Processing**\n* Merged 6 PRs\n  - fix: always set NextProtos regardless of enableHTTP2 flag\n  - Add dependabot config for website\n  - docs: Add dedicated Spark Operator documentation website\n* Released **spark-operator-2.5.0-rc.0**\n* Merged 6 PRs\n  - Upstream repo sync v2.5.1\n  - Add E2E tests for Kueue multi-tenancy, gang scheduling & queue independence\n  - Add E2E tests for Kueue + SparkApplication FairSharing, PriorityScheduling, Preemption",
+    "exec_summary": "The team successfully released spark-operator-2.5.0-rc.0 and ogx v1.1.3 this week, with spark-operator entering release candidate phase after sustained development activity. No critical risks are currently blocking progress across the portfolio."
+  },
+  "github": {
+    "team_prs": [
+      {
+        "number": 149,
+        "title": "docs: add Spark Connect guide for RHOAI workbenches",
+        "url": "https://github.com/opendatahub-io/spark-operator/pull/149",
+        "author": "alimaredia",
+        "is_team_member": true,
+        "merged_at": "2026-07-21T21:45:05Z"
+      },
+      {
+        "number": 133,
+        "title": "Add comprehensive Spark observability documentation",
+        "url": "https://github.com/opendatahub-io/spark-operator/pull/133",
+        "author": "shruthis4",
+        "is_team_member": true,
+        "merged_at": "2026-07-17T19:21:49Z"
+      },
+      {
+        "number": 125,
+        "title": "Add admin and user documentation for Kueue + Spark Operator integration",
+        "url": "https://github.com/opendatahub-io/spark-operator/pull/125",
+        "author": "Vedant-Deshpande",
+        "is_team_member": true,
+        "merged_at": "2026-07-17T15:44:01Z"
+      }
+    ],
+    "external_prs": [
+      {
+        "number": 147,
+        "title": "feat: add preinstalled spark-operator E2E job to module CI",
+        "url": "https://github.com/opendatahub-io/spark-operator/pull/147",
+        "author": "RobuRishabh",
+        "is_team_member": false,
+        "merged_at": "2026-07-22T19:08:37Z"
+      },
+      {
+        "number": 148,
+        "title": "CI: Tekton pipeline sync",
+        "url": "https://github.com/opendatahub-io/spark-operator/pull/148",
+        "author": "odh-devops-app[bot]",
+        "is_team_member": false,
+        "merged_at": "2026-07-20T20:43:10Z"
+      },
+      {
+        "number": 145,
+        "title": "fix: add NetworkPolicy RBAC for Conforma compliance",
+        "url": "https://github.com/opendatahub-io/spark-operator/pull/145",
+        "author": "ugiordan",
+        "is_team_member": false,
+        "merged_at": "2026-07-17T18:01:48Z"
+      },
+      {
+        "number": 144,
+        "title": "Sync e2e upstream 2026 07 14",
+        "url": "https://github.com/opendatahub-io/spark-operator/pull/144",
+        "author": "RobuRishabh",
+        "is_team_member": false,
+        "merged_at": "2026-07-17T14:36:26Z"
+      },
+      {
+        "number": 3048,
+        "title": "[release-2.5.2] fix(webhook): add sparkConf key validation (#3043)",
+        "url": "https://github.com/kubeflow/spark-operator/pull/3048",
+        "author": "nabuskey",
+        "is_team_member": false,
+        "merged_at": "2026-07-17T23:31:17Z"
+      },
+      {
+        "number": 3046,
+        "title": "[release-2.5.2] fix(chart): grant webhook leader election event permissions",
+        "url": "https://github.com/kubeflow/spark-operator/pull/3046",
+        "author": "google-oss-robot",
+        "is_team_member": false,
+        "merged_at": "2026-07-17T18:16:54Z"
+      }
+    ],
+    "team_reviews": [
+      {
+        "pr_number": 147,
+        "pr_title": "feat: add preinstalled spark-operator E2E job to module CI",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/147",
+        "reviewer": "Vedant-Deshpande",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-21T17:54:59Z"
+      },
+      {
+        "pr_number": 147,
+        "pr_title": "feat: add preinstalled spark-operator E2E job to module CI",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/147",
+        "reviewer": "alimaredia",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-21T20:46:35Z"
+      },
+      {
+        "pr_number": 147,
+        "pr_title": "feat: add preinstalled spark-operator E2E job to module CI",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/147",
+        "reviewer": "alimaredia",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-21T20:53:14Z"
+      },
+      {
+        "pr_number": 147,
+        "pr_title": "feat: add preinstalled spark-operator E2E job to module CI",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/147",
+        "reviewer": "alimaredia",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-22T17:50:21Z"
+      },
+      {
+        "pr_number": 147,
+        "pr_title": "feat: add preinstalled spark-operator E2E job to module CI",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/147",
+        "reviewer": "alimaredia",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-22T17:53:03Z"
+      },
+      {
+        "pr_number": 147,
+        "pr_title": "feat: add preinstalled spark-operator E2E job to module CI",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/147",
+        "reviewer": "Vedant-Deshpande",
+        "state": "APPROVED",
+        "submitted_at": "2026-07-22T17:56:03Z"
+      },
+      {
+        "pr_number": 147,
+        "pr_title": "feat: add preinstalled spark-operator E2E job to module CI",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/147",
+        "reviewer": "alimaredia",
+        "state": "APPROVED",
+        "submitted_at": "2026-07-22T19:08:30Z"
+      },
+      {
+        "pr_number": 150,
+        "pr_title": "cleanup: remove old shell-based test scripts and obsolete CI",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/150",
+        "reviewer": "alimaredia",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-22T15:38:29Z"
+      },
+      {
+        "pr_number": 150,
+        "pr_title": "cleanup: remove old shell-based test scripts and obsolete CI",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/150",
+        "reviewer": "alimaredia",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-22T15:39:23Z"
+      },
+      {
+        "pr_number": 150,
+        "pr_title": "cleanup: remove old shell-based test scripts and obsolete CI",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/150",
+        "reviewer": "alimaredia",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-22T15:40:03Z"
+      },
+      {
+        "pr_number": 150,
+        "pr_title": "cleanup: remove old shell-based test scripts and obsolete CI",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/150",
+        "reviewer": "Vedant-Deshpande",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-22T15:48:49Z"
+      },
+      {
+        "pr_number": 150,
+        "pr_title": "cleanup: remove old shell-based test scripts and obsolete CI",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/150",
+        "reviewer": "Vedant-Deshpande",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-22T15:49:21Z"
+      },
+      {
+        "pr_number": 150,
+        "pr_title": "cleanup: remove old shell-based test scripts and obsolete CI",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/150",
+        "reviewer": "Vedant-Deshpande",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-22T15:54:12Z"
+      },
+      {
+        "pr_number": 150,
+        "pr_title": "cleanup: remove old shell-based test scripts and obsolete CI",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/150",
+        "reviewer": "alimaredia",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-22T17:29:52Z"
+      },
+      {
+        "pr_number": 149,
+        "pr_title": "docs: add Spark Connect guide for RHOAI workbenches",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/149",
+        "reviewer": "Vedant-Deshpande",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-21T19:55:25Z"
+      },
+      {
+        "pr_number": 149,
+        "pr_title": "docs: add Spark Connect guide for RHOAI workbenches",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/149",
+        "reviewer": "alimaredia",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-21T20:00:51Z"
+      },
+      {
+        "pr_number": 149,
+        "pr_title": "docs: add Spark Connect guide for RHOAI workbenches",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/149",
+        "reviewer": "alimaredia",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-21T20:18:15Z"
+      },
+      {
+        "pr_number": 141,
+        "pr_title": "Phase 2: Test Consolidation - Create test/e2e/openshift/ subdirectory",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/141",
+        "reviewer": "shruthis4",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-17T14:15:40Z"
+      },
+      {
+        "pr_number": 141,
+        "pr_title": "Phase 2: Test Consolidation - Create test/e2e/openshift/ subdirectory",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/141",
+        "reviewer": "shruthis4",
+        "state": "CHANGES_REQUESTED",
+        "submitted_at": "2026-07-17T14:21:07Z"
+      },
+      {
+        "pr_number": 141,
+        "pr_title": "Phase 2: Test Consolidation - Create test/e2e/openshift/ subdirectory",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/141",
+        "reviewer": "Vedant-Deshpande",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-20T14:24:43Z"
+      },
+      {
+        "pr_number": 141,
+        "pr_title": "Phase 2: Test Consolidation - Create test/e2e/openshift/ subdirectory",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/141",
+        "reviewer": "Vedant-Deshpande",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-20T14:25:41Z"
+      },
+      {
+        "pr_number": 141,
+        "pr_title": "Phase 2: Test Consolidation - Create test/e2e/openshift/ subdirectory",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/141",
+        "reviewer": "Vedant-Deshpande",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-20T14:27:04Z"
+      },
+      {
+        "pr_number": 141,
+        "pr_title": "Phase 2: Test Consolidation - Create test/e2e/openshift/ subdirectory",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/141",
+        "reviewer": "Vedant-Deshpande",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-20T14:27:33Z"
+      },
+      {
+        "pr_number": 141,
+        "pr_title": "Phase 2: Test Consolidation - Create test/e2e/openshift/ subdirectory",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/141",
+        "reviewer": "Vedant-Deshpande",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-20T14:28:16Z"
+      },
+      {
+        "pr_number": 141,
+        "pr_title": "Phase 2: Test Consolidation - Create test/e2e/openshift/ subdirectory",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/141",
+        "reviewer": "Vedant-Deshpande",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-20T14:29:26Z"
+      },
+      {
+        "pr_number": 141,
+        "pr_title": "Phase 2: Test Consolidation - Create test/e2e/openshift/ subdirectory",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/141",
+        "reviewer": "Vedant-Deshpande",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-20T14:30:00Z"
+      },
+      {
+        "pr_number": 141,
+        "pr_title": "Phase 2: Test Consolidation - Create test/e2e/openshift/ subdirectory",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/141",
+        "reviewer": "Vedant-Deshpande",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-20T14:30:37Z"
+      },
+      {
+        "pr_number": 141,
+        "pr_title": "Phase 2: Test Consolidation - Create test/e2e/openshift/ subdirectory",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/141",
+        "reviewer": "Vedant-Deshpande",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-20T14:31:31Z"
+      },
+      {
+        "pr_number": 141,
+        "pr_title": "Phase 2: Test Consolidation - Create test/e2e/openshift/ subdirectory",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/141",
+        "reviewer": "Vedant-Deshpande",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-20T14:33:00Z"
+      },
+      {
+        "pr_number": 141,
+        "pr_title": "Phase 2: Test Consolidation - Create test/e2e/openshift/ subdirectory",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/141",
+        "reviewer": "Vedant-Deshpande",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-20T14:33:40Z"
+      },
+      {
+        "pr_number": 133,
+        "pr_title": "Add comprehensive Spark observability documentation",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/133",
+        "reviewer": "alimaredia",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-17T14:15:27Z"
+      },
+      {
+        "pr_number": 133,
+        "pr_title": "Add comprehensive Spark observability documentation",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/133",
+        "reviewer": "alimaredia",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-17T14:16:24Z"
+      },
+      {
+        "pr_number": 133,
+        "pr_title": "Add comprehensive Spark observability documentation",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/133",
+        "reviewer": "alimaredia",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-17T14:17:06Z"
+      },
+      {
+        "pr_number": 133,
+        "pr_title": "Add comprehensive Spark observability documentation",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/133",
+        "reviewer": "shruthis4",
+        "state": "COMMENTED",
+        "submitted_at": "2026-07-17T14:27:16Z"
+      },
+      {
+        "pr_number": 133,
+        "pr_title": "Add comprehensive Spark observability documentation",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/133",
+        "reviewer": "alimaredia",
+        "state": "APPROVED",
+        "submitted_at": "2026-07-17T19:21:40Z"
+      },
+      {
+        "pr_number": 145,
+        "pr_title": "fix: add NetworkPolicy RBAC for Conforma compliance",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/145",
+        "reviewer": "alimaredia",
+        "state": "APPROVED",
+        "submitted_at": "2026-07-16T17:52:13Z"
+      },
+      {
+        "pr_number": 144,
+        "pr_title": "Sync e2e upstream 2026 07 14",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/144",
+        "reviewer": "alimaredia",
+        "state": "APPROVED",
+        "submitted_at": "2026-07-17T11:44:12Z"
+      }
+    ],
+    "closed_issues": [
+      {
+        "number": 2903,
+        "title": "[BUG] Spark Connect: operator sets SPARK_NO_DAEMONIZE=true but uses daemon-style stop, causing improper shutdown",
+        "url": "https://github.com/kubeflow/spark-operator/issues/2903",
+        "closed_by": "GrimRanger"
+      }
+    ],
+    "total_merged": 9
+  },
+  "jira": {
+    "completed": [
+      {
+        "key": "RHOAIENG-77030",
+        "summary": "CVE-2026-15075 rhoai/odh-spark-operator-rhel9: Eclipse Vert.x: Information disclosure via improper handling of HTTP 30x redirects [rhoai-3.4]",
+        "status": "Closed",
+        "assignee": "Ali Maredia",
+        "priority": "Critical",
+        "type": "Vulnerability",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-23T16:23:07.885+0000",
+        "resolved": "2026-07-20T13:05:27.461+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-77030"
+      },
+      {
+        "key": "RHOAIENG-76615",
+        "summary": "CVE-2026-45205 rhoai/odh-spark-operator-rhel9: Apache Commons Configuration: Denial of Service via uncontrolled recursion with crafted YAML input [rhoai-3.4]",
+        "status": "Closed",
+        "assignee": "Ali Maredia",
+        "priority": "Critical",
+        "type": "Vulnerability",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-23T16:23:52.446+0000",
+        "resolved": "2026-07-20T12:55:42.414+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-76615"
+      },
+      {
+        "key": "RHOAIENG-75005",
+        "summary": "[RHOAI 3.5.0-EA2][TFA Sign-Off][Data Processing] RC2 - Run Test execution matrix",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Critical",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [
+          "3.5 EA2 RHOAI RELEASE"
+        ],
+        "updated": "2026-07-17T14:44:55.476+0000",
+        "resolved": "2026-07-17T14:44:55.440+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-75005"
+      },
+      {
+        "key": "RHOAIENG-74889",
+        "summary": "Phase 1: Upstream Sync - Merge from kubeflow/spark-operator",
+        "status": "Resolved",
+        "assignee": "Rishabh Singh",
+        "priority": "Undefined",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-17T16:12:52.086+0000",
+        "resolved": "2026-07-17T16:12:52.057+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-74889"
+      },
+      {
+        "key": "RHOAIENG-74360",
+        "summary": "[RHOAI 3.5.0-GA][TFA Sign-Off][Data Processing] Execute test matrix - Wk2 (Jul 13)",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Critical",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [
+          "3.5 GA RHOAI RELEASE"
+        ],
+        "updated": "2026-07-17T14:44:28.503+0000",
+        "resolved": "2026-07-17T14:44:28.481+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-74360"
+      },
+      {
+        "key": "RHOAIENG-73280",
+        "summary": "CVE-2026-53492 rhoai/odh-spark-operator-rhel9: containerd: Security bypass via Container Device Interface (CDI) annotation smuggling during checkpoint restoration. [rhoai-3.4]",
+        "status": "Closed",
+        "assignee": "Ali Maredia",
+        "priority": "Critical",
+        "type": "Vulnerability",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.4.4 GA RHOAI"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-23T15:55:10.770+0000",
+        "resolved": "2026-07-23T14:44:06.315+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-73280"
+      },
+      {
+        "key": "RHOAIENG-72909",
+        "summary": "CVE-2026-53488 rhoai/odh-spark-operator-rhel9: containerd: Host-root command execution via unvalidated image config labels in CRI plugin [rhoai-3.4]",
+        "status": "Closed",
+        "assignee": "Ali Maredia",
+        "priority": "Critical",
+        "type": "Vulnerability",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.4.4 GA RHOAI"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-23T15:55:58.864+0000",
+        "resolved": "2026-07-23T14:56:21.884+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-72909"
+      },
+      {
+        "key": "RHOAIENG-68806",
+        "summary": "[RHOAI 3.5.0-EA2][TFA Sign-Off][Data Processing] RC1 - Run Test execution matrix",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Critical",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [
+          "3.5 EA2 RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.5 EA2 RHOAI RELEASE"
+        ],
+        "updated": "2026-07-17T14:42:48.302+0000",
+        "resolved": "2026-07-17T14:42:48.281+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-68806"
+      },
+      {
+        "key": "RHOAIENG-68735",
+        "summary": "[RHOAI 3.5.0-EA2][TFA Sign-Off][Data Processing] OCP 4.21 Disconnected Install - Wk2 (Jun 22)",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Critical",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [
+          "3.5 EA2 RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.5 EA2 RHOAI RELEASE"
+        ],
+        "updated": "2026-07-17T14:42:07.108+0000",
+        "resolved": "2026-07-17T14:42:07.079+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-68735"
+      },
+      {
+        "key": "RHOAIENG-63982",
+        "summary": "Add SparkApplication to Kueue frameworkMapping in opendatahub-operator",
+        "status": "Resolved",
+        "assignee": "Unassigned",
+        "priority": "Major",
+        "type": "Epic",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [
+          "3.5 GA RHOAI RELEASE"
+        ],
+        "updated": "2026-07-23T13:13:15.391+0000",
+        "resolved": "2026-07-23T13:13:15.366+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-63982"
+      },
+      {
+        "key": "RHAIRFE-2737",
+        "summary": "Data Hub Data Connections UI \u2014 Connection Management, Creation, and Selection in Dashboard",
+        "status": "Closed",
+        "assignee": "Jehlum Vitasta Pandit",
+        "priority": "Major",
+        "type": "Feature Request",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-20T17:13:30.798+0000",
+        "resolved": "2026-07-20T17:12:31.248+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIRFE-2737"
+      },
+      {
+        "key": "RHAIRFE-2736",
+        "summary": "Data Hub Data Connections Backend \u2014 Connection Registration, Validation, and Reference API",
+        "status": "Closed",
+        "assignee": "Jehlum Vitasta Pandit",
+        "priority": "Major",
+        "type": "Feature Request",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-20T17:13:26.616+0000",
+        "resolved": "2026-07-20T17:12:05.030+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIRFE-2736"
+      },
+      {
+        "key": "RHAIENG-5907",
+        "summary": "Document and Demo File Processor Locally on Kind cluster",
+        "status": "Resolved",
+        "assignee": "Sahana Sreeram",
+        "priority": "Normal",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-22T18:29:02.849+0000",
+        "resolved": "2026-07-22T18:29:02.825+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-5907"
+      },
+      {
+        "key": "RHAIENG-5906",
+        "summary": "Server-side authorization for spec.sparkConf keys #3006",
+        "status": "Closed",
+        "assignee": "Sahana Sreeram",
+        "priority": "Normal",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-16T16:58:35.289+0000",
+        "resolved": "2026-07-16T16:58:35.258+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-5906"
+      },
+      {
+        "key": "RHAIENG-5348",
+        "summary": "Create midstream KSO syncing strategy",
+        "status": "Resolved",
+        "assignee": "Ali Maredia",
+        "priority": "Critical",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-17T15:22:19.254+0000",
+        "resolved": "2026-07-17T15:22:19.221+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-5348"
+      },
+      {
+        "key": "RHAIENG-5293",
+        "summary": "Documentation - Admin & User Guide for Kueue + Spark Operator Integration",
+        "status": "Resolved",
+        "assignee": "Vedant Deshpande",
+        "priority": "Major",
+        "type": "Story",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-21T13:33:56.864+0000",
+        "resolved": "2026-07-17T16:01:04.392+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-5293"
+      },
+      {
+        "key": "RHAIENG-5288",
+        "summary": "Validate & Document Kueue + KSO Integration on RHOAI",
+        "status": "Closed",
+        "assignee": "Vedant Deshpande",
+        "priority": "Critical",
+        "type": "Epic",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-21T13:33:56.888+0000",
+        "resolved": "2026-07-21T13:33:52.898+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-5288"
+      },
+      {
+        "key": "RHAIENG-4827",
+        "summary": "Document Debugging for Spark Connects Server",
+        "status": "Resolved",
+        "assignee": "Ali Maredia",
+        "priority": "Major",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-21T22:01:57.735+0000",
+        "resolved": "2026-07-21T22:01:57.712+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-4827"
+      }
+    ],
+    "in_progress": [
+      {
+        "key": "RHOAIENG-77656",
+        "summary": "Delete duplicate midstream test:SparkConnectQuery after upstream PR is merged",
+        "status": "New",
+        "assignee": "Vedant Deshpande",
+        "priority": "Normal",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-16T15:37:32.326+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-77656"
+      },
+      {
+        "key": "RHOAIENG-77030",
+        "summary": "CVE-2026-15075 rhoai/odh-spark-operator-rhel9: Eclipse Vert.x: Information disclosure via improper handling of HTTP 30x redirects [rhoai-3.4]",
+        "status": "Closed",
+        "assignee": "Ali Maredia",
+        "priority": "Critical",
+        "type": "Vulnerability",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-23T16:23:07.885+0000",
+        "resolved": "2026-07-20T13:05:27.461+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-77030"
+      },
+      {
+        "key": "RHOAIENG-76615",
+        "summary": "CVE-2026-45205 rhoai/odh-spark-operator-rhel9: Apache Commons Configuration: Denial of Service via uncontrolled recursion with crafted YAML input [rhoai-3.4]",
+        "status": "Closed",
+        "assignee": "Ali Maredia",
+        "priority": "Critical",
+        "type": "Vulnerability",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-23T16:23:52.446+0000",
+        "resolved": "2026-07-20T12:55:42.414+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-76615"
+      },
+      {
+        "key": "RHOAIENG-75724",
+        "summary": "RHOAI Konflux Onboarding odh-spark-operator-module-operator",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Undefined",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-20T13:44:14.840+0000",
+        "resolved": "2026-07-13T18:50:04.227+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-75724"
+      },
+      {
+        "key": "RHOAIENG-75005",
+        "summary": "[RHOAI 3.5.0-EA2][TFA Sign-Off][Data Processing] RC2 - Run Test execution matrix",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Critical",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [
+          "3.5 EA2 RHOAI RELEASE"
+        ],
+        "updated": "2026-07-17T14:44:55.476+0000",
+        "resolved": "2026-07-17T14:44:55.440+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-75005"
+      },
+      {
+        "key": "RHOAIENG-74889",
+        "summary": "Phase 1: Upstream Sync - Merge from kubeflow/spark-operator",
+        "status": "Resolved",
+        "assignee": "Rishabh Singh",
+        "priority": "Undefined",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-17T16:12:52.086+0000",
+        "resolved": "2026-07-17T16:12:52.057+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-74889"
+      },
+      {
+        "key": "RHOAIENG-74888",
+        "summary": "Spark Operator: Test Consolidation & OpenShift CI Strategy",
+        "status": "In Progress",
+        "assignee": "Unassigned",
+        "priority": "Undefined",
+        "type": "Epic",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-17T18:38:49.357+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-74888"
+      },
+      {
+        "key": "RHOAIENG-74435",
+        "summary": "[RHOAI 3.5.0-GA][TFA Sign-Off][Data Processing] Execute test matrix - Wk3 (Jul 20)",
+        "status": "Backlog",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Critical",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [
+          "3.5 GA RHOAI RELEASE"
+        ],
+        "updated": "2026-07-20T06:15:12.651+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-74435"
+      },
+      {
+        "key": "RHOAIENG-74360",
+        "summary": "[RHOAI 3.5.0-GA][TFA Sign-Off][Data Processing] Execute test matrix - Wk2 (Jul 13)",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Critical",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [
+          "3.5 GA RHOAI RELEASE"
+        ],
+        "updated": "2026-07-17T14:44:28.503+0000",
+        "resolved": "2026-07-17T14:44:28.481+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-74360"
+      },
+      {
+        "key": "RHOAIENG-73740",
+        "summary": "CVE-2026-47691 rhoai/odh-spark-operator-rhel9: Netty has Insufficient Bailiwick Validation for NS Records [rhoai-3.4]",
+        "status": "Closed",
+        "assignee": "Unassigned",
+        "priority": "Critical",
+        "type": "Vulnerability",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.4.3 GA RHOAI"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-23T16:21:08.715+0000",
+        "resolved": "2026-07-06T20:15:10.210+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-73740"
+      },
+      {
+        "key": "RHOAIENG-73722",
+        "summary": "CVE-2026-50010 rhoai/odh-spark-operator-rhel9: Netty: Improper trust manager handling leads to hostname verification bypass [rhoai-3.4]",
+        "status": "Closed",
+        "assignee": "Ali Maredia",
+        "priority": "Critical",
+        "type": "Vulnerability",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.4.3 GA RHOAI"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-23T16:19:11.617+0000",
+        "resolved": "2026-07-06T20:43:39.407+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-73722"
+      },
+      {
+        "key": "RHOAIENG-73713",
+        "summary": "CVE-2026-45674 rhoai/odh-spark-operator-rhel9: Netty: Information disclosure and data manipulation due to improper CNAME record validation [rhoai-3.4]",
+        "status": "Closed",
+        "assignee": "Ali Maredia",
+        "priority": "Critical",
+        "type": "Vulnerability",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.4.3 GA RHOAI"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-23T16:18:35.031+0000",
+        "resolved": "2026-07-06T20:44:59.093+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-73713"
+      },
+      {
+        "key": "RHOAIENG-73703",
+        "summary": "CVE-2026-45416 rhoai/odh-spark-operator-rhel9: Netty: Denial of Service due to eager buffer allocation in TLS handshake [rhoai-3.4]",
+        "status": "Closed",
+        "assignee": "Ali Maredia",
+        "priority": "Critical",
+        "type": "Vulnerability",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.4.3 GA RHOAI"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-23T16:17:47.690+0000",
+        "resolved": "2026-07-06T20:45:49.490+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-73703"
+      },
+      {
+        "key": "RHOAIENG-73668",
+        "summary": "CVE-2026-56211 rhoai/odh-spark-operator-rhel9: libaom: remote code execution via SVC layer context handling with attacker-controlled frames [rhoai-3.4]",
+        "status": "Closed",
+        "assignee": "Ali Maredia",
+        "priority": "Critical",
+        "type": "Vulnerability",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.4.3 GA RHOAI"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-23T16:16:56.795+0000",
+        "resolved": "2026-07-06T22:53:34.742+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-73668"
+      },
+      {
+        "key": "RHOAIENG-73623",
+        "summary": "CVE-2026-56210 rhoai/odh-spark-operator-rhel9: libaom: heap-buffer-overflow read via missing bounds check in ctrl_set_layer_id [rhoai-3.4]",
+        "status": "Closed",
+        "assignee": "Ali Maredia",
+        "priority": "Critical",
+        "type": "Vulnerability",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.4.3 GA RHOAI"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-23T16:16:03.269+0000",
+        "resolved": "2026-07-06T22:55:41.382+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-73623"
+      },
+      {
+        "key": "RHOAIENG-73555",
+        "summary": "CVE-2026-56209 rhoai/odh-spark-operator-rhel9: libaom: arbitrary address write via SVC layer context OOB and cyclic refresh map pointer hijack [rhoai-3.4]",
+        "status": "Closed",
+        "assignee": "Ali Maredia",
+        "priority": "Critical",
+        "type": "Vulnerability",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.4.3 GA RHOAI"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-23T16:15:09.422+0000",
+        "resolved": "2026-07-06T22:56:16.768+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-73555"
+      },
+      {
+        "key": "RHOAIENG-73518",
+        "summary": "CVE-2026-56208 rhoai/odh-spark-operator-rhel9: libaom: heap buffer overflow in AV1 encoder first-pass stats buffer via LAP mode [rhoai-3.4]",
+        "status": "Closed",
+        "assignee": "Ali Maredia",
+        "priority": "Critical",
+        "type": "Vulnerability",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.4.3 GA RHOAI"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-23T16:04:37.693+0000",
+        "resolved": "2026-07-06T23:01:40.708+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-73518"
+      },
+      {
+        "key": "RHOAIENG-73480",
+        "summary": "CVE-2026-58049 rhoai/odh-spark-operator-rhel9: FFmpeg: Memory corruption via crafted RASC video stream [rhoai-3.4]",
+        "status": "Closed",
+        "assignee": "Ali Maredia",
+        "priority": "Critical",
+        "type": "Vulnerability",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.4.3 GA RHOAI"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-23T16:21:59.579+0000",
+        "resolved": "2026-07-06T23:08:48.430+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-73480"
+      },
+      {
+        "key": "RHOAIENG-73280",
+        "summary": "CVE-2026-53492 rhoai/odh-spark-operator-rhel9: containerd: Security bypass via Container Device Interface (CDI) annotation smuggling during checkpoint restoration. [rhoai-3.4]",
+        "status": "Closed",
+        "assignee": "Ali Maredia",
+        "priority": "Critical",
+        "type": "Vulnerability",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.4.4 GA RHOAI"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-23T15:55:10.770+0000",
+        "resolved": "2026-07-23T14:44:06.315+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-73280"
+      },
+      {
+        "key": "RHOAIENG-72909",
+        "summary": "CVE-2026-53488 rhoai/odh-spark-operator-rhel9: containerd: Host-root command execution via unvalidated image config labels in CRI plugin [rhoai-3.4]",
+        "status": "Closed",
+        "assignee": "Ali Maredia",
+        "priority": "Critical",
+        "type": "Vulnerability",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.4.4 GA RHOAI"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-23T15:55:58.864+0000",
+        "resolved": "2026-07-23T14:56:21.884+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-72909"
+      },
+      {
+        "key": "RHOAIENG-72611",
+        "summary": "CVE-2026-50193 rhoai/odh-spark-operator-rhel9: Jackson-databind: Denial of Service via deeply nested JSON processing [rhoai-3.4]",
+        "status": "Closed",
+        "assignee": "Ali Maredia",
+        "priority": "Critical",
+        "type": "Vulnerability",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.4.3 GA RHOAI"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-23T16:00:16.418+0000",
+        "resolved": "2026-07-09T20:18:42.777+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-72611"
+      },
+      {
+        "key": "RHOAIENG-72552",
+        "summary": "CVE-2026-54512 rhoai/odh-spark-operator-rhel9: jackson-databind: Arbitrary code execution via PolymorphicTypeValidator bypass [rhoai-3.4]",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Critical",
+        "type": "Vulnerability",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.4.3 GA RHOAI"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-23T16:02:35.551+0000",
+        "resolved": "2026-07-09T20:12:04.198+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-72552"
+      },
+      {
+        "key": "RHOAIENG-69127",
+        "summary": "  Complete Platform Integration & Testing",
+        "status": "Review",
+        "assignee": "Rishabh Singh",
+        "priority": "Undefined",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-22T19:11:19.406+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-69127"
+      },
+      {
+        "key": "RHOAIENG-69125",
+        "summary": "Add ModuleHandler with Unit Tests",
+        "status": "Review",
+        "assignee": "Rishabh Singh",
+        "priority": "Undefined",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-22T19:11:09.143+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-69125"
+      },
+      {
+        "key": "RHOAIENG-68806",
+        "summary": "[RHOAI 3.5.0-EA2][TFA Sign-Off][Data Processing] RC1 - Run Test execution matrix",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Critical",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [
+          "3.5 EA2 RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.5 EA2 RHOAI RELEASE"
+        ],
+        "updated": "2026-07-17T14:42:48.302+0000",
+        "resolved": "2026-07-17T14:42:48.281+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-68806"
+      },
+      {
+        "key": "RHOAIENG-68735",
+        "summary": "[RHOAI 3.5.0-EA2][TFA Sign-Off][Data Processing] OCP 4.21 Disconnected Install - Wk2 (Jun 22)",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Critical",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [
+          "3.5 EA2 RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.5 EA2 RHOAI RELEASE"
+        ],
+        "updated": "2026-07-17T14:42:07.108+0000",
+        "resolved": "2026-07-17T14:42:07.079+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-68735"
+      },
+      {
+        "key": "RHOAIENG-68719",
+        "summary": "[RHOAI 3.5.0-EA2][TFA Sign-Off][Data Processing] Execute test matrix - Wk2 (Jun 22)",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Critical",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [
+          "3.5 EA2 RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.5 EA2 RHOAI RELEASE"
+        ],
+        "updated": "2026-07-22T17:45:40.618+0000",
+        "resolved": "2026-07-01T10:17:37.649+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-68719"
+      },
+      {
+        "key": "RHOAIENG-68576",
+        "summary": "CVE-2026-48043 rhoai/odh-spark-operator-rhel9: netty-codec-http2: Denial of Service due to resource leak [rhoai-3.4]",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Critical",
+        "type": "Vulnerability",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-23T16:02:09.496+0000",
+        "resolved": "2026-06-13T05:32:46.491+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-68576"
+      },
+      {
+        "key": "RHOAIENG-63982",
+        "summary": "Add SparkApplication to Kueue frameworkMapping in opendatahub-operator",
+        "status": "Resolved",
+        "assignee": "Unassigned",
+        "priority": "Major",
+        "type": "Epic",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [
+          "3.5 GA RHOAI RELEASE"
+        ],
+        "updated": "2026-07-23T13:13:15.391+0000",
+        "resolved": "2026-07-23T13:13:15.366+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-63982"
+      },
+      {
+        "key": "RHOAIENG-63123",
+        "summary": "[Upgrade Testing] Spark \u2014 Upgrade Test Coverage",
+        "status": "In Progress",
+        "assignee": "Ali Maredia",
+        "priority": "Critical",
+        "type": "Epic",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [
+          "rhoai-3.5.EA2"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-21T19:23:03.620+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-63123"
+      },
+      {
+        "key": "RHOAIENG-62982",
+        "summary": "Spark Operator onboarding to modular architecture",
+        "status": "In Progress",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Major",
+        "type": "Epic",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [
+          "rhoai-3.6.EA1"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-17T18:11:14.444+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-62982"
+      },
+      {
+        "key": "RHOAIENG-61713",
+        "summary": "[RHOAI 3.5.0-EA1] Test Plan Sign Off - Data Processing Team",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Critical",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [
+          "3.5 EA1 RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.5 EA1 RHOAI RELEASE"
+        ],
+        "updated": "2026-07-22T13:02:35.277+0000",
+        "resolved": "2026-06-08T14:55:55.789+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-61713"
+      },
+      {
+        "key": "RHOAIENG-60636",
+        "summary": "File upstream bug report for driverIngressOptions annotation issue",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Undefined",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-22T18:06:58.672+0000",
+        "resolved": "2026-06-02T14:44:48.965+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-60636"
+      },
+      {
+        "key": "RHOAIENG-59982",
+        "summary": "Conforma violation - odh-spark-operator-v3-4",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Blocker",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [
+          "rhoai-3.4"
+        ],
+        "updated": "2026-07-20T12:36:41.344+0000",
+        "resolved": "2026-05-08T16:06:06.639+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-59982"
+      },
+      {
+        "key": "RHOAIENG-59132",
+        "summary": "Separate spark-operator e2e tests from platform component test runs",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Major",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [
+          "rhoai-3.4"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-20T16:33:24.394+0000",
+        "resolved": "2026-04-23T15:20:14.479+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-59132"
+      },
+      {
+        "key": "RHOAIENG-58266",
+        "summary": "RBAC Error: Spark Operator Controller SA lacks permission to update ScheduledSparkApplication finalizers",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Undefined",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [
+          "rhoai-3.4"
+        ],
+        "updated": "2026-07-16T15:44:18.895+0000",
+        "resolved": "2026-04-15T01:33:35.434+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-58266"
+      },
+      {
+        "key": "RHOAIENG-57540",
+        "summary": "Setup spark-operator with standard  rhoai processes",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Undefined",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-16T16:01:30.396+0000",
+        "resolved": "2026-04-15T15:25:47.937+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-57540"
+      },
+      {
+        "key": "RHOAIENG-57449",
+        "summary": "[RHOAI 3.4.0-EA2] Documentation Sign Off - Data Processing Team",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Critical",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [
+          "rhoai-3.4.EA2"
+        ],
+        "updated": "2026-07-20T12:39:06.084+0000",
+        "resolved": "2026-04-23T14:38:57.428+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-57449"
+      },
+      {
+        "key": "RHOAIENG-57441",
+        "summary": "[RHOAI 3.4.0-EA2][TFA Sign-Off][Data Processing] RC3 - Run Test execution matrix",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Critical",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [
+          "rhoai-3.4.EA2"
+        ],
+        "updated": "2026-07-20T12:38:16.194+0000",
+        "resolved": "2026-04-23T14:47:44.413+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-57441"
+      },
+      {
+        "key": "RHOAIENG-56059",
+        "summary": "Add CI Testing Infrastructure for Dockerfile.odh",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Undefined",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [
+          "rhoai-3.4"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-16T16:00:24.805+0000",
+        "resolved": "2026-04-15T15:24:16.276+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-56059"
+      },
+      {
+        "key": "RHOAIENG-48819",
+        "summary": " Multi-Architecture Support",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Critical",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [
+          "rhoai-3.4"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-20T16:49:33.626+0000",
+        "resolved": "2026-05-13T12:42:35.326+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-48819"
+      },
+      {
+        "key": "RHOAIENG-48818",
+        "summary": "CLONE - Test with disconnected environment",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Critical",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [
+          "rhoai-3.4"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-16T16:00:35.511+0000",
+        "resolved": "2026-04-15T15:18:22.069+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-48818"
+      },
+      {
+        "key": "RHOAIENG-48817",
+        "summary": "CLONE - Security requirements",
+        "status": "Closed",
+        "assignee": "Ali Maredia",
+        "priority": "Critical",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [
+          "rhoai-3.4"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-20T12:18:01.575+0000",
+        "resolved": "2026-04-20T17:12:46.023+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-48817"
+      },
+      {
+        "key": "RHOAIENG-48815",
+        "summary": "CLONE - Testing requirements",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Critical",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [
+          "rhoai-3.4"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-16T16:00:31.602+0000",
+        "resolved": "2026-04-15T15:16:41.668+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-48815"
+      },
+      {
+        "key": "RHOAIENG-48812",
+        "summary": "Tech Preview - ODH and RHOAI Integrations [Kubeflow Spark Operator]",
+        "status": "Closed",
+        "assignee": "Ali Maredia",
+        "priority": "Undefined",
+        "type": "Epic",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [
+          "rhoai-3.4"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-20T16:48:45.436+0000",
+        "resolved": "2026-05-13T13:45:15.454+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-48812"
+      },
+      {
+        "key": "RHAISTRAT-2065",
+        "summary": "Docling performance guidance: model offloading, CPU/GPU tuning, and pipeline optimization for production workloads",
+        "status": "New",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Major",
+        "type": "Feature",
+        "color": "Green",
+        "status_summary": "",
+        "target_versions": [
+          "3.6 EA1 RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.6 EA2 RHOAI RELEASE"
+        ],
+        "updated": "2026-07-21T00:01:17.162+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-2065"
+      },
+      {
+        "key": "RHAISTRAT-1951",
+        "summary": "High-fidelity document conversion of policy documents, transcripts, and wikis into structured clean text on OpenShift AI",
+        "status": "New",
+        "assignee": "Unassigned",
+        "priority": "Major",
+        "type": "Feature",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-20T08:48:40.681+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1951"
+      },
+      {
+        "key": "RHAISTRAT-1943",
+        "summary": "Agent-Discoverable Dataset Assets \u2014 MCP Discovery, Schema Advertisement, and Governed Invocation",
+        "status": "New",
+        "assignee": "Vedant Deshpande",
+        "priority": "Major",
+        "type": "Feature",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-20T08:48:37.780+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1943"
+      },
+      {
+        "key": "RHAISTRAT-1942",
+        "summary": "Dataset Registry for GenAI Workflows \u2014 Register, Discover, and Connect Datasets to Model Tuning, Evaluation, and SDG",
+        "status": "Closed",
+        "assignee": "Unassigned",
+        "priority": "Major",
+        "type": "Feature",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [
+          "rhoai-3.6",
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-20T17:07:36.426+0000",
+        "resolved": "2026-07-07T14:10:14.302+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1942"
+      },
+      {
+        "key": "RHAISTRAT-1788",
+        "summary": "Reference architecture for deploying docling-serve as a document conversion service on OpenShift AI with autoscaling",
+        "status": "New",
+        "assignee": "Ali Maredia",
+        "priority": "Critical",
+        "type": "Feature",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-20T20:52:06.385+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1788"
+      },
+      {
+        "key": "RHAISTRAT-1787",
+        "summary": "Structured information extraction from cheques \u2014 phased reference examples",
+        "status": "New",
+        "assignee": "Vedant Deshpande",
+        "priority": "Critical",
+        "type": "Feature",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-22T19:07:10.161+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1787"
+      },
+      {
+        "key": "RHAISTRAT-1786",
+        "summary": "Continuous indexing and enrichment pipeline reference architecture for agent & RAG knowledge bases",
+        "status": "Refinement",
+        "assignee": "Derek Higgins",
+        "priority": "Major",
+        "type": "Feature",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-21T01:13:45.228+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1786"
+      },
+      {
+        "key": "RHAISTRAT-1785",
+        "summary": "Intelligent Document Processing reference example for OpenShift AI",
+        "status": "New",
+        "assignee": "Nick Ommen",
+        "priority": "Major",
+        "type": "Feature",
+        "color": "Green",
+        "status_summary": "GREEN",
+        "target_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-22T12:13:23.400+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1785"
+      },
+      {
+        "key": "RHAISTRAT-1477",
+        "summary": "Kueue support for Kubeflow Spark Operator (KSO) - testing and docs ",
+        "status": "Review",
+        "assignee": "Vedant Deshpande",
+        "priority": "Critical",
+        "type": "Feature",
+        "color": "Green",
+        "status_summary": "Previously blocked on RHBoK 1.4 (resolved July 20 \u2014 OpenShift 1.36 rebase landed July 18, RHBoK 1.4 released July 20). All E2E test code (16 specs / 17 ACs across 4 PRs) and documentation are written ",
+        "target_versions": [
+          "rhoai-3.5",
+          "3.5 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.5 GA RHOAI RELEASE"
+        ],
+        "updated": "2026-07-23T14:21:26.610+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1477"
+      },
+      {
+        "key": "RHAISTRAT-1408",
+        "summary": "Test & document using the Spark Application UI and spark-history mcp server for logs",
+        "status": "In Progress",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Major",
+        "type": "Feature",
+        "color": "Green",
+        "status_summary": "",
+        "target_versions": [
+          "3.5 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.5 GA RHOAI RELEASE"
+        ],
+        "updated": "2026-07-23T14:16:13.396+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1408"
+      },
+      {
+        "key": "RHAISTRAT-1375",
+        "summary": "Integrate Docling as a backend provider for File Processor API in OGX (previously Llama Stack)",
+        "status": "Refinement",
+        "assignee": "Alina Ryan",
+        "priority": "Normal",
+        "type": "Feature",
+        "color": "Green",
+        "status_summary": "",
+        "target_versions": [
+          "rhoai-3.5",
+          "3.5 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-21T16:17:06.757+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1375"
+      },
+      {
+        "key": "RHAISTRAT-1286",
+        "summary": "KSO + Workbench integration - interactive spark job management ",
+        "status": "Review",
+        "assignee": "Ali Maredia",
+        "priority": "Critical",
+        "type": "Feature",
+        "color": "Green",
+        "status_summary": "A draft of the refinement document is complete, with the data processing team, relevant other engineering teams and PM having done a round of review with comments address.",
+        "target_versions": [
+          "3.5 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.5 GA RHOAI RELEASE"
+        ],
+        "updated": "2026-07-23T14:55:26.197+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1286"
+      },
+      {
+        "key": "RHAISTRAT-183",
+        "summary": "Run & publish benchmarks for the Kubeflow Spark Operator on OpenShift AI",
+        "status": "New",
+        "assignee": "Rishabh Singh",
+        "priority": "Critical",
+        "type": "Feature",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-22T18:54:49.269+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-183"
+      },
+      {
+        "key": "RHAIRFE-2748",
+        "summary": "Data Connect Hub Phase 1 - New API for connection creation, Credential Management, and Platform Integration (S3, PostgreSQL)",
+        "status": "Approved",
+        "assignee": "Marius Ion Danciu",
+        "priority": "Major",
+        "type": "Feature Request",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-23T04:56:36.667+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAIRFE-2748"
+      },
+      {
+        "key": "RHAIRFE-2737",
+        "summary": "Data Hub Data Connections UI \u2014 Connection Management, Creation, and Selection in Dashboard",
+        "status": "Closed",
+        "assignee": "Jehlum Vitasta Pandit",
+        "priority": "Major",
+        "type": "Feature Request",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-20T17:13:30.798+0000",
+        "resolved": "2026-07-20T17:12:31.248+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIRFE-2737"
+      },
+      {
+        "key": "RHAIRFE-2736",
+        "summary": "Data Hub Data Connections Backend \u2014 Connection Registration, Validation, and Reference API",
+        "status": "Closed",
+        "assignee": "Jehlum Vitasta Pandit",
+        "priority": "Major",
+        "type": "Feature Request",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-20T17:13:26.616+0000",
+        "resolved": "2026-07-20T17:12:05.030+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIRFE-2736"
+      },
+      {
+        "key": "RHAIRFE-2185",
+        "summary": "Continuous indexing and enrichment pipeline reference architecture for agent & RAG knowledge bases ",
+        "status": "Approved",
+        "assignee": "Ana Biazetti",
+        "priority": "Major",
+        "type": "Feature Request",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-20T20:54:23.000+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAIRFE-2185"
+      },
+      {
+        "key": "RHAIRFE-1478",
+        "summary": "Supported Spark Application UI access for monitoring and troubleshooting Spark workloads on RHOAI",
+        "status": "Approved",
+        "assignee": "Jehlum Vitasta Pandit",
+        "priority": "Major",
+        "type": "Feature Request",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-20T13:51:03.365+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAIRFE-1478"
+      },
+      {
+        "key": "RHAIRFE-163",
+        "summary": "Establish data provenance and lineage pipelines to enable eval-driven development",
+        "status": "New",
+        "assignee": "Jehlum Vitasta Pandit",
+        "priority": "Major",
+        "type": "Feature Request",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-20T17:07:48.930+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAIRFE-163"
+      },
+      {
+        "key": "RHAIENG-6385",
+        "summary": "Weekly Upstream-Midstream SYNC placeholder",
+        "status": "Backlog",
+        "assignee": "Unassigned",
+        "priority": "Major",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-22T18:51:29.829+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-6385"
+      },
+      {
+        "key": "RHAIENG-5907",
+        "summary": "Document and Demo File Processor Locally on Kind cluster",
+        "status": "Resolved",
+        "assignee": "Sahana Sreeram",
+        "priority": "Normal",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-22T18:29:02.849+0000",
+        "resolved": "2026-07-22T18:29:02.825+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-5907"
+      },
+      {
+        "key": "RHAIENG-5906",
+        "summary": "Server-side authorization for spec.sparkConf keys #3006",
+        "status": "Closed",
+        "assignee": "Sahana Sreeram",
+        "priority": "Normal",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-16T16:58:35.289+0000",
+        "resolved": "2026-07-16T16:58:35.258+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-5906"
+      },
+      {
+        "key": "RHAIENG-5861",
+        "summary": "Complete markitdown dependency onboarding for GA package index",
+        "status": "In Progress",
+        "assignee": "Alina Ryan",
+        "priority": "Major",
+        "type": "Story",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [
+          "3.5 GA RHOAI RELEASE"
+        ],
+        "updated": "2026-07-22T19:51:17.263+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-5861"
+      },
+      {
+        "key": "RHAIENG-5859",
+        "summary": "File Processors API GA Readiness",
+        "status": "In Progress",
+        "assignee": "Alina Ryan",
+        "priority": "Undefined",
+        "type": "Epic",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [
+          "3.5 GA RHOAI RELEASE"
+        ],
+        "updated": "2026-07-20T17:54:15.206+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-5859"
+      },
+      {
+        "key": "RHAIENG-5486",
+        "summary": "Verify PyTorch + CUDA 13.0 compatibility for docling-sdk-cuda-ubi9 on AIPCC base image",
+        "status": "Closed",
+        "assignee": "Rishabh Singh",
+        "priority": "Critical",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [
+          "3.5 EA2 RHOAI RELEASE"
+        ],
+        "updated": "2026-07-22T17:42:48.736+0000",
+        "resolved": "2026-06-04T00:03:32.812+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-5486"
+      },
+      {
+        "key": "RHAIENG-5348",
+        "summary": "Create midstream KSO syncing strategy",
+        "status": "Resolved",
+        "assignee": "Ali Maredia",
+        "priority": "Critical",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-17T15:22:19.254+0000",
+        "resolved": "2026-07-17T15:22:19.221+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-5348"
+      },
+      {
+        "key": "RHAIENG-5330",
+        "summary": "Validate Complete Docling Model List for Container Bundling",
+        "status": "Closed",
+        "assignee": "Rishabh Singh",
+        "priority": "Critical",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [
+          "3.5 EA2 RHOAI RELEASE"
+        ],
+        "updated": "2026-07-22T17:41:16.385+0000",
+        "resolved": "2026-06-03T15:47:23.822+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-5330"
+      },
+      {
+        "key": "RHAIENG-5293",
+        "summary": "Documentation - Admin & User Guide for Kueue + Spark Operator Integration",
+        "status": "Resolved",
+        "assignee": "Vedant Deshpande",
+        "priority": "Major",
+        "type": "Story",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-21T13:33:56.864+0000",
+        "resolved": "2026-07-17T16:01:04.392+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-5293"
+      },
+      {
+        "key": "RHAIENG-5292",
+        "summary": "E2E Test - Validation, Lifecycle Cleanup & Event Visibility",
+        "status": "Resolved",
+        "assignee": "Vedant Deshpande",
+        "priority": "Major",
+        "type": "Story",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-21T13:33:57.029+0000",
+        "resolved": "2026-07-02T16:05:23.624+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-5292"
+      },
+      {
+        "key": "RHAIENG-5291",
+        "summary": "E2E Test - Multi-Tenancy, Gang Scheduling & Queue Independence",
+        "status": "Resolved",
+        "assignee": "Vedant Deshpande",
+        "priority": "Major",
+        "type": "Story",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-21T13:33:56.975+0000",
+        "resolved": "2026-06-22T19:45:02.816+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-5291"
+      },
+      {
+        "key": "RHAIENG-5290",
+        "summary": " E2E Test - Priority-Based Scheduling, Fair Sharing & Preemption",
+        "status": "Resolved",
+        "assignee": "Vedant Deshpande",
+        "priority": "Major",
+        "type": "Story",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-21T13:33:56.909+0000",
+        "resolved": "2026-06-22T19:44:53.767+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-5290"
+      },
+      {
+        "key": "RHAIENG-5288",
+        "summary": "Validate & Document Kueue + KSO Integration on RHOAI",
+        "status": "Closed",
+        "assignee": "Vedant Deshpande",
+        "priority": "Critical",
+        "type": "Epic",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-21T13:33:56.888+0000",
+        "resolved": "2026-07-21T13:33:52.898+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-5288"
+      },
+      {
+        "key": "RHAIENG-5272",
+        "summary": "Week 3: Compare File Processor providers and run tests",
+        "status": "Closed",
+        "assignee": "Sahana Sreeram",
+        "priority": "Undefined",
+        "type": "Story",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-22T18:05:49.935+0000",
+        "resolved": "2026-05-28T15:50:15.415+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-5272"
+      },
+      {
+        "key": "RHAIENG-5265",
+        "summary": "Release Notes Documentation for Docling Container EA2 release",
+        "status": "Closed",
+        "assignee": "Rishabh Singh",
+        "priority": "Undefined",
+        "type": "Story",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [
+          "3.5 EA2 RHOAI RELEASE"
+        ],
+        "updated": "2026-07-22T17:41:22.154+0000",
+        "resolved": "2026-06-29T15:53:04.063+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-5265"
+      },
+      {
+        "key": "RHAIENG-5263",
+        "summary": "Create docling-serve-cuda-ubi9 Image",
+        "status": "Closed",
+        "assignee": "Rishabh Singh",
+        "priority": "Undefined",
+        "type": "Story",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [
+          "3.5 EA2 RHOAI RELEASE"
+        ],
+        "updated": "2026-07-22T17:41:17.173+0000",
+        "resolved": "2026-06-17T20:52:58.512+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-5263"
+      },
+      {
+        "key": "RHAIENG-5262",
+        "summary": "Update docling-sdk-cuda-ubi9 Image",
+        "status": "Closed",
+        "assignee": "Rishabh Singh",
+        "priority": "Undefined",
+        "type": "Story",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [
+          "3.5 EA2 RHOAI RELEASE"
+        ],
+        "updated": "2026-07-22T17:45:59.850+0000",
+        "resolved": "2026-06-17T20:51:30.523+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-5262"
+      },
+      {
+        "key": "RHAIENG-5257",
+        "summary": "SparkConnect BlockManager port mismatch causes broadcast fetch failures",
+        "status": "Closed",
+        "assignee": "Vedant Deshpande",
+        "priority": "Undefined",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-22T12:43:55.917+0000",
+        "resolved": "2026-05-20T17:07:20.674+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-5257"
+      },
+      {
+        "key": "RHAIENG-5234",
+        "summary": "Add missing --metrics-job-submit-latency-buckets arg to controller deployment",
+        "status": "Closed",
+        "assignee": "Rishabh Singh",
+        "priority": "Undefined",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-22T12:44:48.494+0000",
+        "resolved": "2026-05-20T16:30:51.390+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-5234"
+      },
+      {
+        "key": "RHAIENG-5076",
+        "summary": "Kustomize webhook configurations missing namespaceSelector",
+        "status": "Closed",
+        "assignee": "Rishabh Singh",
+        "priority": "Undefined",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-20T16:47:57.078+0000",
+        "resolved": "2026-05-15T16:31:49.549+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-5076"
+      },
+      {
+        "key": "RHAIENG-5064",
+        "summary": "Align Helm/Kustomize remaining drift",
+        "status": "Closed",
+        "assignee": "Rishabh Singh",
+        "priority": "Undefined",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-20T16:49:53.052+0000",
+        "resolved": "2026-05-15T16:32:09.838+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-5064"
+      },
+      {
+        "key": "RHAIENG-4968",
+        "summary": "Feature refinement for File Processors API in OGX",
+        "status": "Closed",
+        "assignee": "Alina Ryan",
+        "priority": "Normal",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-22T18:05:47.257+0000",
+        "resolved": "2026-06-01T15:48:45.478+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-4968"
+      },
+      {
+        "key": "RHAIENG-4838",
+        "summary": "Follow-up: Remove standalone Kustomize binary and standardize on embedded kubectl kustomize",
+        "status": "Closed",
+        "assignee": "Rishabh Singh",
+        "priority": "Major",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-20T16:43:44.072+0000",
+        "resolved": "2026-05-05T16:03:44.310+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-4838"
+      },
+      {
+        "key": "RHAIENG-4829",
+        "summary": "Spark + Kueue Feature Refinement",
+        "status": "Closed",
+        "assignee": "Vedant Deshpande",
+        "priority": "Undefined",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-22T18:07:06.965+0000",
+        "resolved": "2026-06-02T17:57:32.806+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-4829"
+      },
+      {
+        "key": "RHAIENG-4828",
+        "summary": "Run Workbenches on SparkConnects server on Openshift",
+        "status": "Closed",
+        "assignee": "Vedant Deshpande",
+        "priority": "Major",
+        "type": "Story",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-22T12:44:16.155+0000",
+        "resolved": "2026-05-21T17:06:11.309+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-4828"
+      },
+      {
+        "key": "RHAIENG-4827",
+        "summary": "Document Debugging for Spark Connects Server",
+        "status": "Resolved",
+        "assignee": "Ali Maredia",
+        "priority": "Major",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-21T22:01:57.735+0000",
+        "resolved": "2026-07-21T22:01:57.712+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-4827"
+      },
+      {
+        "key": "RHAIENG-4825",
+        "summary": "SparkConnect + Workbenches Demos for the team",
+        "status": "New",
+        "assignee": "Unassigned",
+        "priority": "Normal",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-21T19:26:08.727+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-4825"
+      },
+      {
+        "key": "RHAIENG-4808",
+        "summary": "Create onboarding plan for Sahana",
+        "status": "Closed",
+        "assignee": "Alina Ryan",
+        "priority": "Major",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-22T12:44:01.185+0000",
+        "resolved": "2026-05-21T14:38:29.574+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-4808"
+      },
+      {
+        "key": "RHAIENG-4693",
+        "summary": "Add Prometheus Podmonitor Kustomize Resource to KSO Upstream",
+        "status": "Closed",
+        "assignee": "Vedant Deshpande",
+        "priority": "Normal",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-20T16:34:22.097+0000",
+        "resolved": "2026-04-29T15:08:36.487+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-4693"
+      },
+      {
+        "key": "RHAIENG-4592",
+        "summary": "Refactor Go E2E suite to support dual deployment strategy (Helm + Kustomize)",
+        "status": "Closed",
+        "assignee": "Rishabh Singh",
+        "priority": "Major",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-20T16:43:36.120+0000",
+        "resolved": "2026-05-05T16:03:39.643+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-4592"
+      },
+      {
+        "key": "RHAIENG-4515",
+        "summary": "Tighten controller RBAC markers to enforce least privilege",
+        "status": "Closed",
+        "assignee": "Rishabh Singh",
+        "priority": "Critical",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-20T16:25:55.872+0000",
+        "resolved": "2026-04-21T16:16:36.125+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-4515"
+      },
+      {
+        "key": "RHAIENG-4403",
+        "summary": "Document Running RHOAI Testing Platform",
+        "status": "Backlog",
+        "assignee": "Vedant Deshpande",
+        "priority": "Normal",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-20T12:39:46.109+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-4403"
+      },
+      {
+        "key": "RHAIENG-4395",
+        "summary": "Feature Refinement for Spark + Workbenches",
+        "status": "Closed",
+        "assignee": "Ali Maredia",
+        "priority": "Critical",
+        "type": "Spike",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-22T12:44:20.452+0000",
+        "resolved": "2026-05-21T17:38:35.371+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-4395"
+      },
+      {
+        "key": "RHAIENG-4394",
+        "summary": "Feature Refinement for Docling Container for 3.5 and Beyond",
+        "status": "Closed",
+        "assignee": "Rishabh Singh",
+        "priority": "Critical",
+        "type": "Spike",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-22T12:44:02.121+0000",
+        "resolved": "2026-05-21T17:41:36.939+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-4394"
+      },
+      {
+        "key": "RHAIENG-4384",
+        "summary": "Add Docling serve provider for FileProcessor API",
+        "status": "Closed",
+        "assignee": "Alina Ryan",
+        "priority": "Undefined",
+        "type": "Story",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-20T16:35:01.090+0000",
+        "resolved": "2026-04-27T20:04:36.257+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-4384"
+      },
+      {
+        "key": "RHAIENG-4383",
+        "summary": "Spark Operator Prometheus Metrics E2E Test",
+        "status": "Closed",
+        "assignee": "Ali Maredia",
+        "priority": "Major",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-20T16:35:43.201+0000",
+        "resolved": "2026-05-01T12:15:20.393+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-4383"
+      }
+    ],
+    "created": [
+      {
+        "key": "RHOAIENG-77656",
+        "summary": "Delete duplicate midstream test:SparkConnectQuery after upstream PR is merged",
+        "status": "New",
+        "assignee": "Vedant Deshpande",
+        "priority": "Normal",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-16T15:37:32.326+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-77656"
+      },
+      {
+        "key": "RHOAIENG-77030",
+        "summary": "CVE-2026-15075 rhoai/odh-spark-operator-rhel9: Eclipse Vert.x: Information disclosure via improper handling of HTTP 30x redirects [rhoai-3.4]",
+        "status": "Closed",
+        "assignee": "Ali Maredia",
+        "priority": "Critical",
+        "type": "Vulnerability",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-23T16:23:07.885+0000",
+        "resolved": "2026-07-20T13:05:27.461+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-77030"
+      },
+      {
+        "key": "RHAIRFE-2748",
+        "summary": "Data Connect Hub Phase 1 - New API for connection creation, Credential Management, and Platform Integration (S3, PostgreSQL)",
+        "status": "Approved",
+        "assignee": "Marius Ion Danciu",
+        "priority": "Major",
+        "type": "Feature Request",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-23T04:56:36.667+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAIRFE-2748"
+      },
+      {
+        "key": "RHAIRFE-2737",
+        "summary": "Data Hub Data Connections UI \u2014 Connection Management, Creation, and Selection in Dashboard",
+        "status": "Closed",
+        "assignee": "Jehlum Vitasta Pandit",
+        "priority": "Major",
+        "type": "Feature Request",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-20T17:13:30.798+0000",
+        "resolved": "2026-07-20T17:12:31.248+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIRFE-2737"
+      },
+      {
+        "key": "RHAIRFE-2736",
+        "summary": "Data Hub Data Connections Backend \u2014 Connection Registration, Validation, and Reference API",
+        "status": "Closed",
+        "assignee": "Jehlum Vitasta Pandit",
+        "priority": "Major",
+        "type": "Feature Request",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-20T17:13:26.616+0000",
+        "resolved": "2026-07-20T17:12:05.030+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIRFE-2736"
+      },
+      {
+        "key": "RHAIENG-6385",
+        "summary": "Weekly Upstream-Midstream SYNC placeholder",
+        "status": "Backlog",
+        "assignee": "Unassigned",
+        "priority": "Major",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-07-22T18:51:29.829+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-6385"
+      }
+    ],
+    "features": [
+      {
+        "key": "RHAISTRAT-1786",
+        "summary": "Continuous indexing and enrichment pipeline reference architecture for agent & RAG knowledge bases",
+        "status": "Refinement",
+        "assignee": "Derek Higgins",
+        "priority": "Major",
+        "type": "Feature",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-21T01:13:45.228+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1786"
+      },
+      {
+        "key": "RHAISTRAT-1477",
+        "summary": "Kueue support for Kubeflow Spark Operator (KSO) - testing and docs ",
+        "status": "Review",
+        "assignee": "Vedant Deshpande",
+        "priority": "Critical",
+        "type": "Feature",
+        "color": "Green",
+        "status_summary": "Previously blocked on RHBoK 1.4 (resolved July 20 \u2014 OpenShift 1.36 rebase landed July 18, RHBoK 1.4 released July 20). All E2E test code (16 specs / 17 ACs across 4 PRs) and documentation are written ",
+        "target_versions": [
+          "rhoai-3.5",
+          "3.5 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.5 GA RHOAI RELEASE"
+        ],
+        "updated": "2026-07-23T14:21:26.610+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1477"
+      },
+      {
+        "key": "RHAISTRAT-1408",
+        "summary": "Test & document using the Spark Application UI and spark-history mcp server for logs",
+        "status": "In Progress",
+        "assignee": "Shruthi Sankepelly",
+        "priority": "Major",
+        "type": "Feature",
+        "color": "Green",
+        "status_summary": "",
+        "target_versions": [
+          "3.5 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.5 GA RHOAI RELEASE"
+        ],
+        "updated": "2026-07-23T14:16:13.396+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1408"
+      },
+      {
+        "key": "RHAISTRAT-1375",
+        "summary": "Integrate Docling as a backend provider for File Processor API in OGX (previously Llama Stack)",
+        "status": "Refinement",
+        "assignee": "Alina Ryan",
+        "priority": "Normal",
+        "type": "Feature",
+        "color": "Green",
+        "status_summary": "",
+        "target_versions": [
+          "rhoai-3.5",
+          "3.5 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [],
+        "updated": "2026-07-21T16:17:06.757+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1375"
+      },
+      {
+        "key": "RHAISTRAT-1286",
+        "summary": "KSO + Workbench integration - interactive spark job management ",
+        "status": "Review",
+        "assignee": "Ali Maredia",
+        "priority": "Critical",
+        "type": "Feature",
+        "color": "Green",
+        "status_summary": "A draft of the refinement document is complete, with the data processing team, relevant other engineering teams and PM having done a round of review with comments address.",
+        "target_versions": [
+          "3.5 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.5 GA RHOAI RELEASE"
+        ],
+        "updated": "2026-07-23T14:55:26.197+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1286"
+      }
+    ],
+    "counts": {
+      "completed": 18,
+      "in_progress": 100,
+      "created": 6
+    }
+  },
+  "slack": {},
+  "sections_routed": [
+    "DATA_PROCESSING",
+    "RISKS",
+    "ASSOCIATES"
+  ]
+}
