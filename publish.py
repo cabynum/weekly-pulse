@@ -178,6 +178,22 @@ def _utf16_len(s: str) -> int:
     return len(s.encode("utf-16-le")) // 2
 
 
+def _to_api_index(text: str, py_index: int) -> int:
+    """Convert a Python string index into a Google Docs API (UTF-16) index.
+
+    ``str.find`` / ``len`` count Unicode code points. The Docs API counts
+    UTF-16 code units. Emoji (and other non-BMP chars) are 1 Python char
+    but 2 API units, so using Python indices for insert/delete/style
+    requests shifts every later range. When a link style lands on an
+    adjacent space, Docs strips that space from the document.
+    """
+    if py_index <= 0:
+        return 0
+    if py_index >= len(text):
+        return _utf16_len(text)
+    return _utf16_len(text[:py_index])
+
+
 def parse_markdown_to_doc_content(markdown: str) -> dict:
     """Parse markdown text into structured content for Google Docs.
 
@@ -519,6 +535,8 @@ def publish(creds, doc_id: str, raw_sections: dict[str, str],
     write_plan = []
 
     # --- Primary: Data Processing (replace) ---
+    # find_* helpers return Python string indices; convert to UTF-16 API
+    # indices before any insert/delete/style request.
     dp_raw = raw_sections.get("data_processing", "")
     if dp_raw:
         content_start, content_end = find_section_indices(
@@ -530,15 +548,23 @@ def publish(creds, doc_id: str, raw_sections: dict[str, str],
 
         parsed = parse_markdown_to_doc_content(dp_raw)
         existing = full_text[content_start:content_end]
-        print(f"\nFound '{TEAM_SECTION}' section (chars {content_start}-{content_end})")
+        api_start = _to_api_index(full_text, content_start)
+        api_end = _to_api_index(full_text, content_end)
+        print(f"\nFound '{TEAM_SECTION}' section "
+              f"(py {content_start}-{content_end}, api {api_start}-{api_end})")
         print(f"  Existing: {len(existing)} chars")
         print(f"  New: {len(parsed['text'])} chars, {len(parsed['links'])} links")
         if parsed["bullet_range"]:
             print(f"  Bullets: chars {parsed['bullet_range'][0]}-{parsed['bullet_range'][1]}")
 
-        doc_index = content_start + 1
-        delete_range = (doc_index, content_end + 1) if doc_index < content_end + 1 else None
-        write_plan.append(("Data Processing", "replace", content_start))
+        insert_py = content_start + 1
+        delete_end_py = content_end + 1
+        doc_index = _to_api_index(full_text, insert_py)
+        delete_range = (
+            (doc_index, _to_api_index(full_text, delete_end_py))
+            if insert_py < delete_end_py else None
+        )
+        write_plan.append(("Data Processing", "replace", doc_index))
         all_requests.extend(
             build_section_requests(doc_index, parsed, delete_range=delete_range)
         )
@@ -566,10 +592,11 @@ def publish(creds, doc_id: str, raw_sections: dict[str, str],
     secondary_items.sort(key=lambda x: x[2], reverse=True)
 
     for doc_section_name, parsed, insert_point in secondary_items:
+        doc_index = _to_api_index(full_text, insert_point + 1)
         print(f"\nFound '{doc_section_name}' section, will append")
-        print(f"  {len(parsed['text'])} chars, {len(parsed['links'])} links")
-        write_plan.append((doc_section_name, "append", insert_point))
-        doc_index = insert_point + 1
+        print(f"  {len(parsed['text'])} chars, {len(parsed['links'])} links "
+              f"(api index {doc_index})")
+        write_plan.append((doc_section_name, "append", doc_index))
         all_requests.extend(
             build_section_requests(doc_index, parsed)
         )

@@ -1,5 +1,6 @@
 # Data Processing - Weekly Highlights Draft
 Generated: 2026-07-30 17:00
+Enriched: 2026-07-31 07:15 (Slack)
 
 ## Suggested Section for AAET Weekly Pulse Check
 
@@ -14,10 +15,13 @@ Highlights:
 - Added [ODF storage examples for the Spark History Server](https://redhat.atlassian.net/browse/RHOAIENG-74896) and documented the [OpenShift Route workflow for Spark UI with HTTPS](https://redhat.atlassian.net/browse/RHOAIENG-60635), rounding out the observability and access documentation shipped last week.
 - Integrated Docling as a [backend provider for the File Processor API in OGX](https://redhat.atlassian.net/browse/RHAISTRAT-1375), enabling structured document ingestion for agent and RAG workflows.
 - Kueue support for the Spark Operator and the KSO and Workbench integration features are both in [Release Pending](https://redhat.atlassian.net/browse/RHAISTRAT-1286) state, awaiting final product release steps.
+- Submitted the [Spark platform modularization PR](https://github.com/opendatahub-io/opendatahub-operator/pull/3836) to the ODH operator, implementing the module handler, removing the in-tree controller, and adding E2E tests as part of the modular architecture migration.
+- Assessed [Dynamic Resource Allocation (DRA) support for the Spark Operator](https://redhat.atlassian.net/browse/RHAISTRAT-1787) at the core platform team's request. The Spark Kubernetes backend does not yet support DRA upstream, so a longer-running community effort may be needed before the operator can adopt it.
 
 ## Suggested Addition to Associates Section
 
-- Sahana Sreeram wrapped up her internship capstone by running a [Spark job on-cluster](https://redhat.atlassian.net/browse/RHAIENG-5276), submitting her [contribution PR](https://redhat.atlassian.net/browse/RHAIENG-5277), and delivering a complete [unstructured-to-AI-ready tutorial](https://redhat.atlassian.net/browse/RHAIENG-5278) covering the full data processing pipeline.
+- Sahana Sreeram presented at Red Hat's 2026 College Intern Expo as her internship wraps up August 7. Over the summer she shipped production code in RHOAI 3.5 GA (async docling-serve), owned the end-to-end Unstructured.io integration in OGX, and contributed upstream to the kubeflow/spark-operator. Before she leaves, she'll share a proof-of-concept data agent demo built on RHOAI.
+- Rishabh Singh was invited to mentor in the [CNCF LFX Mentorship program](https://mentorship.lfx.linuxfoundation.org/project/01d5da81-e5d6-4693-920c-e0e6f4fbc9a8) (Term 3, Sep-Nov 2026), guiding a mentee on evolving SparkClient into Kubeflow's unified data processing SDK layer. This extends his upstream influence beyond the operator into the user-facing SDK.
 
 ---
 
@@ -32,10 +36,13 @@ Highlights:
 - Added [ODF storage examples for the Spark History Server](https://redhat.atlassian.net/browse/RHOAIENG-74896) and documented the [OpenShift Route workflow for Spark UI with HTTPS](https://redhat.atlassian.net/browse/RHOAIENG-60635), rounding out the observability and access documentation shipped last week.
 - Integrated Docling as a [backend provider for the File Processor API in OGX](https://redhat.atlassian.net/browse/RHAISTRAT-1375), enabling structured document ingestion for agent and RAG workflows.
 - Kueue support for the Spark Operator and the KSO and Workbench integration features are both in [Release Pending](https://redhat.atlassian.net/browse/RHAISTRAT-1286) state, awaiting final product release steps.
+- Submitted the [Spark platform modularization PR](https://github.com/opendatahub-io/opendatahub-operator/pull/3836) to the ODH operator, implementing the module handler, removing the in-tree controller, and adding E2E tests as part of the modular architecture migration.
+- Assessed [Dynamic Resource Allocation (DRA) support for the Spark Operator](https://redhat.atlassian.net/browse/RHAISTRAT-1787) at the core platform team's request. The Spark Kubernetes backend does not yet support DRA upstream, so a longer-running community effort may be needed before the operator can adopt it.
 
 ### ASSOCIATES
 
-- Sahana Sreeram wrapped up her internship capstone by running a [Spark job on-cluster](https://redhat.atlassian.net/browse/RHAIENG-5276), submitting her [contribution PR](https://redhat.atlassian.net/browse/RHAIENG-5277), and delivering a complete [unstructured-to-AI-ready tutorial](https://redhat.atlassian.net/browse/RHAIENG-5278) covering the full data processing pipeline.
+- Sahana Sreeram participated in Red Hat's 2026 College Intern Expo this week as her internship will wrap up August 7. Over the summer she shipped production code in RHOAI 3.5 GA (async docling-serve), owned the end-to-end Unstructured.io integration in OGX, and contributed upstream to the kubeflow/spark-operator. Before she wraps her impressive summer with our team, she'll share a proof-of-concept data agent demo that she has built on RHOAI.
+- Rishabh Singh was invited to mentor in the [CNCF LFX Mentorship program](https://mentorship.lfx.linuxfoundation.org/project/01d5da81-e5d6-4693-920c-e0e6f4fbc9a8) (Term 3, Sep-Nov 2026), guiding a mentee on evolving SparkClient into Kubeflow's unified data processing SDK layer. This extends his upstream influence beyond the operator into the user-facing SDK.
 
 ---
 
@@ -43,4 +50,5 @@ Highlights:
 
 - Jira: 15 completed, 74 in progress
 - GitHub: 4 PRs merged, 3 by team
+- Slack: 95 messages across 5 team members (enriched 2026-07-31)
 - Sections: DATA_PROCESSING, ASSOCIATES
