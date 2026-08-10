@@ -32,7 +32,10 @@ phrase "produce the report."
    needed). Results inform draft enrichment.
 2. **Enrich** - notable Slack findings are folded into the draft
 3. **Review + approve** - user reviews the final version
-4. **Publish** - `publish.py` writes all sections to the live Google Doc
+4. **Team review (optional)** - say "team review" / "send to team";
+   `format_team_review.py` writes a Slack mrkdwn post for copy-paste
+   into `#aaiet-data-processing`
+5. **Publish** - `publish.py` writes all sections to the live Google Doc
    with native formatting (bullets, hyperlinks, bold removal)
 
 ## Architecture
@@ -45,6 +48,7 @@ phrase "produce the report."
 |---|---|
 | `generate.py` | CI entry point: orchestrates collectors + LLM synthesis |
 | `collect_slack.py` | Local Slack collector: sweeps team messages via Web API |
+| `format_team_review.py` | Formats draft.md as Slack mrkdwn for team-channel review |
 | `synthesize.py` | LLM synthesis: formats data, calls Vertex AI, routes to sections |
 | `publish.py` | Google Docs publisher: native formatting with hyperlinks |
 | `prompt.md` | LLM system + user prompt templates (edit to tune output) |

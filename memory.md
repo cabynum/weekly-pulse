@@ -217,3 +217,34 @@ Fix "Risks / Issues" heading match. Thursday: real run.
 Pipeline fully upgraded, committed, and pushed. XOXC token extracted and
 working (40 messages collected across team). Next Thursday will be the
 first end-to-end run with the new pipeline.
+
+## 2026-08-07 - Team review flow
+
+### Done
+
+- Enriched Aug 6 draft (Slack: 43 msgs / 5 people); rewrote DRA bullet for clarity
+- Added `format_team_review.py` + skill Step 4 for on-demand team channel review
+- Triggers: "team review" / "send to team"; writes `team-review.md` (copy-paste)
+
+### Left Off
+
+Draft + team-review.md ready for Aug 6 week. Awaiting team review paste and/or Google Doc publish approval.
+
+## 2026-08-07 - Publish Week of Aug 6
+
+### Done
+
+- Published DP section only to AAET Weekly Status - Week of Aug 06
+- Held Risks and Associates out of this publish (kept under Raw Bullets)
+- Dismissed dashboard notification
+
+### Left Off
+
+Pulse live for Aug 6 (DP only). Team-review post still available if needed.
+
+## 2026-08-07 - Session close
+
+### Left Off
+
+Pulse live for Aug 6 (DP only) after team-feedback revisions + CVE bullet.
+Team-review flow shipped. Ready for next Thursday generate.
