@@ -1,0 +1,13 @@
+**Data Processing** (Chris Bynum) - 11 issues completed
+
+Highlights:
+
+- Completed the team's 3.5 GA RC1 test execution, closing out the final release gate sign-off for GA. This follows last week's Week 4 test matrix completion and wraps the full testing commitment for the 3.5 release cycle.
+- Removed an unnecessary RBAC finalizer permission from ScheduledSparkApplications in the midstream operator, confirmed through investigation that the patch verb was not required for correct operation.
+- Moved SparkConnect and ScheduledSparkApplication E2E tests from the midstream repo into the upstream kubeflow/spark-operator project, reducing divergence and making coverage available to the broader community.
+- Reverted a midstream Helm chart drift that had accumulated against upstream, realigning the chart to match the upstream baseline and simplifying future syncs.
+- Cleaned up dead webhook config files and manifest docs in the midstream repo, reducing maintenance overhead and preventing confusion from stale configuration artifacts.
+
+## Suggested Addition to Associates Section
+
+- Sahana Sreeram completed her 12-week Data Processing onboarding and contributed directly to the team's upstream test migration this sprint, moving midstream E2E tests into the kubeflow/spark-operator project.
