@@ -73,6 +73,7 @@ def main():
         api_token=os.getenv("JIRA_API_TOKEN", ""),
         component=jira_cfg.get("component", "Data Processing"),
         projects=jira_cfg.get("projects"),
+        members=members,
     )
     jira_data = jira_collector.collect(days_back=args.days_back)
 
@@ -131,8 +132,12 @@ def main():
             f.write(f"### {key}\n\n{bullets}\n\n")
         f.write("---\n\n")
         f.write("## Source Data Summary\n\n")
-        f.write(f"- Jira: {jira_data['counts']['completed']} completed, "
+        f.write(f"- Jira: {jira_data['counts']['completed']} completed by team, "
                 f"{jira_data['counts']['in_progress']} in progress\n")
+        excluded = jira_data['counts']['completed_total_on_component'] - jira_data['counts']['completed']
+        if excluded:
+            f.write(f"  ({excluded} additional completed on the Data Processing component "
+                    f"but assigned outside the team roster, excluded from this report)\n")
         f.write(f"- GitHub: {github_data['total_merged']} PRs merged, "
                 f"{len(github_data['team_prs'])} by team\n")
         if slack_data:

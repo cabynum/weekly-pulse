@@ -23,11 +23,18 @@ class JiraCollector:
 
     def __init__(self, base_url: str, username: str, api_token: str,
                  component: str = "Data Processing",
-                 projects: List[str] = None):
+                 projects: List[str] = None,
+                 members: List[dict] = None):
         self.base_url = base_url
         self.auth = (username, api_token)
         self.component = component
         self.projects = projects or ["RHAIENG", "RHAISTRAT", "RHOAIENG"]
+        self._team_names = {
+            m["name"].strip().lower() for m in (members or []) if m.get("name")
+        }
+
+    def _is_team_member(self, assignee_name: str) -> bool:
+        return assignee_name.strip().lower() in self._team_names
 
     def _search(self, jql: str, max_results: int = 100) -> List[dict]:
         url = f"{self.base_url}/rest/api/3/search/jql"
@@ -71,11 +78,13 @@ class JiraCollector:
         fv = f.get("fixVersions") or []
         fix_versions = [v.get("name", "") for v in fv]
 
+        assignee_name = assignee.get("displayName", "") if assignee else "Unassigned"
         return {
             "key": issue["key"],
             "summary": f.get("summary", ""),
             "status": f.get("status", {}).get("name", ""),
-            "assignee": assignee.get("displayName", "") if assignee else "Unassigned",
+            "assignee": assignee_name,
+            "is_team_member": self._is_team_member(assignee_name),
             "priority": f.get("priority", {}).get("name", ""),
             "type": f.get("issuetype", {}).get("name", ""),
             "color": color,
@@ -98,11 +107,16 @@ class JiraCollector:
 
         completed = self._search(f'{base} AND resolutiondate >= "{since}"')
         completed_fmt = [self._format(i) for i in completed]
-        print(f"  {len(completed_fmt)} completed")
+        completed_team = [i for i in completed_fmt if i["is_team_member"]]
+        completed_external = [i for i in completed_fmt if not i["is_team_member"]]
+        print(f"  {len(completed_fmt)} completed ({len(completed_team)} by team, "
+              f"{len(completed_external)} by non-team assignees on component tickets)")
 
         updated = self._search(f'{base} AND updated >= "{since}" AND status != Done')
         updated_fmt = [self._format(i) for i in updated]
-        print(f"  {len(updated_fmt)} in progress/updated")
+        updated_team = [i for i in updated_fmt if i["is_team_member"]]
+        print(f"  {len(updated_team)} in progress/updated by team "
+              f"({len(updated_fmt)} total on component)")
 
         created = self._search(f'{base} AND created >= "{since}"')
         created_fmt = [self._format(i) for i in created]
@@ -117,13 +131,21 @@ class JiraCollector:
         print(f"  {len(features_fmt)} active features")
 
         return {
-            "completed": completed_fmt,
-            "in_progress": updated_fmt,
+            # Only team-assigned tickets are fed to the report. A ticket
+            # tagged with the Data Processing component but assigned to
+            # someone outside the team roster (a PM, another team's
+            # engineer) is not "our" completed work, even though it shares
+            # the component. See completed_external for visibility only;
+            # it is never passed to the synthesis prompt.
+            "completed": completed_team,
+            "completed_external": completed_external,
+            "in_progress": updated_team,
             "created": created_fmt,
             "features": features_fmt,
             "counts": {
-                "completed": len(completed_fmt),
-                "in_progress": len(updated_fmt),
+                "completed": len(completed_team),
+                "completed_total_on_component": len(completed_fmt),
+                "in_progress": len(updated_team),
                 "created": len(created_fmt),
             },
         }
