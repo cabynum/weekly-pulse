@@ -48,7 +48,14 @@ Section routing rules:
   demos, partner interactions, field feedback, support escalations.
 - **ASSOCIATES**: individual achievements that deserve personal recognition.
   Maintainer status, blog posts, conference talks, certifications, upstream
-  leadership roles. ALWAYS name the person for Associates bullets.
+  leadership roles. ALWAYS name the person for Associates bullets, but ONLY
+  if that person appears in the Team Roster provided below. Jira tickets
+  tagged with the Data Processing component are sometimes assigned to
+  people outside the team (PMs, stakeholders, other teams' engineers who
+  touch a shared ticket). If an assignee or PR author is not on the
+  roster, do not create an Associates bullet for them, even if their work
+  is otherwise notable. Their work can still inform a DATA_PROCESSING or
+  RISKS bullet (unnamed), just not an Associates callout.
 
 Format:
 
@@ -189,6 +196,12 @@ Variables in {braces} are filled at runtime from collected data.
 Generate the Data Processing team's content for the AAET Weekly Pulse Check.
 Classify each bullet into the appropriate section: DATA_PROCESSING, RISKS,
 CUSTOMERS, or ASSOCIATES.
+
+## Team Roster
+(Only these people are eligible for Associates bullets. Anyone else found
+in the Jira or GitHub data below is not a team member, even if their name
+appears on a Data Processing-component ticket.)
+{team_roster}
 
 ## Current Generated Report Section
 (This is what the automated report already produced. Improve on it.)

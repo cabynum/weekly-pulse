@@ -99,7 +99,8 @@ def main():
     print("=" * 60)
 
     team_cfg = config.get("team", {})
-    sections = synth.synthesize(report_data, github_data, jira_data, slack_data)
+    sections = synth.synthesize(report_data, github_data, jira_data, slack_data,
+                                 team_members=members)
     full_section = synth.format_full_section(
         sections, jira_data,
         team_name=team_cfg.get("name", "Data Processing"),

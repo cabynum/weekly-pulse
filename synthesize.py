@@ -230,13 +230,17 @@ class Synthesizer:
     # -- Core synthesis ---------------------------------------------------
 
     def synthesize(self, report_data: dict, github_data: dict,
-                   jira_data: dict, slack_data: dict = None) -> dict[str, str]:
+                   jira_data: dict, slack_data: dict = None,
+                   team_members: list = None) -> dict[str, str]:
         """Generate bullet points from all collected data.
 
         Returns a dict keyed by section name (DATA_PROCESSING, RISKS,
         CUSTOMERS, ASSOCIATES) with bullet text as values.
         """
+        roster = team_members or []
+        team_roster = ", ".join(m.get("name", "") for m in roster) or "(none configured)"
         prompt = self.user_template.format(
+            team_roster=team_roster,
             current_dp_section=report_data.get("dp_section", "(not available)"),
             jira_completed_count=jira_data.get("counts", {}).get("completed", 0),
             jira_in_progress_count=jira_data.get("counts", {}).get("in_progress", 0),
