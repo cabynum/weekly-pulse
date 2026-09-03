@@ -1,0 +1,19 @@
+**Data Processing** (Chris Bynum) - 15 issues completed
+
+Highlights:
+
+- Cleared all 3.5 GA RC3 release gate requirements, completing test matrix execution, ROSA HCP smoke tests, disconnected bare metal install, and disconnected upgrade from 3.4 to 3.5 across OCP 4.21 and 4.22. Documentation sign-off for 3.5 GA was also closed this week.
+- Following last week's 3.6 EA1 Week 1 test execution, completed the Week 2 test matrix run, advancing the team's EA1 release gate obligations through the second validation cycle.
+- Added weekly scheduled CI runs on the midstream main branch with failure notifications, giving the team continuous visibility into regressions between release cycles.
+- Resolved a noisy CI issue where unrelated tests were being triggered and attributed to Spark E2E runs, improving signal quality in test reporting.
+- Updated PySpark to version 4.0.4 in the downstream build, keeping the downstream aligned with the latest upstream PySpark release.
+- Streamlined the downstream build pipeline by adding a pull-request pipeline for the full spark-operator on main and removing the inherited ODH push pipeline, reducing pipeline complexity inherited from the midstream.
+- Completed this week's upstream-to-midstream sync, keeping the ODH midstream current with upstream development.
+
+## Suggested Addition to Risks/Issues Section
+
+- Spark Operator scaling guidelines for OpenShift AI remain in refinement with no published guidance yet. Field teams asking for production sizing recommendations continue to lack official documentation; this is now a second week without resolution.
+
+## Suggested Addition to Associates Section
+
+- Shruthi Sankepelly drove all five 3.5 GA RC3 sign-off tracks this week, including disconnected bare metal install, disconnected upgrade, ROSA HCP smoke tests, full test matrix execution, and documentation sign-off, a high-volume delivery that cleared the team's GA release gate obligations.
