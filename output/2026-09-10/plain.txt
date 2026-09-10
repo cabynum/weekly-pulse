@@ -1,0 +1,6 @@
+**Data Processing** (Chris Bynum) - 0 issues completed
+
+Highlights:
+
+- Hardened the midstream CI pipeline by fixing broken shell-lint and docs workflows that were missing the main branch trigger, ensuring scheduled runs execute reliably against the correct branch.
+- Building on last week's scheduled CI run addition, extended the pipeline with Slack failure notifications so the team is alerted automatically when scheduled runs fail rather than discovering regressions manually.

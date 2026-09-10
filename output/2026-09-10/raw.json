@@ -1,0 +1,95 @@
+{
+  "report": {
+    "report_path": "reports/AAET_Weekly_Status_-_Week_of_Jun_25,_2026.md",
+    "dp_section": "**Data Processing**\n* Merged 6 PRs\n  - fix: always set NextProtos regardless of enableHTTP2 flag\n  - Add dependabot config for website\n  - docs: Add dedicated Spark Operator documentation website\n* Released **spark-operator-2.5.0-rc.0**\n* Merged 6 PRs\n  - Upstream repo sync v2.5.1\n  - Add E2E tests for Kueue multi-tenancy, gang scheduling & queue independence\n  - Add E2E tests for Kueue + SparkApplication FairSharing, PriorityScheduling, Preemption",
+    "exec_summary": "The team successfully released spark-operator-2.5.0-rc.0 and ogx v1.1.3 this week, with spark-operator entering release candidate phase after sustained development activity. No critical risks are currently blocking progress across the portfolio."
+  },
+  "github": {
+    "team_prs": [
+      {
+        "number": 179,
+        "title": "Fix shell-lint and docs workflows missing main branch, fix shell formatting",
+        "url": "https://github.com/opendatahub-io/spark-operator/pull/179",
+        "author": "alinaryan",
+        "is_team_member": true,
+        "merged_at": "2026-09-09T15:39:44Z"
+      },
+      {
+        "number": 178,
+        "title": "Add Slack failure notifications for scheduled CI runs",
+        "url": "https://github.com/opendatahub-io/spark-operator/pull/178",
+        "author": "alinaryan",
+        "is_team_member": true,
+        "merged_at": "2026-09-03T21:17:54Z"
+      }
+    ],
+    "external_prs": [
+      {
+        "number": 3126,
+        "title": "docs: add SparkConnect API reference to api-docs.md",
+        "url": "https://github.com/kubeflow/spark-operator/pull/3126",
+        "author": "Fumer057",
+        "is_team_member": false,
+        "merged_at": "2026-09-04T17:50:18Z"
+      },
+      {
+        "number": 3141,
+        "title": "docs: replace Enterprise Gateway notebooks guide with Kubeflow SDK",
+        "url": "https://github.com/kubeflow/spark-operator/pull/3141",
+        "author": "vikas-saxena02",
+        "is_team_member": false,
+        "merged_at": "2026-09-04T17:47:27Z"
+      }
+    ],
+    "team_reviews": [
+      {
+        "pr_number": 179,
+        "pr_title": "Fix shell-lint and docs workflows missing main branch, fix shell formatting",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/179",
+        "reviewer": "shruthis4",
+        "state": "APPROVED",
+        "submitted_at": "2026-09-09T15:14:23Z"
+      },
+      {
+        "pr_number": 178,
+        "pr_title": "Add Slack failure notifications for scheduled CI runs",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/178",
+        "reviewer": "shruthis4",
+        "state": "APPROVED",
+        "submitted_at": "2026-09-03T21:17:45Z"
+      }
+    ],
+    "closed_issues": [
+      {
+        "number": 3114,
+        "title": "Add SparkConnect API reference in `docs/api-docs.md`",
+        "url": "https://github.com/kubeflow/spark-operator/issues/3114",
+        "closed_by": "tariq-hasan"
+      },
+      {
+        "number": 3097,
+        "title": "Use the same binaries in released assets and container images",
+        "url": "https://github.com/kubeflow/spark-operator/issues/3097",
+        "closed_by": "nabuskey"
+      }
+    ],
+    "total_merged": 4
+  },
+  "jira": {
+    "completed": [],
+    "completed_external": [],
+    "in_progress": [],
+    "created": [],
+    "features": [],
+    "counts": {
+      "completed": 0,
+      "completed_total_on_component": 0,
+      "in_progress": 0,
+      "created": 0
+    }
+  },
+  "slack": {},
+  "sections_routed": [
+    "DATA_PROCESSING"
+  ]
+}
