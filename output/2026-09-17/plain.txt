@@ -1,0 +1,11 @@
+**Data Processing** (Chris Bynum) - 32 issues completed
+
+Highlights:
+
+- Synced upstream kubeflow/spark-operator v2.5.1 changes into the ODH midstream, keeping the midstream current ahead of the 3.6 release cycle.
+- Fixed a Helm CI branch fallback bug for scheduled runs, resolving an edge case where scheduled pipelines could target the wrong branch.
+- Resolved a wave of critical CVEs in the 3.5.1 GA Spark operator image, covering vulnerabilities across Python, OpenSSH, libvpx, libtiff, libnghttp2, openexr-libs, and vim packages. All 20 CVE tickets are now closed.
+- Completed the 3.6 EA1 product and documentation sign-offs for Data Processing, and executed the 3.6 EA2 test matrix (Week 1), clearing the team's release gate requirements for both milestones.
+- Continuing work on the GPU-accelerated Docling serve API container image for 3.6 EA2, with the batch processing image already complete.
+- Drafting official Spark Operator scaling guidelines for OpenShift AI to give customers validated recommendations for large-scale deployments.
+- Two reference architecture workstreams entered refinement: structured information extraction from cheques and a continuous indexing and enrichment pipeline for agent and RAG knowledge bases.
