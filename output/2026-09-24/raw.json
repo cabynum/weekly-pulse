@@ -1,0 +1,2550 @@
+{
+  "report": {
+    "report_path": "reports/AAET_Weekly_Status_-_Week_of_Jun_25,_2026.md",
+    "dp_section": "**Data Processing**\n* Merged 6 PRs\n  - fix: always set NextProtos regardless of enableHTTP2 flag\n  - Add dependabot config for website\n  - docs: Add dedicated Spark Operator documentation website\n* Released **spark-operator-2.5.0-rc.0**\n* Merged 6 PRs\n  - Upstream repo sync v2.5.1\n  - Add E2E tests for Kueue multi-tenancy, gang scheduling & queue independence\n  - Add E2E tests for Kueue + SparkApplication FairSharing, PriorityScheduling, Preemption",
+    "exec_summary": "The team successfully released spark-operator-2.5.0-rc.0 and ogx v1.1.3 this week, with spark-operator entering release candidate phase after sustained development activity. No critical risks are currently blocking progress across the portfolio."
+  },
+  "github": {
+    "team_prs": [],
+    "external_prs": [],
+    "team_reviews": [
+      {
+        "pr_number": 190,
+        "pr_title": "Add SparkOperator spec.spark.jobNamespaces for webhook scope",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/190",
+        "reviewer": "alimaredia",
+        "state": "APPROVED",
+        "submitted_at": "2026-09-23T12:10:28Z"
+      },
+      {
+        "pr_number": 190,
+        "pr_title": "Add SparkOperator spec.spark.jobNamespaces for webhook scope",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/190",
+        "reviewer": "Vedant-Deshpande",
+        "state": "COMMENTED",
+        "submitted_at": "2026-09-23T17:07:29Z"
+      },
+      {
+        "pr_number": 190,
+        "pr_title": "Add SparkOperator spec.spark.jobNamespaces for webhook scope",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/190",
+        "reviewer": "Vedant-Deshpande",
+        "state": "APPROVED",
+        "submitted_at": "2026-09-23T18:02:34Z"
+      },
+      {
+        "pr_number": 190,
+        "pr_title": "Add SparkOperator spec.spark.jobNamespaces for webhook scope",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/190",
+        "reviewer": "alinaryan",
+        "state": "APPROVED",
+        "submitted_at": "2026-09-24T16:51:26Z"
+      }
+    ],
+    "closed_issues": [
+      {
+        "number": 3195,
+        "title": "Helm CRD upgrade hook Job does not support pod annotations/labels (breaks under Istio/mesh sidecar injection)",
+        "url": "https://github.com/kubeflow/spark-operator/issues/3195",
+        "closed_by": "vijaylather"
+      },
+      {
+        "number": 2788,
+        "title": "Restart of Spark Operator may Result in Duplicated Submission",
+        "url": "https://github.com/kubeflow/spark-operator/issues/2788",
+        "closed_by": "kohn"
+      }
+    ],
+    "total_merged": 0
+  },
+  "jira": {
+    "completed": [
+      {
+        "key": "RHOAIENG-94191",
+        "summary": "Upstream Sync: Merge latest changes from kubeflow/spark-operator into opendatahub-io/spark-operator",
+        "status": "Resolved",
+        "assignee": "Vedant Deshpande",
+        "is_team_member": true,
+        "priority": "Major",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-17T14:54:33.370+0000",
+        "resolved": "2026-09-17T14:54:33.332+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-94191"
+      },
+      {
+        "key": "RHOAIENG-92209",
+        "summary": "[RHOAI 3.6.0-EA2][TFA Sign-Off][Data Processing] Execute test matrix - Wk2 (Sep 14)",
+        "status": "Closed",
+        "assignee": "Ali Maredia",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [
+          "3.6 EA2 RHOAI RELEASE"
+        ],
+        "updated": "2026-09-23T06:58:17.378+0000",
+        "resolved": "2026-09-23T06:58:17.343+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-92209"
+      },
+      {
+        "key": "RHOAIENG-92098",
+        "summary": "[RHOAI 3.6.0-EA2] Test Plan Sign Off - Data Processing Team",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [
+          "3.6 EA2 RHOAI RELEASE"
+        ],
+        "updated": "2026-09-23T19:11:01.808+0000",
+        "resolved": "2026-09-23T19:11:01.774+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-92098"
+      },
+      {
+        "key": "RHOAIENG-88219",
+        "summary": "spark-operator e2e tests run the :main test image on RHOAI release jobs instead of the release-matched tag",
+        "status": "Resolved",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-23T15:38:44.867+0000",
+        "resolved": "2026-09-23T15:38:44.824+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-88219"
+      },
+      {
+        "key": "RHOAIENG-81575",
+        "summary": "CVE-2026-33412, CVE-2026-34982 odh-spark-operator-v3-5 vim-minimal 2:8.2.2637-22.el9_6.3 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:14.054+0000",
+        "resolved": "2026-09-17T13:43:26.634+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81575"
+      },
+      {
+        "key": "RHOAIENG-81574",
+        "summary": "CVE-2026-33412, CVE-2026-34982 odh-spark-operator-v3-5 vim-filesystem 2:8.2.2637-22.el9_6.3 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:15.278+0000",
+        "resolved": "2026-09-17T13:46:05.652+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81574"
+      },
+      {
+        "key": "RHOAIENG-81573",
+        "summary": "CVE-2026-4519, CVE-2026-4786, CVE-2026-6100 odh-spark-operator-v3-5 python3.12-libs 0:3.12.9-1.el9_6.8 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:16.573+0000",
+        "resolved": "2026-09-17T13:48:26.272+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81573"
+      },
+      {
+        "key": "RHOAIENG-81572",
+        "summary": "CVE-2026-4519, CVE-2026-4786, CVE-2026-6100 odh-spark-operator-v3-5 python3.12-devel 0:3.12.9-1.el9_6.8 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:17.596+0000",
+        "resolved": "2026-09-17T13:54:22.592+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81572"
+      },
+      {
+        "key": "RHOAIENG-81571",
+        "summary": "CVE-2026-4519, CVE-2026-4786, CVE-2026-6100 odh-spark-operator-v3-5 python3.12 0:3.12.9-1.el9_6.8 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:18.627+0000",
+        "resolved": "2026-09-17T13:54:21.493+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81571"
+      },
+      {
+        "key": "RHOAIENG-81570",
+        "summary": "CVE-2026-4519, CVE-2026-4786, CVE-2026-6100 odh-spark-operator-v3-5 python3-libs 0:3.9.21-2.el9_6.6 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:19.878+0000",
+        "resolved": "2026-09-17T13:54:20.490+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81570"
+      },
+      {
+        "key": "RHOAIENG-81569",
+        "summary": "CVE-2026-4519, CVE-2026-4786, CVE-2026-6100 odh-spark-operator-v3-5 python3 0:3.9.21-2.el9_6.6 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:21.102+0000",
+        "resolved": "2026-09-17T13:54:19.594+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81569"
+      },
+      {
+        "key": "RHOAIENG-81568",
+        "summary": "CVE-2026-10118 odh-spark-operator-v3-5 poppler 0:21.01.0-22.el9_6.1 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:22.313+0000",
+        "resolved": "2026-09-17T13:54:18.692+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81568"
+      },
+      {
+        "key": "RHOAIENG-81561",
+        "summary": "CVE-2026-3497, CVE-2026-35385 odh-spark-operator-v3-5 openssh-clients 0:8.7p1-45.el9_6.3 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:24.604+0000",
+        "resolved": "2026-09-17T13:40:22.336+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81561"
+      },
+      {
+        "key": "RHOAIENG-81560",
+        "summary": "CVE-2026-3497, CVE-2026-35385 odh-spark-operator-v3-5 openssh 0:8.7p1-45.el9_6.3 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:25.751+0000",
+        "resolved": "2026-09-17T13:40:19.824+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81560"
+      },
+      {
+        "key": "RHOAIENG-81559",
+        "summary": "CVE-2026-27622, CVE-2026-34588, CVE-2026-41142, CVE-2026-42216 odh-spark-operator-v3-5 openexr-libs 0:3.1.1-3.el9_6.3 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:26.927+0000",
+        "resolved": "2026-09-17T13:40:18.911+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81559"
+      },
+      {
+        "key": "RHOAIENG-81558",
+        "summary": "CVE-2026-2447 odh-spark-operator-v3-5 libvpx 0:1.9.0-9.el9_6.1 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:28.275+0000",
+        "resolved": "2026-09-17T13:40:17.978+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81558"
+      },
+      {
+        "key": "RHOAIENG-81557",
+        "summary": "CVE-2026-4775 odh-spark-operator-v3-5 libtiff 0:4.4.0-13.el9_6.4 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:29.475+0000",
+        "resolved": "2026-09-17T13:40:17.162+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81557"
+      },
+      {
+        "key": "RHOAIENG-81556",
+        "summary": "CVE-2026-37555 odh-spark-operator-v3-5 libsndfile 0:1.0.31-9.el9_6.1 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:30.774+0000",
+        "resolved": "2026-09-17T13:40:16.243+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81556"
+      },
+      {
+        "key": "RHOAIENG-81555",
+        "summary": "CVE-2026-27135 odh-spark-operator-v3-5 libnghttp2 0:1.43.0-6.el9_6.1 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:31.975+0000",
+        "resolved": "2026-09-17T13:40:15.395+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81555"
+      },
+      {
+        "key": "RHOAIENG-81554",
+        "summary": "CVE-2026-4878 odh-spark-operator-v3-5 libcap 0:2.48-9.el9_6.1 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:33.088+0000",
+        "resolved": "2026-09-17T13:40:14.570+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81554"
+      },
+      {
+        "key": "RHOAIENG-81553",
+        "summary": "CVE-2026-4111, CVE-2026-4424 odh-spark-operator-v3-5 libarchive 0:3.5.3-7.el9_6.1 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:34.263+0000",
+        "resolved": "2026-09-17T13:40:13.701+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81553"
+      },
+      {
+        "key": "RHOAIENG-81552",
+        "summary": "CVE-2026-39979, CVE-2026-40164 odh-spark-operator-v3-5 jq 0:1.6-17.el9_6.4 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:35.426+0000",
+        "resolved": "2026-09-17T13:40:12.725+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81552"
+      },
+      {
+        "key": "RHOAIENG-81544",
+        "summary": "CVE-2026-33845, CVE-2026-33846, CVE-2026-42009, CVE-2026-42010 odh-spark-operator-v3-5 gnutls 0:3.8.3-6.el9_6.4 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:36.601+0000",
+        "resolved": "2026-09-17T13:40:11.889+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81544"
+      },
+      {
+        "key": "RHOAIENG-81543",
+        "summary": "CVE-2026-23868, CVE-2026-26740 odh-spark-operator-v3-5 giflib 0:5.2.1-9.el9_6.2 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:37.677+0000",
+        "resolved": "2026-09-17T13:40:10.950+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81543"
+      },
+      {
+        "key": "RHOAIENG-81542",
+        "summary": "CVE-2026-5201 odh-spark-operator-v3-5 gdk-pixbuf2 0:2.42.6-6.el9_6.1 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:38.780+0000",
+        "resolved": "2026-09-17T13:40:10.023+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81542"
+      },
+      {
+        "key": "RHAISTRAT-2618",
+        "summary": "Up-to-date Docling container image for RHOAI 3.6 EA2 (GPU-accelerated, serve API)",
+        "status": "Release Pending",
+        "assignee": "Alina Ryan",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Feature",
+        "color": "Green",
+        "status_summary": "GREEN as of 18-Sep. Image build pipeline green on Konflux.",
+        "target_versions": [
+          "3.6 EA2 RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.6 EA2 RHOAI RELEASE"
+        ],
+        "updated": "2026-09-18T20:32:39.971+0000",
+        "resolved": "2026-09-18T14:18:10.202+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-2618"
+      },
+      {
+        "key": "RHAIENG-7442",
+        "summary": "Enable Renovate AIPCC base image auto-updates (rhoai-3.5)",
+        "status": "Resolved",
+        "assignee": "Vedant Deshpande",
+        "is_team_member": true,
+        "priority": "Major",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-17T14:54:47.929+0000",
+        "resolved": "2026-09-17T14:54:47.882+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-7442"
+      },
+      {
+        "key": "RHAIENG-7441",
+        "summary": "Enable Renovate AIPCC base image auto-updates (rhoai-3.4)",
+        "status": "Resolved",
+        "assignee": "Vedant Deshpande",
+        "is_team_member": true,
+        "priority": "Major",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-17T14:54:42.437+0000",
+        "resolved": "2026-09-17T14:54:42.392+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-7441"
+      },
+      {
+        "key": "RHAIENG-7366",
+        "summary": "Create test Docling-Server reference Architecture on smaller Openshift AI",
+        "status": "Closed",
+        "assignee": "Ali Maredia",
+        "is_team_member": true,
+        "priority": "Undefined",
+        "type": "Spike",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T15:51:09.004+0000",
+        "resolved": "2026-09-24T15:51:08.962+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-7366"
+      },
+      {
+        "key": "RHAIENG-6619",
+        "summary": "Onboard spark-operator to Konflux early gate testing",
+        "status": "Resolved",
+        "assignee": "Vedant Deshpande",
+        "is_team_member": true,
+        "priority": "Normal",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-21T15:06:04.198+0000",
+        "resolved": "2026-09-21T15:06:04.156+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-6619"
+      },
+      {
+        "key": "RHAIENG-6436",
+        "summary": "Feature Refinement for RHAISTRAT-1787",
+        "status": "Resolved",
+        "assignee": "Vedant Deshpande",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Spike",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-21T15:01:10.244+0000",
+        "resolved": "2026-09-21T15:01:10.140+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-6436"
+      }
+    ],
+    "completed_external": [],
+    "in_progress": [
+      {
+        "key": "RHOAIENG-94191",
+        "summary": "Upstream Sync: Merge latest changes from kubeflow/spark-operator into opendatahub-io/spark-operator",
+        "status": "Resolved",
+        "assignee": "Vedant Deshpande",
+        "is_team_member": true,
+        "priority": "Major",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-17T14:54:33.370+0000",
+        "resolved": "2026-09-17T14:54:33.332+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-94191"
+      },
+      {
+        "key": "RHOAIENG-93080",
+        "summary": "[data-processing] Failed test: TestOdhOperator/DAG_Ordering_E2E_Tests",
+        "status": "New",
+        "assignee": "Vedant Deshpande",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "[truncated]                 \"manager\": <string>\"manager\",\n                                \"operation\": <string>\"Update\",\n                            },\n                        ],\n                     ",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T15:29:51.041+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-93080"
+      },
+      {
+        "key": "RHOAIENG-93052",
+        "summary": "[data-processing] Failed test: TestOdhOperator/components/group_1/sparkoperator/Validate_component_enabled",
+        "status": "New",
+        "assignee": "Alina Ryan",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "[truncated]nches:map[managementState:Removed]] conditions:[map[lastTransitionTime:2026-09-06T16:57:45Z status:True type:Ready] map[lastTransitionTime:2026-09-06T\n16:57:46Z observedGeneration:2 status:",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T15:30:09.155+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-93052"
+      },
+      {
+        "key": "RHOAIENG-92930",
+        "summary": "[data-processing] Failed test: TestOdhOperator/DAG_Ordering_E2E_Tests",
+        "status": "New",
+        "assignee": "Vedant Deshpande",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "[truncated]                    \"f:version\": <map[string]interface {} | len:0>{},\n                                            },\n                                        },\n                             ",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T15:29:48.727+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-92930"
+      },
+      {
+        "key": "RHOAIENG-92834",
+        "summary": "[data-processing] Failed test: TestOdhOperator/components/group_1/sparkoperator/Validate_component_enabled",
+        "status": "New",
+        "assignee": "Alina Ryan",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "[truncated]nches:map[managementState:Removed]] conditions:[map[lastTransitionTime:2026-09-05T20:18:44Z status:True type:Ready] map[lastTransitionTime:2026-09-05T\n20:18:45Z observedGeneration:2 status:",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T15:30:07.831+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-92834"
+      },
+      {
+        "key": "RHOAIENG-92809",
+        "summary": "[data-processing] Failed test: TestOdhOperator/DAG_Ordering_E2E_Tests",
+        "status": "New",
+        "assignee": "Vedant Deshpande",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "[truncated]b426-87429dab7146\",\n                            },\n                        ],\n                        \"resourceVersion\": <string>\"617357\",\n                        \"uid\": <string>\"4fe67e49-5",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T15:29:49.952+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-92809"
+      },
+      {
+        "key": "RHOAIENG-92808",
+        "summary": "[data-processing] Failed test: test_data_science_cluster_healthy",
+        "status": "New",
+        "assignee": "Ali Maredia",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "[truncated]\n    \n            LOGGER.info(log)\n    \n        last_exp = None\n        elapsed_time = None\n        while timeout_watch.remaining_time() > 0:\n            try:\n                elapsed_time =",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T15:30:14.282+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-92808"
+      },
+      {
+        "key": "RHOAIENG-92783",
+        "summary": "[data-processing] Failed test: TestOdhOperator/components/group_1/sparkoperator/Validate_component_enabled",
+        "status": "New",
+        "assignee": "Alina Ryan",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "test_context_test.go:229: \n        Timed out after 600.000s.\n        The function passed to Eventually failed at /workspace/tests/e2e/test_context_test.go:217 with:\n        Expected resource 'redhat-o",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T15:30:05.332+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-92783"
+      },
+      {
+        "key": "RHOAIENG-92384",
+        "summary": "[RHOAI 3.6.0-EA2] Product Sign Off - Data Processing Team",
+        "status": "New",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [
+          "3.6 EA2 RHOAI RELEASE"
+        ],
+        "updated": "2026-09-22T15:14:19.750+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-92384"
+      },
+      {
+        "key": "RHOAIENG-92209",
+        "summary": "[RHOAI 3.6.0-EA2][TFA Sign-Off][Data Processing] Execute test matrix - Wk2 (Sep 14)",
+        "status": "Closed",
+        "assignee": "Ali Maredia",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [
+          "3.6 EA2 RHOAI RELEASE"
+        ],
+        "updated": "2026-09-23T06:58:17.378+0000",
+        "resolved": "2026-09-23T06:58:17.343+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-92209"
+      },
+      {
+        "key": "RHOAIENG-92098",
+        "summary": "[RHOAI 3.6.0-EA2] Test Plan Sign Off - Data Processing Team",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [
+          "3.6 EA2 RHOAI RELEASE"
+        ],
+        "updated": "2026-09-23T19:11:01.808+0000",
+        "resolved": "2026-09-23T19:11:01.774+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-92098"
+      },
+      {
+        "key": "RHOAIENG-91930",
+        "summary": "[data-processing] Failed test: TestOdhOperator/DAG_Ordering_E2E_Tests",
+        "status": "New",
+        "assignee": "Vedant Deshpande",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "[truncated]                   \"component.opendatahub.io/management-state\": <string>\"Unmanaged\",\n                        },\n                        \"creationTimestamp\": <string>\"2026-09-04T00:36:51Z\",\n",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T15:29:52.199+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-91930"
+      },
+      {
+        "key": "RHOAIENG-91883",
+        "summary": "[data-processing] Failed test: TestOdhOperator/DAG_Ordering_E2E_Tests",
+        "status": "New",
+        "assignee": "Vedant Deshpande",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "[truncated]                         },\n                        ],\n                    },\n                    \"spec\": <map[string]interface {} | len:4>{\n                        \"autoCreateQueues\": <boo",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T15:29:53.373+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-91883"
+      },
+      {
+        "key": "RHOAIENG-91872",
+        "summary": "[data-processing] Failed test: TestOdhOperator/DAG_Ordering_E2E_Tests",
+        "status": "New",
+        "assignee": "Vedant Deshpande",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "[truncated]                 \"f:component.opendatahub.io/management-state\": <map[string]interface {} | len:0>{},\n                                            \"f:platform.opendatahub.io/instance.generati",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T15:29:54.566+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-91872"
+      },
+      {
+        "key": "RHOAIENG-91862",
+        "summary": "[data-processing] Failed test: TestOdhOperator/DAG_Ordering_E2E_Tests",
+        "status": "New",
+        "assignee": "Vedant Deshpande",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "[truncated]T21:53:11Z\",\n                            },\n                        ],\n                        \"name\": <string>\"default-kueue\",\n                        \"resourceVersion\": <string>\"670442\",\n",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T15:29:55.660+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-91862"
+      },
+      {
+        "key": "RHOAIENG-91202",
+        "summary": "[data-processing] Failed test: TestOdhOperator/DAG_Ordering_E2E_Tests",
+        "status": "New",
+        "assignee": "Vedant Deshpande",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "[truncated]                             \"f:platform.opendatahub.io/version\": <map[string]interface {} | len:0>{},\n                                            \"f:component.opendatahub.io/management-sta",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T15:29:56.750+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-91202"
+      },
+      {
+        "key": "RHOAIENG-88744",
+        "summary": "[data-processing] Failed test: TestOdhOperator",
+        "status": "New",
+        "assignee": "Ali Maredia",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "[truncated]ntState is set to Removed\n2026/08/27 10:27:58   TrainingOperatorReady: False - Component ManagementState is set to Removed\n2026/08/27 10:27:58   TrustyAIReady: False - Component ManagementS",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T15:30:11.847+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-88744"
+      },
+      {
+        "key": "RHOAIENG-88734",
+        "summary": "[data-processing] Failed test: TestOdhOperator/DAG_Ordering_E2E_Tests",
+        "status": "New",
+        "assignee": "Alina Ryan",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "[truncated]       \"f:metadata\": <map[string]interface {} | len:3>{\n                                        \"f:labels\": <map[string]interface {} | len:1>{\n                                            \"f",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T15:29:57.862+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-88734"
+      },
+      {
+        "key": "RHOAIENG-88539",
+        "summary": "[data-processing] Failed test: TestOdhOperator",
+        "status": "New",
+        "assignee": "Ali Maredia",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "[truncated]/08/26 03:45:21   ProvisioningProgress: True - \n2026/08/26 03:45:21   RayReady: False - Component ManagementState is set to Removed\n2026/08/26 03:45:21   SparkOperatorReady: True - \n2026/08",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T15:30:04.007+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-88539"
+      },
+      {
+        "key": "RHOAIENG-88346",
+        "summary": "[data-processing] Failed test: TestOdhOperator",
+        "status": "New",
+        "assignee": "Ali Maredia",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "[truncated]Ready: False - Module ManagementState is set to Removed\n2026/08/25 17:10:00 === RECENT EVENTS ===\n2026/08/25 17:10:00 No recent events found in monitored namespaces\n2026/08/25 17:10:00 === ",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T15:30:06.557+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-88346"
+      },
+      {
+        "key": "RHOAIENG-88345",
+        "summary": "[data-processing] Failed test: TestOdhOperator/DAG_Ordering_E2E_Tests",
+        "status": "New",
+        "assignee": "Alina Ryan",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "[truncated]         },\n                        ],\n                        \"ownerReferences\": <[]interface {} | len:1, cap:1>[\n                            <map[string]interface {} | len:6>{\n           ",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T15:29:59.023+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-88345"
+      },
+      {
+        "key": "RHOAIENG-88344",
+        "summary": "[data-processing] Failed test: test_create_new_spark_application_post_upgrade",
+        "status": "New",
+        "assignee": "Ali Maredia",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "fixturedef = <FixtureDef argname='new_spark_application_fixture' scope='session' baseid='tests/spark/upgrade'>\nrequest = <SubRequest 'new_spark_application_fixture' for <Function test_create_new_spark",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T15:30:15.414+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-88344"
+      },
+      {
+        "key": "RHOAIENG-88343",
+        "summary": "[data-processing] Failed test: test_spark_application_post_upgrade_exists",
+        "status": "New",
+        "assignee": "Ali Maredia",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "fixturedef = <FixtureDef argname='spark_application_fixture' scope='session' baseid='tests/spark/upgrade'>\nrequest = <SubRequest 'spark_application_fixture' for <Function test_spark_application_post_u",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T15:30:16.581+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-88343"
+      },
+      {
+        "key": "RHOAIENG-88219",
+        "summary": "spark-operator e2e tests run the :main test image on RHOAI release jobs instead of the release-matched tag",
+        "status": "Resolved",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-23T15:38:44.867+0000",
+        "resolved": "2026-09-23T15:38:44.824+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-88219"
+      },
+      {
+        "key": "RHOAIENG-87814",
+        "summary": "[data-processing] Failed test: TestOdhOperator/DAG_Ordering_E2E_Tests",
+        "status": "New",
+        "assignee": "Alina Ryan",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "[truncated]    },\n                        ],\n                        \"name\": <string>\"default-kueue\",\n                        \"ownerReferences\": <[]interface {} | len:1, cap:1>[\n                      ",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T15:30:00.333+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-87814"
+      },
+      {
+        "key": "RHOAIENG-87807",
+        "summary": "[data-processing] Failed test: TestOdhOperator",
+        "status": "New",
+        "assignee": "Ali Maredia",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "[truncated]se - Component ManagementState is set to Removed\n2026/08/22 00:39:32   TrainingOperatorReady: False - Component ManagementState is set to Removed\n2026/08/22 00:39:32   TrustyAIReady: False ",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T15:30:10.656+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-87807"
+      },
+      {
+        "key": "RHOAIENG-87806",
+        "summary": "[data-processing] Failed test: TestOdhOperator/DAG_Ordering_E2E_Tests",
+        "status": "New",
+        "assignee": "Alina Ryan",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "[truncated]ap[string]interface {} | len:0>{},\n                                        },\n                                    },\n                                    \"f:status\": <map[string]interface {}",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T15:30:01.519+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-87806"
+      },
+      {
+        "key": "RHOAIENG-87011",
+        "summary": "[data-processing] Failed test: TestOdhOperator/components/group_1/sparkoperator/Validate_component_enabled",
+        "status": "New",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "[truncated]nches:map[managementState:Removed]] conditions:[map[lastTransitionTime:2026-09-05T01:53:47Z status:True type:Ready] map[lastTransitionTime:2026-09-05T\n01:53:47Z observedGeneration:2 status:",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T15:28:51.664+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-87011"
+      },
+      {
+        "key": "RHOAIENG-83071",
+        "summary": "[RHOAI 3.6.0-EA1] Product Sign Off - Data Processing Team",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [
+          "3.6 EA1 RHOAI RELEASE"
+        ],
+        "updated": "2026-09-17T10:01:56.529+0000",
+        "resolved": "2026-09-16T16:37:36.855+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-83071"
+      },
+      {
+        "key": "RHOAIENG-81575",
+        "summary": "CVE-2026-33412, CVE-2026-34982 odh-spark-operator-v3-5 vim-minimal 2:8.2.2637-22.el9_6.3 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:14.054+0000",
+        "resolved": "2026-09-17T13:43:26.634+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81575"
+      },
+      {
+        "key": "RHOAIENG-81574",
+        "summary": "CVE-2026-33412, CVE-2026-34982 odh-spark-operator-v3-5 vim-filesystem 2:8.2.2637-22.el9_6.3 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:15.278+0000",
+        "resolved": "2026-09-17T13:46:05.652+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81574"
+      },
+      {
+        "key": "RHOAIENG-81573",
+        "summary": "CVE-2026-4519, CVE-2026-4786, CVE-2026-6100 odh-spark-operator-v3-5 python3.12-libs 0:3.12.9-1.el9_6.8 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:16.573+0000",
+        "resolved": "2026-09-17T13:48:26.272+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81573"
+      },
+      {
+        "key": "RHOAIENG-81572",
+        "summary": "CVE-2026-4519, CVE-2026-4786, CVE-2026-6100 odh-spark-operator-v3-5 python3.12-devel 0:3.12.9-1.el9_6.8 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:17.596+0000",
+        "resolved": "2026-09-17T13:54:22.592+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81572"
+      },
+      {
+        "key": "RHOAIENG-81571",
+        "summary": "CVE-2026-4519, CVE-2026-4786, CVE-2026-6100 odh-spark-operator-v3-5 python3.12 0:3.12.9-1.el9_6.8 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:18.627+0000",
+        "resolved": "2026-09-17T13:54:21.493+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81571"
+      },
+      {
+        "key": "RHOAIENG-81570",
+        "summary": "CVE-2026-4519, CVE-2026-4786, CVE-2026-6100 odh-spark-operator-v3-5 python3-libs 0:3.9.21-2.el9_6.6 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:19.878+0000",
+        "resolved": "2026-09-17T13:54:20.490+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81570"
+      },
+      {
+        "key": "RHOAIENG-81569",
+        "summary": "CVE-2026-4519, CVE-2026-4786, CVE-2026-6100 odh-spark-operator-v3-5 python3 0:3.9.21-2.el9_6.6 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:21.102+0000",
+        "resolved": "2026-09-17T13:54:19.594+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81569"
+      },
+      {
+        "key": "RHOAIENG-81568",
+        "summary": "CVE-2026-10118 odh-spark-operator-v3-5 poppler 0:21.01.0-22.el9_6.1 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:22.313+0000",
+        "resolved": "2026-09-17T13:54:18.692+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81568"
+      },
+      {
+        "key": "RHOAIENG-81567",
+        "summary": "CVE-2026-25679, CVE-2026-25681, CVE-2026-27136, CVE-2026-32280, CVE-2026-32283, CVE-2026-39822, CVE-2026-39829, CVE-2026-39832, CVE-2026-39835, CVE-2026-42508, CVE-2026-57231 odh-spark-operator-v3-5 podman 6:5.8.2-5.el9_8 3.5.1 GA RHOAI",
+        "status": "New",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-24T15:27:40.517+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81567"
+      },
+      {
+        "key": "RHOAIENG-81566",
+        "summary": "GHSA-cmp6-m4wj-q63q, GHSA-vqf4-7m7x-wgfc odh-spark-operator-v3-5 org.lz4:lz4-java lastAffected=1.8.1 3.5.1 GA RHOAI",
+        "status": "New",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-24T15:28:37.626+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81566"
+      },
+      {
+        "key": "RHOAIENG-81565",
+        "summary": "GHSA-2r2c-cx56-8933, GHSA-47qp-hqvx-6r3f odh-spark-operator-v3-5 org.jline:jline-remote-telnet 4.2.1 3.5.1 GA RHOAI",
+        "status": "New",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-24T15:27:42.733+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81565"
+      },
+      {
+        "key": "RHOAIENG-81564",
+        "summary": "GHSA-355h-qmc2-wpwf odh-spark-operator-v3-5 org.eclipse.jetty:jetty-http introduced=9.4.0&lastAffected=9.4.59 3.5.1 GA RHOAI",
+        "status": "New",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-24T15:27:41.633+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81564"
+      },
+      {
+        "key": "RHOAIENG-81563",
+        "summary": "GHSA-7xrh-hqfc-g7qr, GHSA-crhr-qqj8-rpxc odh-spark-operator-v3-5 org.apache.zookeeper:zookeeper 3.9.5&introduced=3.9.0 3.5.1 GA RHOAI",
+        "status": "New",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-24T15:27:46.239+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81563"
+      },
+      {
+        "key": "RHOAIENG-81561",
+        "summary": "CVE-2026-3497, CVE-2026-35385 odh-spark-operator-v3-5 openssh-clients 0:8.7p1-45.el9_6.3 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:24.604+0000",
+        "resolved": "2026-09-17T13:40:22.336+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81561"
+      },
+      {
+        "key": "RHOAIENG-81560",
+        "summary": "CVE-2026-3497, CVE-2026-35385 odh-spark-operator-v3-5 openssh 0:8.7p1-45.el9_6.3 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:25.751+0000",
+        "resolved": "2026-09-17T13:40:19.824+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81560"
+      },
+      {
+        "key": "RHOAIENG-81559",
+        "summary": "CVE-2026-27622, CVE-2026-34588, CVE-2026-41142, CVE-2026-42216 odh-spark-operator-v3-5 openexr-libs 0:3.1.1-3.el9_6.3 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:26.927+0000",
+        "resolved": "2026-09-17T13:40:18.911+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81559"
+      },
+      {
+        "key": "RHOAIENG-81558",
+        "summary": "CVE-2026-2447 odh-spark-operator-v3-5 libvpx 0:1.9.0-9.el9_6.1 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:28.275+0000",
+        "resolved": "2026-09-17T13:40:17.978+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81558"
+      },
+      {
+        "key": "RHOAIENG-81557",
+        "summary": "CVE-2026-4775 odh-spark-operator-v3-5 libtiff 0:4.4.0-13.el9_6.4 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:29.475+0000",
+        "resolved": "2026-09-17T13:40:17.162+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81557"
+      },
+      {
+        "key": "RHOAIENG-81556",
+        "summary": "CVE-2026-37555 odh-spark-operator-v3-5 libsndfile 0:1.0.31-9.el9_6.1 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:30.774+0000",
+        "resolved": "2026-09-17T13:40:16.243+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81556"
+      },
+      {
+        "key": "RHOAIENG-81555",
+        "summary": "CVE-2026-27135 odh-spark-operator-v3-5 libnghttp2 0:1.43.0-6.el9_6.1 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:31.975+0000",
+        "resolved": "2026-09-17T13:40:15.395+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81555"
+      },
+      {
+        "key": "RHOAIENG-81554",
+        "summary": "CVE-2026-4878 odh-spark-operator-v3-5 libcap 0:2.48-9.el9_6.1 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:33.088+0000",
+        "resolved": "2026-09-17T13:40:14.570+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81554"
+      },
+      {
+        "key": "RHOAIENG-81553",
+        "summary": "CVE-2026-4111, CVE-2026-4424 odh-spark-operator-v3-5 libarchive 0:3.5.3-7.el9_6.1 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:34.263+0000",
+        "resolved": "2026-09-17T13:40:13.701+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81553"
+      },
+      {
+        "key": "RHOAIENG-81552",
+        "summary": "CVE-2026-39979, CVE-2026-40164 odh-spark-operator-v3-5 jq 0:1.6-17.el9_6.4 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:35.426+0000",
+        "resolved": "2026-09-17T13:40:12.725+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81552"
+      },
+      {
+        "key": "RHOAIENG-81551",
+        "summary": "GHSA-5pvg-856g-cp85, GHSA-676x-f7gg-47vc odh-spark-operator-v3-5 io.netty:netty-resolver-dns 4.1.135.Final 3.5.1 GA RHOAI",
+        "status": "New",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-24T15:27:47.688+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81551"
+      },
+      {
+        "key": "RHOAIENG-81550",
+        "summary": "GHSA-3qp7-7mw8-wx86, GHSA-c653-97m9-rcg9, GHSA-x4gw-5cx5-pgmh odh-spark-operator-v3-5 io.netty:netty-handler 4.1.135.Final 3.5.1 GA RHOAI",
+        "status": "New",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-24T15:27:43.890+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81550"
+      },
+      {
+        "key": "RHOAIENG-81549",
+        "summary": "GHSA-f6hv-jmp6-3vwv, GHSA-prj3-ccx8-p6x4, GHSA-w9fj-cfpg-grvv odh-spark-operator-v3-5 io.netty:netty-codec-http2 4.1.133.Final 3.5.1 GA RHOAI",
+        "status": "New",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-24T15:28:39.296+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81549"
+      },
+      {
+        "key": "RHOAIENG-81548",
+        "summary": "GHSA-57rv-r2g8-2cj3, GHSA-f6hv-jmp6-3vwv, GHSA-pwqr-wmgm-9rr8 odh-spark-operator-v3-5 io.netty:netty-codec-http 4.1.133.Final 3.5.1 GA RHOAI",
+        "status": "New",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-24T15:27:45.130+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81548"
+      },
+      {
+        "key": "RHOAIENG-81547",
+        "summary": "GHSA-cm33-6792-r9fm odh-spark-operator-v3-5 io.netty:netty-codec-dns 4.1.133.Final 3.5.1 GA RHOAI",
+        "status": "New",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-24T15:27:48.807+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81547"
+      },
+      {
+        "key": "RHOAIENG-81546",
+        "summary": "GHSA-mj4r-2hfc-f8p6 odh-spark-operator-v3-5 io.netty:netty-codec 4.1.133.Final 3.5.1 GA RHOAI",
+        "status": "New",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-24T15:28:48.260+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81546"
+      },
+      {
+        "key": "RHOAIENG-81545",
+        "summary": "GHSA-vx9q-rhv9-3jvg odh-spark-operator-v3-5 io.airlift:aircompressor 2.0.3 3.5.1 GA RHOAI",
+        "status": "New",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-24T15:28:49.403+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81545"
+      },
+      {
+        "key": "RHOAIENG-81544",
+        "summary": "CVE-2026-33845, CVE-2026-33846, CVE-2026-42009, CVE-2026-42010 odh-spark-operator-v3-5 gnutls 0:3.8.3-6.el9_6.4 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:36.601+0000",
+        "resolved": "2026-09-17T13:40:11.889+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81544"
+      },
+      {
+        "key": "RHOAIENG-81543",
+        "summary": "CVE-2026-23868, CVE-2026-26740 odh-spark-operator-v3-5 giflib 0:5.2.1-9.el9_6.2 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:37.677+0000",
+        "resolved": "2026-09-17T13:40:10.950+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81543"
+      },
+      {
+        "key": "RHOAIENG-81542",
+        "summary": "CVE-2026-5201 odh-spark-operator-v3-5 gdk-pixbuf2 0:2.42.6-6.el9_6.1 3.5.1 GA RHOAI",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.1 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-21T16:19:38.780+0000",
+        "resolved": "2026-09-17T13:40:10.023+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81542"
+      },
+      {
+        "key": "RHOAIENG-81541",
+        "summary": "GHSA-wxr5-93ph-8wr9 odh-spark-operator-v3-5 commons-beanutils:commons-beanutils 1.11.0&introduced=1.0 3.5.1 GA RHOAI",
+        "status": "New",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-24T15:28:50.544+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81541"
+      },
+      {
+        "key": "RHOAIENG-81540",
+        "summary": "GHSA-j3rv-43j4-c7qm, GHSA-rmj7-2vxq-3g9f odh-spark-operator-v3-5 com.fasterxml.jackson.core:jackson-databind 2.18.8&introduced=2.10.0 3.5.1 GA RHOAI",
+        "status": "New",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-24T15:28:47.093+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81540"
+      },
+      {
+        "key": "RHOAIENG-81539",
+        "summary": "GHSA-h46c-h94j-95f3 odh-spark-operator-v3-5 com.fasterxml.jackson.core:jackson-core 2.15.0 3.5.1 GA RHOAI",
+        "status": "New",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-09-24T15:28:45.453+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81539"
+      },
+      {
+        "key": "RHOAIENG-79728",
+        "summary": "[Spark Operator] E2E testing responsibility sign-off for modular architecture",
+        "status": "Closed",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [
+          "3.6 EA1 RHOAI RELEASE"
+        ],
+        "fix_versions": [],
+        "updated": "2026-09-23T20:16:47.891+0000",
+        "resolved": "2026-08-18T17:51:23.397+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-79728"
+      },
+      {
+        "key": "RHOAIENG-77656",
+        "summary": "Delete duplicate midstream test:SparkConnectQuery after upstream PR is merged",
+        "status": "Review",
+        "assignee": "Vedant Deshpande",
+        "is_team_member": true,
+        "priority": "Normal",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-17T17:23:45.978+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-77656"
+      },
+      {
+        "key": "RHOAIENG-72290",
+        "summary": "[data-processing] Failed test: TestOdhOperator",
+        "status": "New",
+        "assignee": "Ali Maredia",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T15:30:13.038+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-72290"
+      },
+      {
+        "key": "RHOAIENG-72289",
+        "summary": "[data-processing] Failed test: TestOdhOperator/DAG_Ordering_E2E_Tests",
+        "status": "New",
+        "assignee": "Alina Ryan",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "[truncated] {} | len:0>{},\n                                            \"f:platform.opendatahub.io/instance.uid\": <map[string]interface {} | len:0>{},\n                                            \"f:pla",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T15:30:02.786+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-72289"
+      },
+      {
+        "key": "RHOAIENG-62982",
+        "summary": "Spark Operator onboarding to modular architecture",
+        "status": "Closed",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Major",
+        "type": "Epic",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [
+          "rhoai-3.6.EA1"
+        ],
+        "fix_versions": [],
+        "updated": "2026-09-23T20:19:16.997+0000",
+        "resolved": "2026-08-19T15:24:11.018+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-62982"
+      },
+      {
+        "key": "RHOAIENG-59982",
+        "summary": "Conforma violation - odh-spark-operator-v3-4",
+        "status": "Closed",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [
+          "rhoai-3.4"
+        ],
+        "updated": "2026-09-17T16:52:22.920+0000",
+        "resolved": "2026-05-08T16:06:06.639+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-59982"
+      },
+      {
+        "key": "RHAISTRAT-2618",
+        "summary": "Up-to-date Docling container image for RHOAI 3.6 EA2 (GPU-accelerated, serve API)",
+        "status": "Release Pending",
+        "assignee": "Alina Ryan",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Feature",
+        "color": "Green",
+        "status_summary": "GREEN as of 18-Sep. Image build pipeline green on Konflux.",
+        "target_versions": [
+          "3.6 EA2 RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.6 EA2 RHOAI RELEASE"
+        ],
+        "updated": "2026-09-18T20:32:39.971+0000",
+        "resolved": "2026-09-18T14:18:10.202+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-2618"
+      },
+      {
+        "key": "RHAISTRAT-2591",
+        "summary": "Official Spark Operator scaling guidelines for OpenShift AI",
+        "status": "In Progress",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Major",
+        "type": "Feature",
+        "color": "Green",
+        "status_summary": "",
+        "target_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "updated": "2026-09-22T14:32:24.273+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-2591"
+      },
+      {
+        "key": "RHAISTRAT-2586",
+        "summary": "[DRAFT] Reference architecture for deploying docling-serve as a document conversion service on OpenShift AI with autoscaling",
+        "status": "New",
+        "assignee": "Ali Maredia",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Feature",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-23T15:23:01.941+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-2586"
+      },
+      {
+        "key": "RHAISTRAT-2065",
+        "summary": "Docling performance guidance: model offloading, CPU/GPU tuning, and pipeline optimization for production workloads",
+        "status": "New",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Major",
+        "type": "Feature",
+        "color": "Green",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-23T15:22:14.621+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-2065"
+      },
+      {
+        "key": "RHAISTRAT-1951",
+        "summary": "High-fidelity document conversion of policy documents, transcripts, and wikis into structured clean text on OpenShift AI",
+        "status": "New",
+        "assignee": "Alina Ryan",
+        "is_team_member": true,
+        "priority": "Major",
+        "type": "Feature",
+        "color": "Green",
+        "status_summary": "",
+        "target_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "updated": "2026-09-23T03:46:44.809+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1951"
+      },
+      {
+        "key": "RHAISTRAT-1787",
+        "summary": "Structured information extraction from cheques \u2014 phased reference examples",
+        "status": "In Progress",
+        "assignee": "Vedant Deshpande",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Feature",
+        "color": "Green",
+        "status_summary": "Creations of epics done, individual stories to be created next",
+        "target_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "updated": "2026-09-22T15:01:44.667+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1787"
+      },
+      {
+        "key": "RHAISTRAT-1408",
+        "summary": "Test & document using the Spark Application UI and spark-history mcp server for logs",
+        "status": "Release Pending",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Major",
+        "type": "Feature",
+        "color": "Green",
+        "status_summary": "Development work and testing done, pending documentation.",
+        "target_versions": [
+          "3.5 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.5 GA RHOAI RELEASE"
+        ],
+        "updated": "2026-09-21T12:02:19.424+0000",
+        "resolved": "2026-07-30T19:23:31.247+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1408"
+      }
+    ],
+    "created": [
+      {
+        "key": "RHOAIENG-96624",
+        "summary": "Write Phase 2 README and package deployment artifacts",
+        "status": "New",
+        "assignee": "Unassigned",
+        "is_team_member": false,
+        "priority": "Normal",
+        "type": "Story",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T16:23:33.727+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-96624"
+      },
+      {
+        "key": "RHOAIENG-96623",
+        "summary": "Run Phase 2 benchmarks and compare against perf team baseline",
+        "status": "New",
+        "assignee": "Unassigned",
+        "is_team_member": false,
+        "priority": "Normal",
+        "type": "Story",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T16:23:20.859+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-96623"
+      },
+      {
+        "key": "RHOAIENG-96622",
+        "summary": "Configure Gateway API ingress with platform authentication",
+        "status": "New",
+        "assignee": "Unassigned",
+        "is_team_member": false,
+        "priority": "Normal",
+        "type": "Story",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T16:23:11.411+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-96622"
+      },
+      {
+        "key": "RHOAIENG-96621",
+        "summary": "Configure HPA/KEDA autoscaling on custom Prometheus metrics",
+        "status": "New",
+        "assignee": "Unassigned",
+        "is_team_member": false,
+        "priority": "Normal",
+        "type": "Story",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T16:23:07.937+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-96621"
+      },
+      {
+        "key": "RHOAIENG-96620",
+        "summary": "Implement per-field confidence scoring for cheque extraction",
+        "status": "New",
+        "assignee": "Unassigned",
+        "is_team_member": false,
+        "priority": "Major",
+        "type": "Story",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T16:23:00.951+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-96620"
+      },
+      {
+        "key": "RHOAIENG-96619",
+        "summary": "Configure schema-constrained extraction with guided decoding or bounding box fallback",
+        "status": "New",
+        "assignee": "Unassigned",
+        "is_team_member": false,
+        "priority": "Major",
+        "type": "Story",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T16:22:46.571+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-96619"
+      },
+      {
+        "key": "RHOAIENG-96618",
+        "summary": "Deploy Gemma-4-E4B-it via KServe InferenceService with vLLM on H200",
+        "status": "New",
+        "assignee": "Unassigned",
+        "is_team_member": false,
+        "priority": "Major",
+        "type": "Story",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T16:22:44.137+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-96618"
+      },
+      {
+        "key": "RHOAIENG-96617",
+        "summary": "Build benchmark harness for accuracy, throughput, and latency measurement",
+        "status": "New",
+        "assignee": "Unassigned",
+        "is_team_member": false,
+        "priority": "Major",
+        "type": "Story",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T16:22:17.543+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-96617"
+      },
+      {
+        "key": "RHOAIENG-96616",
+        "summary": "Curate and validate cheque test dataset from existing sources",
+        "status": "New",
+        "assignee": "Unassigned",
+        "is_team_member": false,
+        "priority": "Major",
+        "type": "Story",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T16:22:15.232+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-96616"
+      },
+      {
+        "key": "RHOAIENG-96615",
+        "summary": "Validate Gemma-4-E4B-it guided decoding with cheque extraction schema on vLLM 0.19.1",
+        "status": "New",
+        "assignee": "Unassigned",
+        "is_team_member": false,
+        "priority": "Major",
+        "type": "Story",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T16:22:04.440+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-96615"
+      },
+      {
+        "key": "RHOAIENG-96614",
+        "summary": "Define cheque extraction JSON Schema for BofA target fields",
+        "status": "New",
+        "assignee": "Unassigned",
+        "is_team_member": false,
+        "priority": "Major",
+        "type": "Story",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T16:21:58.424+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-96614"
+      },
+      {
+        "key": "RHOAIENG-96613",
+        "summary": "Document VLM recommendation with GPU requirements, optimal config, and known issues",
+        "status": "New",
+        "assignee": "Unassigned",
+        "is_team_member": false,
+        "priority": "Normal",
+        "type": "Story",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T16:21:55.606+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-96613"
+      },
+      {
+        "key": "RHOAIENG-96612",
+        "summary": "Consolidate perf team Gemma-4-E4B-it benchmark results",
+        "status": "New",
+        "assignee": "Unassigned",
+        "is_team_member": false,
+        "priority": "Normal",
+        "type": "Story",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T16:21:45.689+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-96612"
+      },
+      {
+        "key": "RHOAIENG-96611",
+        "summary": "Test story - delete me",
+        "status": "New",
+        "assignee": "Unassigned",
+        "is_team_member": false,
+        "priority": "Normal",
+        "type": "Story",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T16:20:54.021+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-96611"
+      },
+      {
+        "key": "RHOAIENG-96116",
+        "summary": "Remove Docling M4A MIME workaround after upstream PR #789 release",
+        "status": "New",
+        "assignee": "Tomasz Guzik",
+        "is_team_member": false,
+        "priority": "Major",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-22T09:10:24.483+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-96116"
+      },
+      {
+        "key": "RHOAIENG-95821",
+        "summary": "[TLS-Scanner] Add TLS-Scanner CI step for Kubeflow Spark Operator",
+        "status": "New",
+        "assignee": "Unassigned",
+        "is_team_member": false,
+        "priority": "Undefined",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-19T06:16:59.913+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-95821"
+      },
+      {
+        "key": "RHOAIENG-95815",
+        "summary": "Add TLS-Scanner CI step to RHOAI component upstream E2E pipelines",
+        "status": "Backlog",
+        "assignee": "Unassigned",
+        "is_team_member": false,
+        "priority": "Blocker",
+        "type": "Epic",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "updated": "2026-09-24T09:36:15.654+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-95815"
+      },
+      {
+        "key": "RHOAIENG-95585",
+        "summary": "[Spark Operator] OLMv1 compliance sign-off",
+        "status": "New",
+        "assignee": "Unassigned",
+        "is_team_member": false,
+        "priority": "Normal",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "updated": "2026-09-18T10:29:21.105+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-95585"
+      },
+      {
+        "key": "RHAISTRAT-2826",
+        "summary": "TLS compliance completion for RHOAI components (3.6 GA)",
+        "status": "Backlog",
+        "assignee": "Scott Froberg",
+        "is_team_member": false,
+        "priority": "Critical",
+        "type": "Feature",
+        "color": "Green",
+        "status_summary": "As of 9/22/26:",
+        "target_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "updated": "2026-09-24T14:28:19.946+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-2826"
+      },
+      {
+        "key": "RHAIENG-7623",
+        "summary": "[Blocker] SparkOperator CR lacks durable controllerResources; 512Mi reconcile stomps OOM fixes",
+        "status": "Review",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Undefined",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T02:06:09.012+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-7623"
+      },
+      {
+        "key": "RHAIENG-7622",
+        "summary": "[Blocker] SparkOperator CR lacks durable jobNamespaces for webhook namespaceSelector",
+        "status": "Review",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Undefined",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-24T02:05:19.122+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-7622"
+      },
+      {
+        "key": "RHAIENG-7614",
+        "summary": "Update rpms.lock.yaml with latest package versions for RHOAI 3.6 branch",
+        "status": "New",
+        "assignee": "Unassigned",
+        "is_team_member": false,
+        "priority": "Normal",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-22T18:37:03.721+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-7614"
+      },
+      {
+        "key": "RHAIENG-7613",
+        "summary": "Add Konflux package rule on main for each new release branch",
+        "status": "New",
+        "assignee": "Unassigned",
+        "is_team_member": false,
+        "priority": "Normal",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-22T18:32:02.540+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-7613"
+      },
+      {
+        "key": "RHAIENG-7611",
+        "summary": "Configure Autofix in Orgpulse for Kubeflow Spark Operator",
+        "status": "Backlog",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Undefined",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-09-22T17:43:28.752+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-7611"
+      }
+    ],
+    "features": [
+      {
+        "key": "RHAISTRAT-2591",
+        "summary": "Official Spark Operator scaling guidelines for OpenShift AI",
+        "status": "In Progress",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Major",
+        "type": "Feature",
+        "color": "Green",
+        "status_summary": "",
+        "target_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "updated": "2026-09-22T14:32:24.273+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-2591"
+      },
+      {
+        "key": "RHAISTRAT-1787",
+        "summary": "Structured information extraction from cheques \u2014 phased reference examples",
+        "status": "In Progress",
+        "assignee": "Vedant Deshpande",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Feature",
+        "color": "Green",
+        "status_summary": "Creations of epics done, individual stories to be created next",
+        "target_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "updated": "2026-09-22T15:01:44.667+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1787"
+      },
+      {
+        "key": "RHAISTRAT-1786",
+        "summary": "Continuous indexing and enrichment pipeline reference architecture for agent & RAG knowledge bases",
+        "status": "Refinement",
+        "assignee": "Unassigned",
+        "is_team_member": false,
+        "priority": "Major",
+        "type": "Feature",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [],
+        "updated": "2026-08-27T04:36:27.107+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1786"
+      }
+    ],
+    "counts": {
+      "completed": 31,
+      "completed_total_on_component": 31,
+      "in_progress": 78,
+      "created": 24
+    }
+  },
+  "slack": {},
+  "sections_routed": [
+    "DATA_PROCESSING",
+    "RISKS"
+  ]
+}
