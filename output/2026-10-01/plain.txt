@@ -1,0 +1,14 @@
+**Data Processing** (Chris Bynum) - 23 issues completed
+
+Highlights:
+
+- Completed the team's 3.6 EA1 release gate requirements, executing the RC1 test matrix and clearing the sign-off checkpoint for this milestone.
+- Resolved a persistent pattern of DAG Ordering and Spark operator component validation test failures that had been surfacing as blockers across multiple CI runs. Closing this cluster of tickets removes ongoing noise from the release pipeline.
+- Completed OLMv1 compliance sign-off for the Spark operator, a required gate for 3.6 GA distribution through the operator catalog.
+- Cleaned up a duplicate SparkConnect query test in the ODH midstream that became redundant after the corresponding upstream PR merged, keeping the test suite lean and avoiding false signal.
+- Reviewed and approved a midstream PR to configure Spark operator controller resource limits, enabling operators to be tuned for production workload profiles.
+- Active work underway on TLS compliance for 3.6 GA and official Spark operator scaling guidelines for OpenShift AI, both targeting the GA milestone.
+
+## Suggested Addition to Risks/Issues Section
+
+- The DAG Ordering E2E test has appeared as a blocker across more than ten CI runs over multiple weeks. While individual instances are being closed, the recurring pattern suggests an underlying instability that warrants a root-cause investigation rather than per-run triage.
