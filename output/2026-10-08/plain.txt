@@ -1,0 +1,21 @@
+**Data Processing** (Chris Bynum) - 18 issues completed
+
+Highlights:
+
+- Resolved a recurring cluster of blocker-level CI test failures across `TestOdhOperator` and Spark upgrade scenarios, clearing noise that had been accumulating across multiple CI runs and pipeline checks.
+- Enabled user-workload Prometheus to scrape Spark operator metrics in ODH/RHOAI overlays, alongside a companion NetworkPolicy to allow that traffic. This makes operator observability work out of the box on OpenShift without manual configuration.
+- Landed early-gate pipeline snapshot generation in the midstream CI, shortening feedback cycles for component integration by catching issues before full pipeline runs.
+- Completed an investigation into PySpark removal from the Spark operator and evaluated replacing `pyspark-connect` with `pyspark-client` in the upstream SDK, informing the dependency strategy for future releases.
+- Resolved a blocker where the SparkOperator CR lacked durable controller resource settings, preventing OOM fixes from surviving reconcile loops. The 512Mi reconcile override was stomping user-applied tuning on every sync cycle.
+- Closed out the Docling provider integration into upstream OGX (formerly Llama Stack), advancing structured document processing capabilities in the upstream ecosystem.
+- Completed a sync with the Data & AI team on AI Factory and Dataverse, aligning on integration points and next steps for shared pipeline infrastructure.
+
+## Suggested Addition to Risks/Issues Section
+
+- The SparkOperator CR controller resource durability issue was resolved this week, but the underlying pattern (reconcile loops overwriting operator tuning) may affect other resource configurations. Worth confirming no similar gaps remain before 3.6 GA.
+
+## Suggested Addition to Associates Section
+
+- Rishabh Singh drove resolution of the durable controllerResources blocker and led the upstream SDK dependency evaluation, contributing to both reliability and the long-term PySpark dependency strategy.
+- Shruthi Sankepelly shipped the early-gate pipeline enhancement and reviewed the Prometheus metrics PR through multiple rounds of feedback before approving, raising the quality bar on that feature.
+- Alina Ryan closed out the Docling upstream OGX integration and approved the NetworkPolicy and metrics scraping PRs in the midstream, contributing to two shipped features this week.
