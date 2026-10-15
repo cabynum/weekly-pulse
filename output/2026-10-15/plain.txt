@@ -1,0 +1,20 @@
+**Data Processing** (Chris Bynum) - 11 issues completed
+
+Highlights:
+
+- Completed the 3.6 EA2 product sign-off and RC1 test execution gate requirements, clearing the team's release obligations for this milestone.
+- Wrapped up a full P0 benchmarking campaign for the Spark Operator on OpenShift AI, covering baseline throughput, namespace-density comparison, and artifact retention for further analysis. Results feed directly into the official Spark Operator scaling guidelines effort targeting 3.6 GA.
+- Fixed a webhook namespace-selector bug in the upstream Spark Operator that caused incorrect behavior in multi-tenant Helm installs, landing the fix in the upstream kubeflow repo.
+- Resolved a CI failure in the ODH Spark Pi Kustomize E2E suite where operator deployments were timing out in KIND clusters, restoring CI reliability for midstream validation.
+- Fixed a CI image/config version skew issue in the midstream repo by switching to source builds on push, preventing mismatches between the operator image and its configuration on every commit.
+- Added Konflux package rules on main to automatically track each new release branch, reducing manual overhead in the downstream build pipeline.
+- Reviewed and approved NetworkPolicy additions for operator egress and webhook ingress in ODH/RHOAI overlays, building on last week's Prometheus metrics NetworkPolicy to round out operator network isolation.
+
+## Suggested Addition to Risks/Issues Section
+
+- TLS compliance for 3.6 GA (RHAISTRAT-2826) remains in progress and is assigned outside the team. Given the Critical priority and GA timeline, this dependency should be tracked closely.
+
+## Suggested Addition to Associates Section
+
+- Rishabh Singh led the full P0 Spark Operator benchmarking effort end-to-end, from adapting the upstream benchmark workflow to OpenShift AI through execution and artifact retention, producing the data needed to publish official scaling guidelines.
+- Shruthi Sankepelly completed the 3.6 EA2 product sign-off and test execution matrix, fulfilling the team's critical release gate obligations for this milestone.
