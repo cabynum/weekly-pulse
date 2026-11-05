@@ -1,0 +1,759 @@
+{
+  "report": {
+    "report_path": "reports/AAET_Weekly_Status_-_Week_of_Oct_30,_2026.md",
+    "dp_section": "",
+    "exec_summary": ""
+  },
+  "github": {
+    "team_prs": [
+      {
+        "number": 221,
+        "title": "fix: restore Prometheus scraping for secure metrics PodMonitors",
+        "url": "https://github.com/opendatahub-io/spark-operator/pull/221",
+        "author": "Vedant-Deshpande",
+        "is_team_member": true,
+        "merged_at": "2026-11-03T23:03:09Z"
+      },
+      {
+        "number": 205,
+        "title": "config: enable secure metrics (HTTPS) for TLS-Scanner compliance",
+        "url": "https://github.com/opendatahub-io/spark-operator/pull/205",
+        "author": "Vedant-Deshpande",
+        "is_team_member": true,
+        "merged_at": "2026-10-30T21:02:23Z"
+      },
+      {
+        "number": 217,
+        "title": "Add environment specification to sync job",
+        "url": "https://github.com/opendatahub-io/spark-operator/pull/217",
+        "author": "shruthis4",
+        "is_team_member": true,
+        "merged_at": "2026-10-29T18:27:28Z"
+      },
+      {
+        "number": 216,
+        "title": "fix(e2e): install Spark Connect client deps into a writable directory",
+        "url": "https://github.com/opendatahub-io/spark-operator/pull/216",
+        "author": "alimaredia",
+        "is_team_member": true,
+        "merged_at": "2026-10-29T18:15:00Z"
+      }
+    ],
+    "external_prs": [
+      {
+        "number": 215,
+        "title": "feat(spark-operator-module): add durable controller tuning knobs",
+        "url": "https://github.com/opendatahub-io/spark-operator/pull/215",
+        "author": "RobuRishabh",
+        "is_team_member": false,
+        "merged_at": "2026-10-31T00:00:19Z"
+      },
+      {
+        "number": 214,
+        "title": "RHAI-6898: Move Spark example to CPU Torch 2.13 channel",
+        "url": "https://github.com/opendatahub-io/spark-operator/pull/214",
+        "author": "vshawrh",
+        "is_team_member": false,
+        "merged_at": "2026-10-29T19:18:21Z"
+      }
+    ],
+    "team_reviews": [
+      {
+        "pr_number": 221,
+        "pr_title": "fix: restore Prometheus scraping for secure metrics PodMonitors",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/221",
+        "reviewer": "alimaredia",
+        "state": "APPROVED",
+        "submitted_at": "2026-11-03T01:47:41Z"
+      },
+      {
+        "pr_number": 215,
+        "pr_title": "feat(spark-operator-module): add durable controller tuning knobs",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/215",
+        "reviewer": "Vedant-Deshpande",
+        "state": "APPROVED",
+        "submitted_at": "2026-10-29T18:03:48Z"
+      },
+      {
+        "pr_number": 215,
+        "pr_title": "feat(spark-operator-module): add durable controller tuning knobs",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/215",
+        "reviewer": "alinaryan",
+        "state": "COMMENTED",
+        "submitted_at": "2026-10-29T18:05:27Z"
+      },
+      {
+        "pr_number": 215,
+        "pr_title": "feat(spark-operator-module): add durable controller tuning knobs",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/215",
+        "reviewer": "alinaryan",
+        "state": "APPROVED",
+        "submitted_at": "2026-10-29T18:43:53Z"
+      },
+      {
+        "pr_number": 215,
+        "pr_title": "feat(spark-operator-module): add durable controller tuning knobs",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/215",
+        "reviewer": "shruthis4",
+        "state": "APPROVED",
+        "submitted_at": "2026-10-29T19:20:35Z"
+      },
+      {
+        "pr_number": 205,
+        "pr_title": "config: enable secure metrics (HTTPS) for TLS-Scanner compliance",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/205",
+        "reviewer": "alimaredia",
+        "state": "APPROVED",
+        "submitted_at": "2026-10-30T21:02:13Z"
+      },
+      {
+        "pr_number": 214,
+        "pr_title": "RHAI-6898: Move Spark example to CPU Torch 2.13 channel",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/214",
+        "reviewer": "alimaredia",
+        "state": "APPROVED",
+        "submitted_at": "2026-10-29T19:00:15Z"
+      },
+      {
+        "pr_number": 214,
+        "pr_title": "RHAI-6898: Move Spark example to CPU Torch 2.13 channel",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/214",
+        "reviewer": "shruthis4",
+        "state": "APPROVED",
+        "submitted_at": "2026-10-29T19:18:10Z"
+      },
+      {
+        "pr_number": 217,
+        "pr_title": "Add environment specification to sync job",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/217",
+        "reviewer": "alimaredia",
+        "state": "APPROVED",
+        "submitted_at": "2026-10-29T18:27:18Z"
+      }
+    ],
+    "closed_issues": [
+      {
+        "number": 2788,
+        "title": "Restart of Spark Operator may Result in Duplicated Submission",
+        "url": "https://github.com/kubeflow/spark-operator/issues/2788",
+        "closed_by": "kohn"
+      }
+    ],
+    "total_merged": 6
+  },
+  "jira": {
+    "completed": [
+      {
+        "key": "RHOAIENG-95821",
+        "summary": "[TLS-Scanner] Add TLS-Scanner CI step for Kubeflow Spark Operator",
+        "status": "Resolved",
+        "assignee": "Vedant Deshpande",
+        "is_team_member": true,
+        "priority": "Undefined",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-11-03T16:30:09.557+0000",
+        "resolved": "2026-10-30T21:02:53.648+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-95821"
+      },
+      {
+        "key": "RHOAIENG-93732",
+        "summary": "NetworkPolicies for Kubeflow Spark Operator operands",
+        "status": "Closed",
+        "assignee": "Ali Maredia",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Epic",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "updated": "2026-11-03T22:16:36.034+0000",
+        "resolved": "2026-10-30T04:54:12.999+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-93732"
+      },
+      {
+        "key": "RHAIENG-7846",
+        "summary": "Grafana: Interactive dashboard covering all benchmark runs",
+        "status": "Resolved",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Undefined",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-11-05T16:40:31.081+0000",
+        "resolved": "2026-11-05T16:40:31.045+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-7846"
+      },
+      {
+        "key": "RHAIENG-7845",
+        "summary": "CT: Combined controller, workqueue, and API-client tuning at 51 apps (single variant run, webhook on)",
+        "status": "Resolved",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Undefined",
+        "type": "Story",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-11-05T16:40:58.217+0000",
+        "resolved": "2026-11-05T14:46:16.998+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-7845"
+      },
+      {
+        "key": "RHAIENG-7844",
+        "summary": "Docs: Record all benchmark runs on Confluence",
+        "status": "Resolved",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Undefined",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-11-05T16:40:31.872+0000",
+        "resolved": "2026-11-05T16:40:31.831+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-7844"
+      },
+      {
+        "key": "RHAIENG-7843",
+        "summary": "C3: Resource-version polling unset vs enabled at 51 apps (single variant run, webhook on)",
+        "status": "Resolved",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Undefined",
+        "type": "Story",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-11-05T16:40:38.616+0000",
+        "resolved": "2026-11-05T14:46:16.169+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-7843"
+      },
+      {
+        "key": "RHAIENG-7842",
+        "summary": "C2: Controller workers 10 vs 20 at 51 apps (single variant run, webhook on)",
+        "status": "Resolved",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Undefined",
+        "type": "Story",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-11-05T16:40:20.386+0000",
+        "resolved": "2026-11-05T14:46:15.301+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-7842"
+      },
+      {
+        "key": "RHAIENG-7670",
+        "summary": "Update docling-serve version in the docling container image ",
+        "status": "Resolved",
+        "assignee": "Alina Ryan",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Story",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-11-04T19:18:57.659+0000",
+        "resolved": "2026-11-04T19:18:57.624+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-7670"
+      },
+      {
+        "key": "RHAIENG-7425",
+        "summary": "Blog Post Job Scheduling on Spark Operator using Kueue on RHOAI",
+        "status": "Resolved",
+        "assignee": "Vedant Deshpande",
+        "is_team_member": true,
+        "priority": "Major",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-11-04T19:07:55.552+0000",
+        "resolved": "2026-11-04T19:07:55.513+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-7425"
+      },
+      {
+        "key": "RHAIENG-6958",
+        "summary": "Spike: Research tooling, approach selection, and downstream requirements",
+        "status": "Resolved",
+        "assignee": "Alina Ryan",
+        "is_team_member": true,
+        "priority": "Undefined",
+        "type": "Spike",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-11-04T19:19:08.998+0000",
+        "resolved": "2026-11-04T19:19:08.963+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-6958"
+      }
+    ],
+    "completed_external": [
+      {
+        "key": "RHOAIENG-96880",
+        "summary": "Add TLS-Scanner CI step for Kubeflow Spark Operator",
+        "status": "Closed",
+        "assignee": "Unassigned",
+        "is_team_member": false,
+        "priority": "Normal",
+        "type": "Epic",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-11-03T20:31:47.158+0000",
+        "resolved": "2026-10-30T21:03:07.407+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-96880"
+      }
+    ],
+    "in_progress": [
+      {
+        "key": "RHOAIENG-95821",
+        "summary": "[TLS-Scanner] Add TLS-Scanner CI step for Kubeflow Spark Operator",
+        "status": "Resolved",
+        "assignee": "Vedant Deshpande",
+        "is_team_member": true,
+        "priority": "Undefined",
+        "type": "Task",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-11-03T16:30:09.557+0000",
+        "resolved": "2026-10-30T21:02:53.648+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-95821"
+      },
+      {
+        "key": "RHOAIENG-93732",
+        "summary": "NetworkPolicies for Kubeflow Spark Operator operands",
+        "status": "Closed",
+        "assignee": "Ali Maredia",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Epic",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "updated": "2026-11-03T22:16:36.034+0000",
+        "resolved": "2026-10-30T04:54:12.999+0000",
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-93732"
+      },
+      {
+        "key": "RHOAIENG-81551",
+        "summary": "GHSA-5pvg-856g-cp85, GHSA-676x-f7gg-47vc odh-spark-operator-v3-5 io.netty:netty-resolver-dns 4.1.135.Final 3.5.1 GA RHOAI",
+        "status": "New",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-11-04T21:04:19.519+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81551"
+      },
+      {
+        "key": "RHOAIENG-81550",
+        "summary": "GHSA-3qp7-7mw8-wx86, GHSA-c653-97m9-rcg9, GHSA-x4gw-5cx5-pgmh odh-spark-operator-v3-5 io.netty:netty-handler 4.1.135.Final 3.5.1 GA RHOAI",
+        "status": "New",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-11-04T21:04:19.338+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81550"
+      },
+      {
+        "key": "RHOAIENG-81549",
+        "summary": "GHSA-f6hv-jmp6-3vwv, GHSA-prj3-ccx8-p6x4, GHSA-w9fj-cfpg-grvv odh-spark-operator-v3-5 io.netty:netty-codec-http2 4.1.133.Final 3.5.1 GA RHOAI",
+        "status": "New",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-11-04T21:04:19.160+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81549"
+      },
+      {
+        "key": "RHOAIENG-81548",
+        "summary": "GHSA-57rv-r2g8-2cj3, GHSA-f6hv-jmp6-3vwv, GHSA-pwqr-wmgm-9rr8 odh-spark-operator-v3-5 io.netty:netty-codec-http 4.1.133.Final 3.5.1 GA RHOAI",
+        "status": "New",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-11-04T21:04:18.935+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81548"
+      },
+      {
+        "key": "RHOAIENG-81547",
+        "summary": "GHSA-cm33-6792-r9fm odh-spark-operator-v3-5 io.netty:netty-codec-dns 4.1.133.Final 3.5.1 GA RHOAI",
+        "status": "New",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-11-04T21:04:18.738+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81547"
+      },
+      {
+        "key": "RHOAIENG-81546",
+        "summary": "GHSA-mj4r-2hfc-f8p6 odh-spark-operator-v3-5 io.netty:netty-codec 4.1.133.Final 3.5.1 GA RHOAI",
+        "status": "New",
+        "assignee": "Shruthi Sankepelly",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "fix_versions": [
+          "3.5.2 GA RHOAI"
+        ],
+        "updated": "2026-11-04T21:04:18.527+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-81546"
+      },
+      {
+        "key": "RHAISTRAT-1951",
+        "summary": "High-fidelity document conversion of policy documents, transcripts, and wikis into structured clean text on OpenShift AI",
+        "status": "Review",
+        "assignee": "Alina Ryan",
+        "is_team_member": true,
+        "priority": "Major",
+        "type": "Feature",
+        "color": "Green",
+        "status_summary": "Status: Green as of 2026-10-16",
+        "target_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.7 EA RHOAI RELEASE"
+        ],
+        "updated": "2026-10-30T19:35:33.614+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1951"
+      },
+      {
+        "key": "RHAIENG-7846",
+        "summary": "Grafana: Interactive dashboard covering all benchmark runs",
+        "status": "Resolved",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Undefined",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-11-05T16:40:31.081+0000",
+        "resolved": "2026-11-05T16:40:31.045+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-7846"
+      },
+      {
+        "key": "RHAIENG-7845",
+        "summary": "CT: Combined controller, workqueue, and API-client tuning at 51 apps (single variant run, webhook on)",
+        "status": "Resolved",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Undefined",
+        "type": "Story",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-11-05T16:40:58.217+0000",
+        "resolved": "2026-11-05T14:46:16.998+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-7845"
+      },
+      {
+        "key": "RHAIENG-7844",
+        "summary": "Docs: Record all benchmark runs on Confluence",
+        "status": "Resolved",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Undefined",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-11-05T16:40:31.872+0000",
+        "resolved": "2026-11-05T16:40:31.831+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-7844"
+      },
+      {
+        "key": "RHAIENG-7843",
+        "summary": "C3: Resource-version polling unset vs enabled at 51 apps (single variant run, webhook on)",
+        "status": "Resolved",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Undefined",
+        "type": "Story",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-11-05T16:40:38.616+0000",
+        "resolved": "2026-11-05T14:46:16.169+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-7843"
+      },
+      {
+        "key": "RHAIENG-7842",
+        "summary": "C2: Controller workers 10 vs 20 at 51 apps (single variant run, webhook on)",
+        "status": "Resolved",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Undefined",
+        "type": "Story",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-11-05T16:40:20.386+0000",
+        "resolved": "2026-11-05T14:46:15.301+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-7842"
+      },
+      {
+        "key": "RHAIENG-7670",
+        "summary": "Update docling-serve version in the docling container image ",
+        "status": "Resolved",
+        "assignee": "Alina Ryan",
+        "is_team_member": true,
+        "priority": "Blocker",
+        "type": "Story",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-11-04T19:18:57.659+0000",
+        "resolved": "2026-11-04T19:18:57.624+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-7670"
+      },
+      {
+        "key": "RHAIENG-7425",
+        "summary": "Blog Post Job Scheduling on Spark Operator using Kueue on RHOAI",
+        "status": "Resolved",
+        "assignee": "Vedant Deshpande",
+        "is_team_member": true,
+        "priority": "Major",
+        "type": "Task",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-11-04T19:07:55.552+0000",
+        "resolved": "2026-11-04T19:07:55.513+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-7425"
+      },
+      {
+        "key": "RHAIENG-6958",
+        "summary": "Spike: Research tooling, approach selection, and downstream requirements",
+        "status": "Resolved",
+        "assignee": "Alina Ryan",
+        "is_team_member": true,
+        "priority": "Undefined",
+        "type": "Spike",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-11-04T19:19:08.998+0000",
+        "resolved": "2026-11-04T19:19:08.963+0000",
+        "url": "https://redhat.atlassian.net/browse/RHAIENG-6958"
+      }
+    ],
+    "created": [
+      {
+        "key": "RHOAIENG-102740",
+        "summary": "[ccs Bug] unresolved {dbd-config-default-namespace} attribute rendered literally in Spark Connect workbench docs (RHOAI 3.5)",
+        "status": "Backlog",
+        "assignee": "Olivia Brown",
+        "is_team_member": false,
+        "priority": "Undefined",
+        "type": "Bug",
+        "color": "",
+        "status_summary": "",
+        "target_versions": [],
+        "fix_versions": [],
+        "updated": "2026-11-05T09:49:11.708+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHOAIENG-102740"
+      }
+    ],
+    "features": [
+      {
+        "key": "RHAISTRAT-2826",
+        "summary": "TLS compliance completion for RHOAI components (3.6 GA)",
+        "status": "In Progress",
+        "assignee": "Scott Froberg",
+        "is_team_member": false,
+        "priority": "Critical",
+        "type": "Feature",
+        "color": "Green",
+        "status_summary": "As of Tue ",
+        "target_versions": [
+          "3.7 EA RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.7 EA RHOAI RELEASE"
+        ],
+        "updated": "2026-11-04T16:05:07.374+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-2826"
+      },
+      {
+        "key": "RHAISTRAT-2591",
+        "summary": "Official Spark Operator scaling guidelines for OpenShift AI",
+        "status": "In Progress",
+        "assignee": "Rishabh Singh",
+        "is_team_member": true,
+        "priority": "Major",
+        "type": "Feature",
+        "color": "Green",
+        "status_summary": "",
+        "target_versions": [
+          "3.7 EA RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.7 EA RHOAI RELEASE"
+        ],
+        "updated": "2026-10-16T17:27:10.362+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-2591"
+      },
+      {
+        "key": "RHAISTRAT-1951",
+        "summary": "High-fidelity document conversion of policy documents, transcripts, and wikis into structured clean text on OpenShift AI",
+        "status": "Review",
+        "assignee": "Alina Ryan",
+        "is_team_member": true,
+        "priority": "Major",
+        "type": "Feature",
+        "color": "Green",
+        "status_summary": "Status: Green as of 2026-10-16",
+        "target_versions": [
+          "3.6 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [
+          "3.7 EA RHOAI RELEASE"
+        ],
+        "updated": "2026-10-30T19:35:33.614+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1951"
+      },
+      {
+        "key": "RHAISTRAT-1787",
+        "summary": "Structured information extraction from cheques \u2014 phased reference examples",
+        "status": "In Progress",
+        "assignee": "Vedant Deshpande",
+        "is_team_member": true,
+        "priority": "Critical",
+        "type": "Feature",
+        "color": "Green",
+        "status_summary": "Creations of epics done, individual stories to be created next",
+        "target_versions": [
+          "3.7 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [],
+        "updated": "2026-10-16T15:28:00.962+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1787"
+      },
+      {
+        "key": "RHAISTRAT-1786",
+        "summary": "Continuous indexing and enrichment pipeline reference architecture for agent & RAG knowledge bases",
+        "status": "Refinement",
+        "assignee": "Unassigned",
+        "is_team_member": false,
+        "priority": "Major",
+        "type": "Feature",
+        "color": "Not Selected",
+        "status_summary": "",
+        "target_versions": [
+          "3.7 GA RHOAI RELEASE"
+        ],
+        "fix_versions": [],
+        "updated": "2026-09-28T18:38:34.216+0000",
+        "resolved": null,
+        "url": "https://redhat.atlassian.net/browse/RHAISTRAT-1786"
+      }
+    ],
+    "counts": {
+      "completed": 10,
+      "completed_total_on_component": 11,
+      "in_progress": 17,
+      "created": 1
+    }
+  },
+  "slack": {},
+  "sections_routed": [
+    "DATA_PROCESSING",
+    "ASSOCIATES"
+  ]
+}

@@ -1,0 +1,15 @@
+**Data Processing** (Chris Bynum) - 10 issues completed
+
+Highlights:
+
+- Shipped NetworkPolicy coverage for Kubeflow Spark Operator operands, closing a blocker-priority gap in network isolation for 3.6 GA. This completes the work started several weeks ago with pod inventory and policy scoping.
+- Enabled TLS-compliant secure metrics on the midstream Spark Operator by configuring HTTPS for metrics endpoints and restoring Prometheus scraping via PodMonitors after a regression introduced by the TLS change. Added a TLS-Scanner CI step to catch compliance drift automatically going forward.
+- Updated the docling-serve version in the container image, a blocker-priority fix that keeps the document conversion pipeline current ahead of 3.6 GA.
+- Completed research into tooling and approach selection for downstream productization requirements, laying the groundwork for the document conversion reference architecture.
+- Fixed a Spark Connect E2E test failure caused by client dependencies installing into a read-only directory, keeping the midstream CI pipeline green.
+- Added environment specification to the sync job in the midstream repo, improving consistency of automated syncing between streams.
+- Wrapped up the Spark Operator controller tuning benchmark series, completing multiple benchmark variants at scale (51 apps) covering worker counts, resource-version polling, and combined tuning. Results are documented on Confluence and surfaced in an interactive Grafana dashboard, advancing the official scaling guidelines effort toward published guidance for 3.6 GA.
+
+## Suggested Addition to Associates Section
+
+- Vedant Deshpande published a blog post on job scheduling with Spark Operator and Kueue on OpenShift AI, contributing community-facing content that documents a key 3.6 feature for practitioners.
