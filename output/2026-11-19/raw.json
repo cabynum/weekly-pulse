@@ -1,0 +1,222 @@
+{
+  "report": {
+    "report_path": "reports/AAET_Weekly_Status_-_Week_of_Oct_30,_2026.md",
+    "dp_section": "",
+    "exec_summary": ""
+  },
+  "github": {
+    "team_prs": [],
+    "external_prs": [
+      {
+        "number": 225,
+        "title": "Sync e2e upstream 2026 11 10",
+        "url": "https://github.com/opendatahub-io/spark-operator/pull/225",
+        "author": "RobuRishabh",
+        "is_team_member": false,
+        "merged_at": "2026-11-16T19:36:53Z"
+      },
+      {
+        "number": 188,
+        "title": "Add an OpenShift AI Spark Operator P0 benchmark harness.",
+        "url": "https://github.com/opendatahub-io/spark-operator/pull/188",
+        "author": "RobuRishabh",
+        "is_team_member": false,
+        "merged_at": "2026-11-13T16:59:24Z"
+      },
+      {
+        "number": 226,
+        "title": "feat(module): configure controller start latency buckets",
+        "url": "https://github.com/opendatahub-io/spark-operator/pull/226",
+        "author": "RobuRishabh",
+        "is_team_member": false,
+        "merged_at": "2026-11-12T19:23:54Z"
+      },
+      {
+        "number": 3315,
+        "title": "feat: add configurable schedulerName for webhook, controller",
+        "url": "https://github.com/kubeflow/spark-operator/pull/3315",
+        "author": "eufebius",
+        "is_team_member": false,
+        "merged_at": "2026-11-18T16:22:31Z"
+      },
+      {
+        "number": 3310,
+        "title": "chore(ci): run e2e tests on Kubernetes 1.35\u20131.37 and drop unsupported versions",
+        "url": "https://github.com/kubeflow/spark-operator/pull/3310",
+        "author": "vikas-saxena02",
+        "is_team_member": false,
+        "merged_at": "2026-11-16T18:27:27Z"
+      }
+    ],
+    "team_reviews": [
+      {
+        "pr_number": 128,
+        "pr_title": "Add policy document conversion pipeline with VLM artifact interpretation",
+        "pr_url": "https://github.com/opendatahub-io/data-processing/pull/128",
+        "reviewer": "alimaredia",
+        "state": "APPROVED",
+        "submitted_at": "2026-11-16T20:58:35Z"
+      },
+      {
+        "pr_number": 228,
+        "pr_title": "build(odh): bump bundled Spark to 4.2.1 and Java to 21",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/228",
+        "reviewer": "alimaredia",
+        "state": "APPROVED",
+        "submitted_at": "2026-11-19T17:42:12Z"
+      },
+      {
+        "pr_number": 225,
+        "pr_title": "Sync e2e upstream 2026 11 10",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/225",
+        "reviewer": "alimaredia",
+        "state": "APPROVED",
+        "submitted_at": "2026-11-12T21:34:01Z"
+      },
+      {
+        "pr_number": 225,
+        "pr_title": "Sync e2e upstream 2026 11 10",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/225",
+        "reviewer": "alimaredia",
+        "state": "APPROVED",
+        "submitted_at": "2026-11-12T21:35:47Z"
+      },
+      {
+        "pr_number": 225,
+        "pr_title": "Sync e2e upstream 2026 11 10",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/225",
+        "reviewer": "shruthis4",
+        "state": "APPROVED",
+        "submitted_at": "2026-11-16T19:36:40Z"
+      },
+      {
+        "pr_number": 188,
+        "pr_title": "Add an OpenShift AI Spark Operator P0 benchmark harness.",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/188",
+        "reviewer": "alimaredia",
+        "state": "APPROVED",
+        "submitted_at": "2026-11-12T21:50:14Z"
+      },
+      {
+        "pr_number": 188,
+        "pr_title": "Add an OpenShift AI Spark Operator P0 benchmark harness.",
+        "pr_url": "https://github.com/opendatahub-io/spark-operator/pull/188",
+        "reviewer": "shruthis4",
+        "state": "APPROVED",
+        "submitted_at": "2026-11-13T14:25:41Z"
+      },
+      {
+        "pr_number": 3304,
+        "pr_title": "Improve kustomize config and RBAC role definitions",
+        "pr_url": "https://github.com/kubeflow/spark-operator/pull/3304",
+        "reviewer": "alinaryan",
+        "state": "COMMENTED",
+        "submitted_at": "2026-11-13T17:13:14Z"
+      },
+      {
+        "pr_number": 3304,
+        "pr_title": "Improve kustomize config and RBAC role definitions",
+        "pr_url": "https://github.com/kubeflow/spark-operator/pull/3304",
+        "reviewer": "alinaryan",
+        "state": "COMMENTED",
+        "submitted_at": "2026-11-13T17:13:26Z"
+      },
+      {
+        "pr_number": 3304,
+        "pr_title": "Improve kustomize config and RBAC role definitions",
+        "pr_url": "https://github.com/kubeflow/spark-operator/pull/3304",
+        "reviewer": "alinaryan",
+        "state": "COMMENTED",
+        "submitted_at": "2026-11-13T17:13:34Z"
+      },
+      {
+        "pr_number": 3303,
+        "pr_title": "Add documentation comments and update .gitignore",
+        "pr_url": "https://github.com/kubeflow/spark-operator/pull/3303",
+        "reviewer": "alinaryan",
+        "state": "COMMENTED",
+        "submitted_at": "2026-11-13T17:12:54Z"
+      },
+      {
+        "pr_number": 3303,
+        "pr_title": "Add documentation comments and update .gitignore",
+        "pr_url": "https://github.com/kubeflow/spark-operator/pull/3303",
+        "reviewer": "alinaryan",
+        "state": "COMMENTED",
+        "submitted_at": "2026-11-13T17:12:57Z"
+      },
+      {
+        "pr_number": 3303,
+        "pr_title": "Add documentation comments and update .gitignore",
+        "pr_url": "https://github.com/kubeflow/spark-operator/pull/3303",
+        "reviewer": "alinaryan",
+        "state": "COMMENTED",
+        "submitted_at": "2026-11-13T17:13:02Z"
+      },
+      {
+        "pr_number": 3303,
+        "pr_title": "Add documentation comments and update .gitignore",
+        "pr_url": "https://github.com/kubeflow/spark-operator/pull/3303",
+        "reviewer": "alinaryan",
+        "state": "COMMENTED",
+        "submitted_at": "2026-11-13T17:13:09Z"
+      },
+      {
+        "pr_number": 3302,
+        "pr_title": "Fix Makefile: unit-test continuation, KIND_KUBE_CONFIG, and controller-gen paths",
+        "pr_url": "https://github.com/kubeflow/spark-operator/pull/3302",
+        "reviewer": "alinaryan",
+        "state": "COMMENTED",
+        "submitted_at": "2026-11-13T17:12:31Z"
+      },
+      {
+        "pr_number": 3302,
+        "pr_title": "Fix Makefile: unit-test continuation, KIND_KUBE_CONFIG, and controller-gen paths",
+        "pr_url": "https://github.com/kubeflow/spark-operator/pull/3302",
+        "reviewer": "alinaryan",
+        "state": "COMMENTED",
+        "submitted_at": "2026-11-13T17:12:41Z"
+      },
+      {
+        "pr_number": 3302,
+        "pr_title": "Fix Makefile: unit-test continuation, KIND_KUBE_CONFIG, and controller-gen paths",
+        "pr_url": "https://github.com/kubeflow/spark-operator/pull/3302",
+        "reviewer": "alinaryan",
+        "state": "COMMENTED",
+        "submitted_at": "2026-11-13T17:12:49Z"
+      }
+    ],
+    "closed_issues": [
+      {
+        "number": 3309,
+        "title": "chore(ci): remove unsupported Kubernetes versions from the e2e test matrix",
+        "url": "https://github.com/kubeflow/spark-operator/issues/3309",
+        "closed_by": "vikas-saxena02"
+      },
+      {
+        "number": 2987,
+        "title": "Create a Dedicated Website for Kubeflow Spark Operator",
+        "url": "https://github.com/kubeflow/spark-operator/issues/2987",
+        "closed_by": "vara-bonthu"
+      }
+    ],
+    "total_merged": 5
+  },
+  "jira": {
+    "completed": [],
+    "completed_external": [],
+    "in_progress": [],
+    "created": [],
+    "features": [],
+    "counts": {
+      "completed": 0,
+      "completed_total_on_component": 0,
+      "in_progress": 0,
+      "created": 0
+    }
+  },
+  "slack": {},
+  "sections_routed": [
+    "DATA_PROCESSING"
+  ]
+}
